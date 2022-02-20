@@ -1,0 +1,79 @@
+{
+  "tissue": {
+    "global": {
+      "deltat": {
+        "_type": "number",
+        "_step": 0.001,
+        "_lower_limit": 0.0,
+        "_upper_limit": 1.0,
+        "_value": 0.01
+      },
+      "types": {
+        "_type": "declaration"
+      },
+      "itissue": {
+        "ncellsx": {
+          "_type": "number",
+          "_step": 1,
+          "_lower_limit": 1,
+          "_upper_limit": 100,
+          "_value": 10
+        },
+        "ncellsy": {
+          "_type": "number",
+          "_step": 1,
+          "_lower_limit": 1,
+          "_upper_limit": 100,
+          "_value": 10
+        },
+        "background": "types",
+        "square": {
+          "_type": "command",
+          "t": "types",
+          "ix": {
+            "_type": "number",
+            "_step": 1,
+            "_lower_limit": 0,
+            "_upper_limit": 100,
+            "_value": 0
+          },
+          "iy": {
+            "_type": "number",
+            "_step": 1,
+            "_lower_limit": 0,
+            "_upper_limit": 100,
+            "_value": 0
+          },
+          "sizex": {
+            "_type": "number",
+            "_step": 1,
+            "_lower_limit": 1,
+            "_upper_limit": 100,
+            "_value": 10
+          },
+          "sizey": {
+            "_type": "number",
+            "_step": 1,
+            "_lower_limit": 1,
+            "_upper_limit": 100,
+            "_value": 10
+          }
+        },
+        "file": {
+          "_type": "declaration",
+          "f": ""
+        }
+      },
+      "AllowT1C2": {
+        "_type": "command"
+      },
+      "ProteinBinomialDistribution": {
+        "_type": "command"
+      }
+    },
+    "stages": null,
+    "potentials": null,
+    "cycles": null,
+    "protein": null
+  }
+}

@@ -1,0 +1,153 @@
+"tissue":
+{
+	"isLoaded":true,
+	"data":null,
+	"global":
+	{
+		"deltat":"0.002",
+		"types":
+		{
+			"celltype1":"",
+			"celltype2":""
+		},
+		"itissue":
+		{
+			"ncellsx":"10",			
+			"ncellsy":"10",
+			"backgroundcells":"celltype1",
+			"square":
+			[
+				{"$":{"t":"celltype2","ix":"5","iy":"0","sizex":"5","sizey":"10"}},
+				{"$":{"t":"celltype1","ix":"1","iy":"2","sizex":"7","sizey":"11"}}
+			],
+			"file":
+				{"$":{"f":""}}
+		},
+		"AllowT1C2":""
+	},
+	"stages":
+	[
+		{
+			"$":{"order":"1","duration":"150","intermediate":"10000"},
+			"mechanics":"",
+			"growth":"",
+			"proteins":""
+		}
+	],
+	"potentials":
+	{
+		"potential":
+		{
+			"$": { "stage":"all" },
+			"KAPPA":
+			[
+				{"_":"1.","$":{"t":"celltype1"}},
+				{"_":"1.","$":{"t":"celltype2"}}
+			],
+			"LAMBDA":
+			[
+				{"_":"0.04","$":{"t1":"celltype1","t2":"celltype1"}},
+				{"_":"0.2","$":{"t1":"celltype1","t2":"empty"}},
+				{"_":"0.04","$":{"t1":"celltype2","t2":"celltype2"}},
+				{"_":"0.2","$":{"t1":"celltype2","t2":"empty"}},
+				{"_":"0.04","$":{"t1":"celltype1","t2":"celltype2"}}
+			],
+			"GAMMA":
+			[
+				{"_":"0.02","$":{"t":"celltype1"}},
+				{"_":"0.02","$":{"t":"celltype2"}}
+			]
+		}
+	},
+	"cycles":
+	{
+		"cycle":
+		{
+			"$": { "stage":"all" },
+			"dispersion":
+			[
+				{"_":"0.8","$":{"t":"celltype1"}},
+				{"_":"0.8","$":{"t":"celltype2"}}
+			],
+			"speed":
+			[
+				{"_":"2.","$":{"t":"celltype1"}},
+				{"_":"2.","$":{"t":"celltype2"}}
+			],
+			"phase":
+			[
+				{"_":"1","$":{"t":"celltype1","a0i":"1.","a0f":"1.","reldiv":"0.70","prop":"0.5"}},
+				{"_":"2","$":{"t":"celltype1","a0i":"1.","a0f":"2.","reldiv":"0.70","prop":"0.5"}},
+				{"_":"1","$":{"t":"celltype2","a0i":"1.","a0f":"1.","reldiv":"0.70","prop":"0.5"}},
+				{"_":"2","$":{"t":"celltype2","a0i":"1.","a0f":"2.","reldiv":"0.70","prop":"0.5"}}
+			],
+			"divisionshift":
+			[
+				{"_":"2*%c1.morphogen","$":{"t":"celltype1"}},
+				{"_":"2*%c1.morphogen","$":{"t":"celltype2"}}
+			],
+			"divisiondispersion":
+			[
+				{"_":"0.2","$":{"t":"celltype1"}},
+				{"_":"0.2","$":{"t":"celltype2"}}
+			],
+			"divisiondispersionlimit":
+			[
+				{"_":"0.5","$":{"t":"celltype1"}},
+				{"_":"0.5","$":{"t":"celltype2"}}
+			]
+		}
+	},
+	"proteins":
+	{
+		"constants":
+		[
+			{"$":{"stage":"1"},"deg1":"0.9","deg2":"0.34","k1":"0.5","k2":"0.125","Dwingless":"2."},
+			{"$":{"stage":"2"},"deg1":"0.9","deg2":"0.34","k1":"0.5","k2":"0.125","Dwingless":"4."}
+		],
+		"protein":
+		[
+			{
+				"$":{"species":"morphogen"},
+				"iconcentration":
+				[
+					{"_":"1.","$":{"t":"celltype1","dispersion":"1","stochastic":"y"}},
+					{"_":"1.","$":{"t":"celltype2","dispersion":"1","stochastic":"y"}}
+				],
+				"dynamics":
+				{
+					"_":"((c->ctype)-1)-morphogen",
+					"$":{"negval":"n"}
+				}
+			}
+			{
+				"$":{"species":"notch"},
+				"iconcentration":
+				[
+					{"_":"2000.","$":{"t":"progenitor","stochastic":"y","dispersion":"0.01"}},
+					{"_":"1000.","$":{"t":"epithelial","stochastic":"n","dispersion":"0.02"}}
+				],
+				"dynamics":
+				{
+					"_":"function_hill(wingless,k1,1)-deg1*notch",
+					"$":{"negval":"n"}
+				}
+			}			
+		]
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

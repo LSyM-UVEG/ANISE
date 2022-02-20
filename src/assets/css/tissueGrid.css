@@ -1,0 +1,24 @@
+div.moving {
+  cursor: grab;
+}
+
+div.create {
+  cursor: cell;
+}
+
+div.select {
+  cursor: crosshair;
+}
+
+svg .hexagon {
+  transition: fill-opacity .2s, stroke .2s;
+}
+
+div.select g .hexagon:hover, div.create g .hexagon:hover, div.erase g .hexagon:hover {
+  fill-opacity: 0.5;
+}
+
+svg#viewport
+{
+
+}

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tissue>
+
+<!--*** GLOBAL ****-->
+  <global>
+    <deltat>0.002</deltat>
+    <types>
+      <celltype1/>
+      <celltype2/>
+      <celltype3/>
+   </types>
+    <itissue>
+      <ncellsx>30</ncellsx>
+      <ncellsy>25</ncellsy>
+      <backgroundcells>celltype1</backgroundcells>
+      <square t="celltype2" ix="16" iy="13" sizex="8" sizey="7"/> 
+      <square t="celltype3" ix="6" iy="5" sizex="9" sizey="5"/> 
+      <file f=""/>
+    </itissue>
+    <AllowT1C2/>
+  </global>
+
+<!--*** STAGES ****-->
+ <stages>	
+	<stage order="1" duration="150" intermediate="10000">
+		<mechanics/> 
+		<growth/>
+		<proteins/>
+	</stage>	
+	<stage order="2" duration="150" intermediate="10000">
+		<mechanics/> 
+		<growth/>
+		<proteins/>
+		</stage>
+  </stages>
+
+<!--*** POTENTIALS ****-->
+<potentials>
+  <potential stage="all">
+      <KAPPA t="celltype1">1.</KAPPA>      
+      <LAMBDA t1="celltype1" t2="celltype1">0.04</LAMBDA>
+      <LAMBDA t1="celltype1" t2="empty">0.2</LAMBDA>
+      <GAMMA t="celltype1">0.02</GAMMA>
+
+<KAPPA t="celltype2">1.</KAPPA>     
+      <LAMBDA t1="celltype2" t2="celltype2">0.04</LAMBDA>
+      <LAMBDA t1="celltype2" t2="empty">0.2</LAMBDA>
+      <GAMMA t="celltype2">0.02</GAMMA>
+
+      <LAMBDA t1="celltype1" t2="celltype2">0.04</LAMBDA>
+
+    </potential>
+
+</potentials>
+
+<!--*** CYCLES ****-->
+  <cycles>
+
+    <cycle stage="all">  
+      <dispersion t="celltype1">0.8</dispersion>
+      <speed t="celltype1">2.</speed>
+      <phase t="celltype1" a0i="1." a0f="1." reldiv="0.70" prop="0.5">1</phase>
+      <phase t="celltype1" a0i="1." a0f="2." reldiv="0.70" prop="0.5">2</phase>
+      <divisionshift t="celltype1">2*%c1.morphogen</divisionshift>
+      <divisiondispersion t="celltype1">0.2</divisiondispersion>
+      <divisiondispersionlimit t="celltype1">0.5</divisiondispersionlimit>
+
+      <dispersion t="celltype2">0.8</dispersion>
+      <speed t="celltype2">2.</speed>
+      <phase t="celltype2" a0i="1." a0f="1." reldiv="0.70" prop="0.5">1</phase>
+      <phase t="celltype2" a0i="1." a0f="2." reldiv="0.70" prop="0.5">2</phase>
+      <divisionshift t="celltype2">2*%c1.morphogen</divisionshift>
+      <divisiondispersion t="celltype2">0.2</divisiondispersion>
+      <divisiondispersionlimit t="celltype2">0.5</divisiondispersionlimit>
+    </cycle>
+  </cycles>
+
+<!--*** PROTEINS ****-->
+<proteins>
+<constants stage="1">
+<deg1>0.9</deg1>
+<deg2>0.34</deg2>
+<k1>0.5</k1>
+<k2>0.125</k2>
+<Dwingless>2.</Dwingless>
+</constants>
+<!-- IN STAGE 2 THE DIFFUSION COEFFICIENT (DWINGLESS) INCREASES -->
+<constants stage="2">
+<deg1>0.9</deg1>
+<deg2>0.34</deg2>
+<k1>0.5</k1>
+<k2>0.125</k2>
+<Dwingless>4.</Dwingless>
+</constants>
+
+
+  <protein species="morphogen">
+    <iconcentration t="celltype1" dispersion="1" stochastic="y">1.</iconcentration>
+    <iconcentration t="celltype2" dispersion="1" stochastic="y">1.</iconcentration>
+    <dynamics negval="n">((c->ctype)-1)-morphogen</dynamics>
+  </protein>
+  
+  <protein species="notch">
+<!-- THE INITIAL NUMBER OF “NOTCH” IN “PROGENITOR” CELLS IS STOCHASTIC AROUND 2000 -->
+<iconcentration t="progenitor" stochastic="y" dispersion="0.01">2000.</iconcentration>
+<!-- THE INITIAL NUMBER OF “NOTCH” IN “EPITHELIAL” CELLS IS DETERMINISTIC AND EQUAL TO 1000, -->
+<!-- THE VALUE OF THE DISPERSION IS IRRELEVANT -->
+<iconcentration t="epithelial" stochastic="n" dispersion="0.02">1000.</iconcentration>
+<!-- THE NUMBER OF “NOTCH” MOLECULES CANNOT BE NEGATIVE. IF THE -->
+<!-- INTEGRATION RETURNS A NEGATIVE NUMBER IS REPLACED BY ZERO -->
+<dynamics negval="n">function_hill(wingless,k1,1)-deg1*notch</dynamics>
+</protein>
+<!-- “WINGLESS” PROTEIN DYNAMICS -->
+<protein species="wingless">
+<!-- “WINGLESS” PROTEIN IS STOCHASTICALLY INITIALIZED IN BOTH CELL TYPES -->
+<iconcentration t="progenitor" stochastic="y" dispersion="0.1">3000.</iconcentration>
+<iconcentration t="epithelial" stochastic="y" dispersion="0.23">2000.</iconcentration>
+<!-- “WINGLESS” IS A PROTEIN THAT DIFFUSES OUT OF THE CELL -->
+<dynamics negval="n">function_hill_inverse(notch,k2,2)-deg2*wingless+Dwingless*diffusion_wingless()</dynamics>
+</protein>
+
+
+  
+</proteins>  
+</tissue>
