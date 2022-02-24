@@ -3,6 +3,8 @@ Web application that allows you to configure the Tifosi application, which is a 
 
 The entire application is developed in javascript, mainly using [React](https://reactjs.org/), a library for building user interfaces.
 
+The app can be accessed through the following link [Tifosi Web](https://lsymserver.uv.es/lsym/Tifosi)
+
 ### Quick Guide to building
 
 #### Prerequisites:
