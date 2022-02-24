@@ -1,5 +1,5 @@
 # TiFoSi App Web
-Web application that allows you to configure the Tifosi application, witch is a computational tool to simulate the cellular dynamics of planar epithelia.
+Web application that allows you to configure the Tifosi application, which is a computational tool to simulate the cellular dynamics of planar epithelia.
 
 The entire application is developed in javascript, mainly using [React](https://reactjs.org/), a library for building user interfaces.
 
