@@ -23,6 +23,11 @@ function checkPairProperty(property, cellType, potential, global, remove = false
     modified = true;
   }
 
+  if (!Array.isArray(potential[property])) {
+    potential[property] = [potential[property]]
+    modified = true;
+  }
+
   if (remove) {
     let newPotentialProp =  potential[property].filter( value => value.$.t1 !== cellType && value.$.t2 !== cellType );
     potential[property] = [...newPotentialProp];
