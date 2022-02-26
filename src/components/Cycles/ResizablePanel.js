@@ -216,6 +216,8 @@ export function ResizablePanel(props) {
     document.removeEventListener("mousemove", handleMouseMove, true);
 
     let id = selectedSeparator.current;
+    if (typeof arrayMolon.current === "undefined")
+      return;
     props.handleChangeProps(
       id + 1,
       "prop",
@@ -276,6 +278,9 @@ export function ResizablePanel(props) {
   };
 
   function DivSelected(witdhValue, index) {
+    if (typeof phasesArray[index] === "undefined")
+      return(<div></div>);
+      
     return (
       <div
         className={classes.block}
@@ -297,6 +302,10 @@ export function ResizablePanel(props) {
   }
 
   function DivUnSelected(witdhValue, index) {
+
+    if (typeof phasesArray[index] === "undefined")
+      return(<div></div>);
+
     return (
       <div
         className={classes.block}
@@ -315,7 +324,7 @@ export function ResizablePanel(props) {
   }
 
   // Actualiza el array de anchuras si ha variado algun valor
-  if(props.sizes.length && !internalUpdate)
+  if(props.sizes.length != arrayWidth.length || !internalUpdate)
   {
     let totalSize = props.sizes.reduce(
       (total, value) => (total = parseFloat(total) + parseFloat(value))

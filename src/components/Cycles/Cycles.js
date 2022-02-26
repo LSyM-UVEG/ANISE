@@ -234,10 +234,16 @@ export function Cycles(props) {
     let cycle = props.cycles[idCycleSelected];
     if (!Array.isArray(cycle.phase)) cycle.phase = [cycle.phase];
 
+    if (phasesArray.length > 10) // Maximum number of phases
+      return;
+
     // The proportion in the newPhase will be the last proportion * 0.5
     let newProportion = 1.0;
     if (phasesArray.length > 0) {
       newProportion = parseFloat(phasesArray[phasesArray.length - 1].$.prop) * 0.5;
+      if (isNaN(newProportion)) {
+        newProportion = 0.0;
+      }
       phasesArray[phasesArray.length - 1].$.prop = newProportion + "";
     }
     cycle.phase = [...cycle.phase, newPhase(phasesArray.length + 1, cellTypeSelected, "1.0", "1.0", newProportion + "", 0.7)];
