@@ -36,6 +36,12 @@ export default function ProteinDialog(props) {
     const repairIconcentration = (iconcentration, celltypeLookup) => {
         let celltypeLookupArray = Object.keys(celltypeLookup);
         let newIconcentration = [];
+        
+        // Check if iconcetration is an array
+        if (!Array.isArray(iconcentration)) {
+            iconcentration = [iconcentration]
+        }
+
         for (let i = 0; i < celltypeLookupArray.length; i++) {
             let idx = iconcentration.findIndex(e => e.$.t === celltypeLookupArray[i]);
             if (idx >= 0) {
