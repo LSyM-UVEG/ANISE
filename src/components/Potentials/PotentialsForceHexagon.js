@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-import Tooltip from "@material-ui/core/Tooltip";
-import Typography from "@material-ui/core/Typography";
 
 function PotentialsHexagon(props) {
   let transf = "translate(" + props.xTrans.toString() + ", " + props.yTrans.toString() + ")";

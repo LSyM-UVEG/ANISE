@@ -14,7 +14,6 @@ import {
 import {
   getMaxIndexInArrayField,
   createProteinObjectJS,
-  createConnectorObjectJS,
   createRelationObjectJS,
   getProteinFormula,
   getInfoFromProteinFormula,
@@ -151,6 +150,7 @@ function ProteinsEditor(props) {
   // Initial function
   useEffect(() => {
     getInitialInfo(props.proteins, props.proteinEditorData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Updates the main state of the app when the editor changes
@@ -176,6 +176,7 @@ function ProteinsEditor(props) {
       props.handlerValue(newProteins);
       props.handlerEditorValue(newProteinEditorData);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [proteins, relations, connectors]);
 
   const onChangeFormula = (idx, formula) => {

@@ -12,7 +12,6 @@ import React from "react";
 import TissueEditor from "./TissueEditor";
 import Squares from "./Squares";
 import {Divider} from "@material-ui/core";
-import Tooltip from "@material-ui/core/Tooltip";
 import MuiAccordion from "@material-ui/core/Accordion";
 import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import MuiAccordionDetails from "@material-ui/core/AccordionDetails";

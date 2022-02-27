@@ -1,13 +1,12 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Line } from "react-chartjs-2";
-import Slider from "@material-ui/core/Slider";
 
 export function HillFunctionChart(props) {
   const lowerBound = 0.0; //100;
   const upperBound = 1.0; //props.threshold > 0.001 ? props.threshold * 2 : 1.0; //300;
 
-  const [update, setUpdate] = React.useState(false);
-  const initPos = React.useRef();
+  //const [update, setUpdate] = React.useState(false);
+  //const initPos = React.useRef();
 
   const hillEquation = (x, k, n) =>
     Math.pow(x, n) / (Math.pow(k, n) + Math.pow(x, n));
@@ -103,6 +102,8 @@ export function HillFunctionChart(props) {
                       case 2:
                         label = isNaN(props.threshold) ? "2 * " + props.threshold : (props.threshold * 2).toString();
                         break;
+                      default:
+                        break;
                     }
                     return label;
                 }
@@ -128,6 +129,8 @@ export function HillFunctionChart(props) {
                         break;
                       case 0:
                         label = props.k.toString();
+                        break;
+                      default:
                         break;
                     }
                     return label;

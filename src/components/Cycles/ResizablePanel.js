@@ -324,7 +324,7 @@ export function ResizablePanel(props) {
   }
 
   // Actualiza el array de anchuras si ha variado algun valor
-  if(props.sizes.length != arrayWidth.length || !internalUpdate)
+  if(props.sizes.length !== arrayWidth.length || !internalUpdate)
   {
     let totalSize = props.sizes.reduce(
       (total, value) => (total = parseFloat(total) + parseFloat(value))
