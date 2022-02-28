@@ -161,7 +161,7 @@ function ManualContent(props) {
           the protein number partitioning upon cell division, and the modeling of cell communication (juxtacrine and paracrine signalling).
         </Typography>
         <Typography paragraph align="left">      
-          The tissue simulation properties used by TiFoSi program are specified through an <i>configuration file</i>. 
+          The tissue simulation properties used by TiFoSi program are specified through a <i>configuration file</i>. 
           This online editor provides a visual and easy-to-use tool to read and generate configuration files, which can be used directly in the application.
         </Typography>
         </div>
@@ -183,7 +183,7 @@ function ManualContent(props) {
       </tr>        
 	  <tr>
       <td>STAGES</td>
-      <td>The simulations can be subdivided into different temporal stages. 
+      <td>The simulations can be subdivided into different temporal stages
         Within each stage the mechanical relaxation of the tissue, the cell growth, and the protein kinetics can be independently prescribed to take place or not</td>
       </tr>
 	  <tr>
@@ -204,7 +204,7 @@ function ManualContent(props) {
       
       <Typography paragraph>
       <p/>       
-        The properties of each section are accesed through the upper tabs from the web editor.
+        The properties of each section are accessed through the upper tabs from the web editor.
         </Typography>
         <Typography paragrap align="center">
         <img alt="" src={sections}/>
@@ -230,7 +230,7 @@ function ManualContent(props) {
         
         <Typography paragraph align="left">    
         The generated configuration file (<i>config.xml</i>) is specified through the XML language, which follows the semantic logic of standard XML files.
-        The file can be modified later manually by the user, if necessary. Please, refer this <a href="https://osf.io/3g2t5/download">manual</a> for more details.
+        The file can be modified later manually by the user, if necessary. Please, refer to this <a href="https://osf.io/3g2t5/download">manual</a> for more details.
         </Typography>         
         </div>        
 
@@ -272,7 +272,7 @@ function ManualContent(props) {
 		  Delta Time
       </Typography>
       <Typography paragraph align="left">
-      Provides the value of the dimensionless <b>time step</b> to be used in the Euler algorithm for numerically integrating the dynamics of both, the tissue mechanics/growth and the protein kinetics.
+      Provides the value of the dimensionless <b>time step</b> used in the Euler algorithm for numerically integrating the dynamics of the tissue mechanics/growth and the protein kinetics.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={time_step}/>
@@ -288,7 +288,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph align="left">
-      Allow that <b>T1 transitions</b> at the tissue periphery can take place, meaning that the edges of cells that form the tissue periphery can eventually disappear.
+      Allows that <b>T1 transitions</b> at the tissue periphery can take place, meaning that the cell edges that form the tissue periphery can eventually disappear.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={transitions}/>
@@ -305,10 +305,10 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph variant="h6" align="left">
-		  Initializacion File
+		  Initialization File
       </Typography>
       <Typography paragraph align="left">
-      This option offers an alternative way to initialize the tissue, and start the simulation from this state, using a <i>initializacion file</i>. Press the pencil button (<EditIcon />) to load this file.
+      This option offers an alternative way to initialize the tissue, and start the simulation from this state using an <i>initialization file</i>. Press the pencil button (<EditIcon />) to load this file.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={initialization_file}/>
@@ -325,7 +325,7 @@ function ManualContent(props) {
       </Typography>
 	  
       <Typography paragraph align="left">
-      The different <b>cell types</b> involved in the simulated are defined in this list. Each type of cell type has a unique color that identifies it in other sections.
+      The different <b>cell types</b> involved in the simulations are defined in this list. Each cell type has a unique color that identifies it in other sections.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={celltypes}/>
@@ -353,14 +353,14 @@ function ManualContent(props) {
 	  </Typography>
 	  
 	  <Typography paragraph align="left">
-      The initial tissue size is composed by <i>X</i> x <i>Y</i> cells organized in an hexagonal lattice with X rows and Y files.		</Typography>
+      The initial tissue size is composed by <i>X</i> x <i>Y</i> cells organized in an hexagonal lattice with X rows and Y columns.		</Typography>
 	  	 
       <Typography paragraph align="center">
       <img alt="" src={background}/>
       </Typography>
 	  
        <Typography paragraph align="left">
-      Use the slider to select the appropiate size value in each dimension, or write directly a value in the text box. Additionally, you must specify the cell type acting as the background layer.
+      Use the slider to select the appropriate size value in each dimension, or write directly a value in the text box. Additionally, you must specify the cell type acting as the background layer.
       </Typography>		 
     </div>
 
@@ -491,7 +491,7 @@ function ManualContent(props) {
 	  </SectionHeading>
       <div class="w3-code">      
 		<Typography paragraph>
-			The <b>Stages section</b> define different the temporal windows (stages) of the simulation, where
+			The <b>Stages section</b> defines the different temporal windows (stages) of the simulation, where
 			<ul>
 				<li>tissue dynamics</li>
 				<li>cell growth</li>
@@ -598,8 +598,8 @@ function ManualContent(props) {
         <div class="w3-code">
         <Typography paragraph align="left">
         The <b>Constants</b> involved in the differential equations that account for the protein dynamics are defined in this table.
-        Use the <b>Add</b> <AddIcon/> button for define new constants, and the <b>Remove</b> <RemoveIcon/> button for delete the selected constant.
-        The name of the constants is arbitraty and the user can provide any alphanumerical string.
+        Use the <b>Add</b> <AddIcon/> button to define new constants, and the <b>Remove</b> <RemoveIcon/> button to delete the selected constant.
+        The name of the constants is arbitrary and the user can provide any alphanumeric string.
         </Typography>
         <Typography paragraph align="center">
         <img alt="" src={protein_constants}/>
@@ -646,7 +646,7 @@ function ManualContent(props) {
     </Typography>
 
 		<Typography paragraph align="left">
-		The toolbar on top of the grid support the following actions:
+		The toolbar on top of the grid supports the following actions:
 		</Typography>		
 		
 		<Typography paragraph>
@@ -661,15 +661,15 @@ function ManualContent(props) {
         </tr>
 	    <tr>      
         <td class="w3-small">NEW POSITIVE REGULATION</td>
-        <td>Add a positive regulation by select this option, clicking a protein in the editor, and drag the <b class="w3-text-green"> green arrow </b>to another protein or regulation.</td>
+        <td>Add a positive regulation by selecting this option, clicking a protein in the editor, and dragging the <b class="w3-text-green"> green arrow </b>to another protein or regulation.</td>
         </tr>
 	    <tr>
         <td class="w3-small">NEW NEGATIVE REGULATION</td>
-        <td>Add a negative regulation by select this option, clicking a protein in the editor, and drag the <b class="w3-text-red"> red arrow </b> to another protein or regulation.</td>
+        <td>Add a negative regulation by selecting this option, clicking a protein in the editor, and dragging the <b class="w3-text-red"> red arrow </b> to another protein or regulation.</td>
         </tr>
 	    <tr>
         <td class="w3-small">REMOVE</td>
-        <td>Delete a protein or regulation by select this option and clicking an object in the editor.</td>
+        <td>Delete a protein or regulation by selecting this option and clicking an object in the editor.</td>
         </tr>    
         </table>	  
         </Typography>
@@ -688,7 +688,7 @@ function ManualContent(props) {
     </SectionHeading>
     <div class="w3-code">		
 		  <Typography paragraph align="left">
-        When you add a protein, the <b>Edit protein</b> window is shown. It allows configure all the properties related with the protein.        
+        When you add a protein, the <b>Edit protein</b> window is shown. It allows to configure all the properties related to the protein.        
 		  </Typography>
 
       <Typography paragraph align="center">
@@ -719,15 +719,15 @@ function ManualContent(props) {
 		  Degradation, Basal and Diffusion rates
       </Typography>
       <Typography paragraph align="left">
-      This properties can be optionally activated and, for each one, you can set a value or select a previously defined constant using the pencil button (<EditIcon />).
+      These properties can be optionally activated and you can set a value or select a previously defined constant using the pencil button for each one of them. (<EditIcon />).
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={protein_rates}/>
       </Typography>
 
       <Typography paragraph align="left">
-      When you enable some of this parameters and set a non-zero value, it is marked with a symbol in the editor. 
-      In this example,  <i>Protein1</i> has a degradation expression, <i>Protein2</i> has a basal expression, and <i>Protein3</i> has a diffussion:
+      When you enable some of these parameters and set a non-zero value, it is marked with a symbol in the editor. 
+      In this example,  <i>Protein1</i> has a degradation expression, <i>Protein2</i> has a basal expression, and <i>Protein3</i> has a diffusion term:
       </Typography>
 
       <Typography paragraph align="center">
@@ -787,7 +787,7 @@ function ManualContent(props) {
       The regulation (Hill function) parameters are:
       <ul>
 				<li><b>Amplitude (K)</b>: The final value of the function.</li>
-				<li><b>Threshold</b>: Input value that makes the function value 0.5 with respect to its final value. .</li>
+				<li><b>Threshold</b>: Input value that makes the function value 0.5 with respect to its final value. </li>
 				<li><b>Order (n)</b>: Function order, which translates into the value of the slope of the function.</li>
 			</ul>        
       </Typography>
@@ -802,7 +802,7 @@ function ManualContent(props) {
     <div class="w3-code">
 
       <Typography paragraph align="left">
-        When you select the <b>Formula mode</b>, the dynamics equation obtained from the grahics representation (<b>Visual mode</b>) is shown.
+        When you select the <b>Formula mode</b>, the dynamics equation obtained from the grahical representation (<b>Visual mode</b>) is shown.
       </Typography>
 
         <Typography paragraph align="center">
@@ -834,7 +834,7 @@ function ManualContent(props) {
         </SectionHeading>
         <div class="w3-code">      
       	<Typography paragraph>
-      		The <b>Protein List</b> shows the formula of the all proteins kinematic equations defined. If you press a protein equation, the corresponding formula is stated in the top for editing.
+      		The <b>Protein List</b> shows the formula of all the proteins kinematic equations defined. If you press a protein equation, the corresponding formula is stated in the top for editing.
       	</Typography>
       	<Typography paragraph align="center">
       		<img alt="" src={protein_list}/>
@@ -921,7 +921,7 @@ function ManualContent(props) {
 
       <Typography paragraph align="left">
       <div class="w3-panel w3-warning">
-      <p><strong>Hint:</strong> Use the mouse wheel or the up/down arrow keys for change the cell pair selected.</p>
+      <p><strong>Hint:</strong> Use the mouse wheel or the up/down arrow keys to change the cell pair selected.</p>
       </div>
 
       <Typography paragraph align="left">
@@ -945,11 +945,11 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>KAPPA (K)</td>
-      <td>Establishes the value of (dimensionless) elastic constant, Young modulus, of a particular cell type.</td>
+      <td>Value of (dimensionless) elastic constant, Young modulus, of a particular cell type.</td>
       </tr>  
       <tr>
       <td>GAMMA (Γ)</td>
-      <td>Specifies the value of (dimensionless) global cortical tension.</td>
+      <td>Value of (dimensionless) global cortical tension.</td>
       </tr>
       <tr>
       <td>Force</td>
@@ -1035,7 +1035,7 @@ function ManualContent(props) {
       </Typography>
       <Typography paragraph align="left">
       The <b>Speed</b> parameter actually sets the putative duration of the cell cycle. 
-      Note that the default value is 0, assuming that the cells of a particular cell type will not grow thier apical area.
+      Note that the default value is 0, assuming that the apical area of particular cell type will not grow.
       <p/>
       This last parameter can be defined as function, depending on the amount of particular protein species, using the <i>Function Editor</i> (<EditIcon/>) as explained below.
       </Typography>
@@ -1140,7 +1140,7 @@ function ManualContent(props) {
       <div class="w3-code">
       
       <Typography paragraph align="left">
-      Using the <b>Function Editor</b> is possible to prescribe values of the parameters as a function of time or, among other cell properties, as a function of the amount of proteins within cells in order to implement feedback between signaling and biomechanics.
+      The <b>Function Editor</b> allows to prescribe values of the parameters as a function of time or, among other cell properties, as a function of the amount of proteins within cells in order to implement feedback between signaling and biomechanics.
       </Typography>
 
       <Typography paragraph align="center">
@@ -1177,19 +1177,19 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>C1</td>
-      <td>Refers to the current selected cell type.</td>
+      <td>Current selected cell type.</td>
       </tr>  
       <tr>
       <td>C2</td>
-      <td>Refers the cell type pair in combination with the selected cell type (C1), only if the property that you are editing depends on cell pairs.</td>
+      <td>Cell type pair in combination with the selected cell type (C1), only if the property that you are editing depends on cell pairs.</td>
       </tr>
       <tr>
       <td>CP1</td>
-      <td>Refers to the neighbouring cell types of C1.</td>
+      <td>Neighbouring cell types of C1.</td>
       </tr>
       <tr>
       <td>CP2</td>
-      <td>Refers to the neighbouring cell types of C2.</td>
+      <td>Neighbouring cell types of C2.</td>
       </tr>
       </table>
       </Typography>
@@ -1199,7 +1199,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph align="left">
-      Next, you can select the cell property that you want to include to the formula. It was added like a variable (whose name begin with %), with the proper syntax.
+      Next, you can select the cell properties that you want to include in the formula. It is added like a variable (whose names begin with %), with the proper syntax.
       </Typography>
 
       <Typography paragraph>
@@ -1217,8 +1217,8 @@ function ManualContent(props) {
       <td>The cell type.</td>
       </tr>
       <tr>
-      <td>NEIGHBORING CELLS</td>
-      <td>The number of cell neighbors.</td>
+      <td>NEIGHBOURING CELLS</td>
+      <td>The number of cell neighbours.</td>
       </tr>
       <tr>
       <td>N. CELL VERTEXES</td>
