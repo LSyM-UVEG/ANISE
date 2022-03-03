@@ -179,20 +179,19 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>GLOBAL</td>
-      <td>Cell types, the initial spatial organization of cells, and some additional data regarding the simulation are specified here</td>
+      <td>Cell types, initial spatial organization of cells, and some additional data regarding the simulation</td>
       </tr>        
 	  <tr>
       <td>STAGES</td>
-      <td>The simulations can be subdivided into different temporal stages
-        Within each stage the mechanical relaxation of the tissue, the cell growth, and the protein kinetics can be independently prescribed to take place or not</td>
+      <td>Mechanical relaxation of the tissue, cell growth, and protein kinetics for each stage (simulations can be subdivided into different independent temporal stages) </td>
       </tr>
 	  <tr>
       <td>POTENTIALS</td>
-      <td>The different constants defining the energy functional (potential) of the vertex model must be given here.</td>
+      <td>Constants defining the energy functional (potential) of the vertex model</td>
       </tr>
 	  <tr>
       <td>CYCLES</td>
-      <td>Specification of the cell cycle kinetics and cleavage orientation properties</td>
+      <td>Cell cycle kinetics and cleavage orientation properties</td>
       </tr>
 	  <tr>
       <td>PROTEINS</td>
@@ -265,9 +264,7 @@ function ManualContent(props) {
     </SectionHeading>
 										
     <div class="w3-code">
-	<Typography paragraph>
-		Contains the parameters that configures the entire simulation:
-	</Typography>
+	
       <Typography paragraph variant="h6" align="left">
 		  Delta Time
       </Typography>
@@ -786,9 +783,9 @@ function ManualContent(props) {
       <Typography paragraph align="left">
       The regulation (Hill function) parameters are:
       <ul>
-				<li><b>Amplitude (K)</b>: The final value of the function.</li>
+				<li><b>Amplitude (K)</b>: Final value of the function.</li>
 				<li><b>Threshold</b>: Input value that makes the function value 0.5 with respect to its final value. </li>
-				<li><b>Order (n)</b>: Function order, which translates into the value of the slope of the function.</li>
+				<li><b>Order (n)</b>: Function order which represents the value of the slope of the function.</li>
 			</ul>        
       </Typography>
       <Typography paragraph align="left">
