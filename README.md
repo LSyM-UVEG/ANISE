@@ -15,7 +15,7 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 git clone https://github.com/LSyM-UVEG/TiFoSiAppWeb
 cd TiFoSiAppWeb
 npm install
-npm start or npm build
+npm start or npm run build
 ```
 
 ##### `npm start`
