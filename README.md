@@ -9,6 +9,8 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 
 #### Prerequisites:
  * [nodejs](https://nodejs.org/) 16.14. It includes Python and npm manager.
+ * Notes about node version:
+ * 1) Check the version by using ....
  
 #### Command line build instructions:
 ```console
