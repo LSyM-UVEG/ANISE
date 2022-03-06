@@ -20,6 +20,8 @@ To install the Web App, **Nodejs version 16.14** (includes npm manager 8.3.1), *
 >> v16.14.0 
 ```
 
+Note that you are free to install _Nodejs_ via the terminal as long as you install the good version (16.14.0). 
+
 * **Git** 
 1) Download the Windows installer of [Git](https://gitforwindows.org/) 
 2) Execute the _.exe_ file and follow the _Git Setup_ instructions
