@@ -41,8 +41,15 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 
 **Option 1:** Installation using a source code
 1) Download the source code of [nodejs](https://nodejs.org/en/download/) version 16.14.0
-2) 
-
+2) Extract the folder using ```tar xvzf node-v16.14.0.tar.gz```
+3) Enter the folder ```cd node-v16.14.0```
+4) Run the following command lines to install it
+```console
+./configure
+make
+sudo make install
+```
+5) You can check the version with ```node -v```
 
 **Option 2:** Installation from the terminal 
  1) Run the following command line: 
@@ -50,6 +57,7 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 sudo apt update && sudo apt install --assume-yes curl
 curl --silent --location https://deb.nodesource.com/setup_10.x  | sudo bash -
 sudo apt install --assume-yes nodejs
+sudo apt-get update
 ```
 2) Check the version installed using ```node -v ```. If the version is not 16.14.0 then follow the next steps.
 
