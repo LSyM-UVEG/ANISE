@@ -51,7 +51,7 @@ sudo apt update && sudo apt install --assume-yes curl
 curl --silent --location https://deb.nodesource.com/setup_10.x  | sudo bash -
 sudo apt install --assume-yes nodejs
 ```
-2) Check the version installed using ```node -v ```. If the version is not 16.14.0 then follow steps 3 and 4.
+2) Check the version installed using ```node -v ```. If the version is not 16.14.0 then follow the next steps.
 
 3) The node version can be changed with Node Version Manager (nvm). Execute the following command line. 
 ```console 
