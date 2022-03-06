@@ -8,9 +8,17 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ### Quick Guide to building
 
 #### Prerequisites:
- * [nodejs](https://nodejs.org/) 16.14. It includes Python and npm manager.
- * Notes about node version:
- * 1) Check the version by using ....
+ [nodejs] version 16.14 (It includes Python and npm manager)
+ [git]
+ 
+LINUX:
+ * Option 1: Installation of version 16.14.0 via (https://nodejs.org/) 
+ * Option 2: Installation from ```console sudo apt install nodejs ```
+ ** 1) Check the version by using ```console node -v ```. If the version is not 16.14.0 then follow step 2. 
+ ** 2) 
+ WINDOWS:
+ * 1) Install version 16.14.0 of [nodejs] (https://nodejs.org/) 
+ * 2) Install [git] (https://gitforwindows.org/) 
  
 #### Command line build instructions:
 ```console
