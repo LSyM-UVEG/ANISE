@@ -39,7 +39,7 @@ export function Constants(props) {
 
   // Se comprueba que constants sea un array
   if (!Array.isArray(props.proteins.constants)) {
-    if (typeof proteins.constants === "undefined")
+    if (typeof proteins.constants === "undefined" || typeof proteins.constants.$ === "undefined" || typeof proteins.constants.$.stage === "undefined")
       proteins = {"constants":[{$:{stage:"all"}}]};
     else
       proteins.constants = [proteins.constants];

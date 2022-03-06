@@ -392,10 +392,8 @@ export function Cycles(props) {
   }
 
   // check if cycles exists
-  if (typeof props.cycles[idCycleSelected] === "undefined") {
-    props.cycles[idCycleSelected] = {$:{stage:"all"}};
-    //props.handlerValue([], 0, props.cycles[0]);
-    
+  if (typeof props.cycles[idCycleSelected] === "undefined" || typeof props.cycles[idCycleSelected].$ === "undefined" || typeof props.cycles[idCycleSelected].$.stage === "undefined") {
+    props.cycles[idCycleSelected] = {$:{stage:"all"}};    
     let cycle = props.cycles[idCycleSelected];
     if (checkCellType(cycle, cellTypeSelected)) props.handlerValue([], idCycleSelected, cycle);
   }

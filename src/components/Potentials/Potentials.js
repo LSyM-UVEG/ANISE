@@ -262,7 +262,7 @@ function Potentials(props) {
   const getPairValueStageCell = (valueName) => {
     let potential = props.potentials[idPotentialSelected];
 
-    if (typeof potential === "undefined") {
+    if (typeof potential === "undefined" || typeof potential.$ === "undefined" || typeof potential.$.stage === "undefined") {
       props.potentials[idPotentialSelected] = {$:{stage:"all"}};
       potential = props.potentials[idPotentialSelected];
     }
@@ -275,7 +275,7 @@ function Potentials(props) {
   const getValueStageCell = (valueName, idPotential, celltype) => {
     let potential = props.potentials[idPotential];
 
-    if (typeof potential === "undefined") {
+    if (typeof potential === "undefined" || typeof potential.$ === "undefined" || typeof potential.$.stage === "undefined") {
       props.potentials[idPotential] = {$:{stage:"all"}};
       potential = props.potentials[idPotential];
     }

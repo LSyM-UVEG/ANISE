@@ -123,6 +123,10 @@ class App extends Component {
   }
   
 
+  getArray = (data) => {
+      return Array.isArray(data) ? data : [data];
+  }
+
   onFileChange = () => (event) => {
     var lthis = this;
     if (event.target.files && event.target.files.length > 0) {
@@ -137,9 +141,9 @@ class App extends Component {
               isLoaded: true,
               global: result.tissue.global,
               stages: Array.isArray(result.tissue.stages.stage)? result.tissue.stages.stage: [result.tissue.stages.stage],
-              potentials: Array.isArray(result.tissue.potentials.potential)? result.tissue.potentials.potential: [result.tissue.potentials.potential],
-              cycles: Array.isArray(result.tissue.cycles.cycle) ? result.tissue.cycles.cycle : [result.tissue.cycles.cycle],
-              proteins: result.tissue.proteins,
+              potentials: typeof result.tissue.potentials === "undefined" ? [result.tissue.potentials] : lthis.getArray(result.tissue.potentials.potential),
+              cycles: typeof result.tissue.cycles === "undefined" ? [result.tissue.cycles] : lthis.getArray(result.tissue.cycles.cycle),
+              proteins: typeof result.tissue.proteins === "undefined" ? "": result.tissue.proteins,
               proteinEditorData: parseXMLProteinEditorData(text),
               colorList: lthis.getColorList(result.tissue.global.types)
             });
