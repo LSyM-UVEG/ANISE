@@ -39,10 +39,10 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 
 * **Nodejs** 
 
-**Option 1:** Installation using Linux installer
-1) Download the Linux installer of [nodejs](https://nodejs.org/en/download/) version 16.14.0
-1) dddd
-2) dddd
+**Option 1:** Installation using a source code
+1) Download the source code of [nodejs](https://nodejs.org/en/download/) version 16.14.0
+2) 
+
 
 **Option 2:** Installation from the terminal 
  1) Run the following command line: 
