@@ -392,7 +392,7 @@ class App extends Component {
             </div>
 
             <div label="CYCLES">
-              <Cycles handlerValue={this.handlerValueCycle} cycles={this.state.cycles} cellTypeColorList={this.state.colorList} global={this.state.global}/>
+              <Cycles handlerValue={this.handlerValueCycle} cycles={this.state.cycles} cellTypeColorList={this.state.colorList} global={this.state.global} stages={this.state.stages}/>
             </div>
           </Tabs>
         </div>

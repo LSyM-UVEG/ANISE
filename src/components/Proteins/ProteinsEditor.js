@@ -690,9 +690,14 @@ function ProteinsEditor(props) {
   };
 
   // Protein Dialog variables
-  if (!Array.isArray(props.proteins.constants)) props.proteins.constants = [props.proteins.constants];
-  let constants = Object.keys(props.proteins.constants[0]).slice(1);
-
+  let proteinsObj = props.proteins;
+  if (!Array.isArray(proteinsObj.constants)) {
+    if (typeof proteinsObj.constants === "undefined")
+    proteinsObj = {"constants":[{$:{stage:"all"}}]};
+    else
+    proteinsObj.constants = [proteinsObj.constants];
+  } 
+  let constants = Object.keys(proteinsObj.constants[0]).slice(1);
   let proteinDialogNegval = null;
   let proteinDialogIconcentration = null;
   if (proteinDialog !== null) {

@@ -35,16 +35,20 @@ export function Constants(props) {
   const [removeOperation, setRemoveOperation] = React.useState(null);
   const classes = useStyles();
 
+  let proteins = props.proteins;
+
   // Se comprueba que constants sea un array
   if (!Array.isArray(props.proteins.constants)) {
-    let proteins = props.proteins;
-    proteins.constants = [proteins.constants];
-    //props.handlerValue(proteins);
+    if (typeof proteins.constants === "undefined")
+      proteins = {"constants":[{$:{stage:"all"}}]};
+    else
+      proteins.constants = [proteins.constants];
+    props.handlerValue(proteins);
     //return;
   }
 
   if (keyNameModified === null) {
-    let arrayKeys = Object.keys(props.proteins.constants[idStageSelected]);
+    let arrayKeys = Object.keys(proteins.constants[idStageSelected]);
     if (arrayKeys.length > rowSelected + 1) {
       setKeyNameModified(arrayKeys[rowSelected + 1]);
       return;
@@ -254,7 +258,7 @@ export function Constants(props) {
     }
   };
 
-  let constantArray = idStageSelected < props.proteins.constants.length ? props.proteins.constants[idStageSelected] : props.proteins.constants[0];
+  let constantArray = idStageSelected < proteins.constants.length ? proteins.constants[idStageSelected] : proteins.constants[0];
   let keys = Object.keys(constantArray);
   let vals = Object.values(constantArray);
   keys.splice(0, 1);
@@ -286,7 +290,7 @@ export function Constants(props) {
       >
         <SelectorStageCelltype
           stageList={props.stageLookup}
-          stageSelected={props.proteins.constants[idStageSelected].$.stage}
+          stageSelected={proteins.constants[idStageSelected].$.stage}
           stageHandler={handleMenuItemClickStage(props.stageLookup)}
           style={{ width: "100%" }}
         />

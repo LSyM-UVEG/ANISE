@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import xmlData from "../../context/xmlData";
 import Typography from "@material-ui/core/Typography";
 import { ResizablePanel } from "./ResizablePanel";
 import { AddCircle, RemoveCircle } from "@material-ui/icons";
@@ -80,7 +79,7 @@ function checkPhase(phase, cellType, cycle, remove = false, newCelltypeName = ""
 
   // filtra por tipo de celula
   let phaseFound = cycle.phase.map((value, index) => {
-    if (value.$.t === cellType && (remove || value._ === phase + "")) {
+    if (value && value.$ && value.$.t === cellType && (remove || value._ === phase + "")) {
       indexSelected = index;
       return value;
     }
@@ -90,7 +89,7 @@ function checkPhase(phase, cellType, cycle, remove = false, newCelltypeName = ""
   // Si no existe fases para ese tipo de célula, se crean
   if (phaseFound[indexSelected] === null && !remove) {
     let phaseValue = newPhase(1, (newCelltypeName !== "") ? newCelltypeName : cellType, 1, 1, 1, 0.7);
-    cycle.phase = [...cycle.phase, phaseValue];
+    cycle.phase = typeof cycle.phase[0] === "undefined" ? [phaseValue] : [...cycle.phase, phaseValue];
     modified = true;
   } else if (remove) {
     // Se eliminan todas las fases asociadas al celltype
@@ -380,38 +379,42 @@ export function Cycles(props) {
     setCellTypeSelected(Object.keys(props.global.types)[0]);
   }, [props.global.types])
 
+  // Check if exists idCycleSelected
   if (idCycleSelected >= props.cycles.length) {
     setIdCycleSelected(0);
     return;
   }
   
-  var stageLookupObject = {};
+  // check if exists cellTypeSelected
+  if (Object.keys(props.global.types).findIndex( (value) => value === cellTypeSelected) === -1) {
+    setCellTypeSelected(Object.keys(props.global.types)[0]);
+    return;
+  }
+
+  // check if cycles exists
+  if (typeof props.cycles[idCycleSelected] === "undefined") {
+    props.cycles[idCycleSelected] = {$:{stage:"all"}};
+    //props.handlerValue([], 0, props.cycles[0]);
+    
+    let cycle = props.cycles[idCycleSelected];
+    if (checkCellType(cycle, cellTypeSelected)) props.handlerValue([], idCycleSelected, cycle);
+  }
+  
+  let stageLookupObject = {};
+  props.stages.map((stage, i) => {
+    stageLookupObject[i + 1] = (i + 1).toString();
+    return ""; //sin return da warning
+  });
+
   return (
     <Grid component="span" container justify={"center"} alignContent={"center"}>
       <Grid /*item xs={11} md={11} lg={9}*/ style={{ backgroundColor: "GhostWhite", padding: "0  0 0", marginTop: "70px", width: "1100px" }}>
-        {/* <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      > */}
-        <xmlData.Consumer>
-          {(state) =>
-            state &&
-            state.cycles &&
-            state.stages && (
               <div>
-                {state.stages.map((stage, i) => {
-                  stageLookupObject[i + 1] = i + 1;
-                  return ""; //sin return da warning
-                })}
-                {/* <ul>{JSON.stringify(state.cycles)}</ul> */}
                 <SelectorStageCelltype
                   stageList={stageLookupObject}
                   stageSelected={props.cycles[idCycleSelected].$.stage}
                   stageHandler={handlerChoiceStage(stageLookupObject)}
-                  celltypeList={state.global.types}
+                  celltypeList={props.global.types}
                   celltypeSelected={cellTypeSelected}
                   celltypeHandler={handlerChoiceCellType}
                   cellTypeColorList={props.cellTypeColorList}
@@ -468,13 +471,8 @@ export function Cycles(props) {
                   selected={phase - 1}
                   phasesArray={getPhases()}
                 />
-                {/* <PhasesTable selected={phase - 1} phasesArray={getPhases()} handleChangePhase={changePhase} updateValue={setPhaseValue}/> */}
                 <PhaseData selected={phase - 1} phasesArray={getPhases()} handleChangePhase={changePhase} updateValue={setPhaseValue} />
-                {/* </ThemeProvider> */}
               </div>
-            )
-          }
-        </xmlData.Consumer>
       </Grid>
     </Grid>
     // </div>

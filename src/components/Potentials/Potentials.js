@@ -18,6 +18,9 @@ import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownO
 function checkPairProperty(property, cellType, potential, global, remove = false, newCellTypeName = "") {
   let modified = false;
 
+  if (typeof potential === "undefined")
+    return modified;
+
   if (!potential[property]) {
     potential[property] = [];
     modified = true;
@@ -74,6 +77,10 @@ function checkProperty(property, cellType, potential, remove = false, newCellTyp
   let modified = false;
   let indexSelected = 0;
 
+  
+  if (typeof potential === "undefined")
+    return modified;
+
   if (!potential[property]) {
     potential[property] = [];
     modified = true;
@@ -116,10 +123,14 @@ function checkProperty(property, cellType, potential, remove = false, newCellTyp
 
 export function checkCellTypePotential(potential, newCelltype, global, remove = false, newCelltypeName = "") {
   // se comprueba si todas las propiedades tienen valor para ese tipo de celula, en caso contrario se crea
-  let modified = checkProperty("KAPPA", newCelltype, potential, remove, newCelltypeName);
-  modified = checkProperty("GAMMA", newCelltype, potential, remove, newCelltypeName) || modified;
-  modified = checkProperty("force_x", newCelltype, potential, remove, newCelltypeName) || modified;
-  modified = checkProperty("force_y", newCelltype, potential, remove, newCelltypeName) || modified;
+  let modified = false;
+
+  if (newCelltype !== "empty") {
+    modified = checkProperty("KAPPA", newCelltype, potential, remove, newCelltypeName);
+    modified = checkProperty("GAMMA", newCelltype, potential, remove, newCelltypeName) || modified;
+    modified = checkProperty("force_x", newCelltype, potential, remove, newCelltypeName) || modified;
+    modified = checkProperty("force_y", newCelltype, potential, remove, newCelltypeName) || modified;
+  }
 
   modified = checkPairProperty("LAMBDA", newCelltype, potential, global, remove, newCelltypeName) || modified;
   modified = checkPairProperty("lambda", newCelltype, potential, global, remove, newCelltypeName) || modified;
@@ -164,7 +175,7 @@ function Potentials(props) {
 
     // finding potential index for "stage"
     let potentialSelected = potentials.map((value, index) => {
-      if (value.$.stage === stage) {
+      if (value && value.$ && value.$.stage === stage) {
         idPotentialFound.index = index;
         return value;
       }
@@ -251,15 +262,24 @@ function Potentials(props) {
   const getPairValueStageCell = (valueName) => {
     let potential = props.potentials[idPotentialSelected];
 
+    if (typeof potential === "undefined") {
+      props.potentials[idPotentialSelected] = {$:{stage:"all"}};
+      potential = props.potentials[idPotentialSelected];
+    }
+
     if (checkCellTypePotential(potential, cellTypeSelected, props.global) && checkCellTypePotential(potential, otherCellTypeSelected, props.global)) props.handlerValue([], idPotentialSelected, potential);
     const value = potential[valueName].filter((value) => (value.$.t1 === cellTypeSelected && value.$.t2 === otherCellTypeSelected) || (value.$.t2 === cellTypeSelected && value.$.t1 === otherCellTypeSelected));
     return value.length > 0 ? value[0]._ : null;
   };
 
   const getValueStageCell = (valueName, idPotential, celltype) => {
-
-
     let potential = props.potentials[idPotential];
+
+    if (typeof potential === "undefined") {
+      props.potentials[idPotential] = {$:{stage:"all"}};
+      potential = props.potentials[idPotential];
+    }
+      
     if (checkCellTypePotential(potential, celltype, props.global)) props.handlerValue([], idPotential, potential);
     const value = potential[valueName].filter((value) => value.$.t === celltype);
     return value.length > 0 ? value[0]._ : null;
@@ -323,19 +343,28 @@ function Potentials(props) {
     props.handlerValue([], idPotentialSelected, potential);
   };
 
-  const [force, setForce] = useState({ x: isNaN(getValue("force_x")) ? getValue("force_x") : parseFloat(getValue("force_x")) * 10.0 + "",
-                                       y: isNaN(getValue("force_y")) ? getValue("force_y") : parseFloat(getValue("force_y")) * 10.0 + "" });
+  useEffect(() => {
+    setCellTypeSelected(Object.keys(props.global.types)[0]);
+    setPotentialSelected(0);
+    setForce({ x: isNaN(getValue("force_x")) ? getValue("force_x") : parseFloat(getValue("force_x")) * 10.0 + "",
+               y: isNaN(getValue("force_y")) ? getValue("force_y") : parseFloat(getValue("force_y")) * 10.0 + "" });
+  }, [props.global.types])
+
+  const [force, setForce] = useState({ x: "0", y: "0" });
 
   const setForceValue = (value) => {
     setForce({ x: isNaN(value.x) ? value.x : parseFloat(value.x) * 10.0 + "", y: isNaN(value.y) ? value.y : parseFloat(value.y) * 10.0 + "" });
   };
 
-  useEffect(() => {
-    setCellTypeSelected(Object.keys(props.global.types)[0]);
-  }, [props.global.types])
-
+  // Checl if exists idPotentialSelected
   if (idPotentialSelected >= props.potentials.length) {
     setPotentialSelected(0);
+    return;
+  }
+
+  // check if exists cellTypeSelected
+  if (Object.keys(props.global.types).findIndex( (value) => value === cellTypeSelected) === -1) {
+    setCellTypeSelected(Object.keys(props.global.types)[0]);
     return;
   }
   
