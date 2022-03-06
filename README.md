@@ -11,8 +11,8 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 To install the Web App, **Nodejs version 16.14** (includes npm manager 8.3.1), **Git**, **Python 3** and **Visual studio (C++)** are needed.  
  
 #### WINDOWS SETUP
-* Installation of **Nodejs**
-1) Download the Windows installer of [nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
+* **Nodejs**
+1) Download the Windows installer of [Nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
 2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions
 3) Check the version of the node via the terminal (run as admnistrator)
  ```console 
@@ -20,22 +20,22 @@ To install the Web App, **Nodejs version 16.14** (includes npm manager 8.3.1), *
 >> v16.14.0 
 ```
 
-* Installation of **Git** 
-1) Download the Windows installer of [git](https://gitforwindows.org/) 
+* **Git** 
+1) Download the Windows installer of [Git](https://gitforwindows.org/) 
 2) Execute the _.exe_ file and follow the _Git Setup_ instructions
 
-* Installation of **Python 3** 
+* **Python 3** 
 1) Download the Windows installer of [Python 3](https://www.python.org/downloads/windows/) 
 2) Execute the _.exe_ file and follow the _Python3 Setup_ instructions
 
-* Installation of **Visual Studio (C++)** 
+* **Visual Studio (C++)** 
 1) Download the Windows installer of [Visual Studio](https://visualstudio.microsoft.com/downloads/) **with C++**
-2) Select the **Community 2022** file
+2) Select the **Community** file
 3) Execute the _.exe_ file and follow the _Visual Studio Setup_ instructions
 
 #### LINUX SETUP
 
-* Installation of **Nodejs** 
+* **Nodejs** 
 
 **Option 1:** Installation using Linux installer
 1) Download the Linux installer of [nodejs](https://nodejs.org/en/download/) version 16.14.0
@@ -54,10 +54,6 @@ sudo apt install --assume-yes nodejs
 3) The node version can be changed with Node Version Manager (nvm). Execute the following command line. 
 ```console 
 curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
-```
-or
-```console 
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 In the URL below make sure you replace v0.39.1 with the latest version of nvm. Then, 
@@ -79,17 +75,17 @@ node -v
 >> v16.14.0 
 ```
 
-* Installation of **Git** 
+* **Git** 
 
 Git is supposed to be already installed in LINUX. If not the case, you can follow those [instructions](https://git-scm.com/download/linux).
 
-* Installation of **Python 3**
+* **Python 3**
 
-To install or update Python, you can follow those [instructions](https://docs.python-guide.org/starting/install3/linux/)
+To install or update Python, you can follow those [instructions](https://docs.python-guide.org/starting/install3/linux/).
 
-* Installation of **Visual studio (C++)** 
+* **Visual studio (C++)** 
 
-You can follow those instructions to install [Virtual Studio](https://code.visualstudio.com/docs/setup/linux). Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
+To install Virtual Studio, you can follow those [instructions](https://code.visualstudio.com/docs/setup/linux). Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
  
 ### Command line build instructions:
 
