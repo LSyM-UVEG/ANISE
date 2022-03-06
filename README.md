@@ -8,12 +8,12 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ## Quick Guide to building
 
 ### Prerequisites:
-To install the Web App, **nodejs version 16.14**  (includes Python and npm manager 8.3.1) and **git** are needed. 
+To install the Web App, **nodejs version 16.14** (includes npm manager 8.3.1), **git**, **Python 3** and **Visual studio** are needed.  
  
 #### WINDOWS
 * Installation of **nodejs**
 1) Download the Windows installer of [nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
-2) Execute the .msi file and follow the Nodejs.Setup instructions
+2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions
 3) Check the version of the node via the terminal (run as admnistrator)
  ```console 
  node -v  
@@ -22,10 +22,20 @@ To install the Web App, **nodejs version 16.14**  (includes Python and npm manag
 
 * Installation of **git** 
 1) Download the Windows installer of [git](https://gitforwindows.org/) 
-2) Execute the .exe file and follow the Git.Setup instructions
+2) Execute the _.exe_ file and follow the _Git Setup_ instructions
+
+* Installation of **Python 3** 
+1) Download the Windows installer of [Python 3](https://www.python.org/downloads/windows/) 
+2) Execute the _.exe_ file and follow the _Python3 Setup_ instructions
+
+* Installation of **Visual Studio** 
+1) Download the Windows installer of [Visual Studio](https://visualstudio.microsoft.com/downloads/) 
+2) Execute the _.exe_ file and follow the _Visual Studio Setup_ instructions
  
 #### LINUX
-* Option 1: Install version 16.14.0 of [nodejs](https://nodejs.org/en/download/) downloading the .tar
+
+* Option 1: Installation using Linux installer
+1) Download the Linux installer of [nodejs](https://nodejs.org/en/download/) version 16.14.0
 1) dddd
 2) dddd
 
@@ -36,7 +46,7 @@ sudo apt update && sudo apt install --assume-yes curl
 curl --silent --location https://deb.nodesource.com/setup_10.x  | sudo bash -
 sudo apt install --assume-yes nodejs
 ```
-2) Check the version installed using ```console node -v ```. If the version is not 16.14.0 then follow steps 3 and 4. 
+2) Check the version installed using ```node -v ```. If the version is not 16.14.0 then follow steps 3 and 4. 
 3) The node version can be changed with Node Version Manager (nvm). Execute the following command line. 
 ```console 
 curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
@@ -55,17 +65,23 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   source ~/.bash_profile
 ```
-Check that it's installed with the command ```console command -v nvm ``` which should return ```nvm ```
+Check that it is well installed with the command ```command -v nvm ``` which should return ```nvm ```
 
-4) Install the 16.14.0 version executing ```console nvm install 16.14.0```
+4) Install the 16.14.0 version executing ```nvm install 16.14.0```
 
-Check it using ```console node -v ``` which should give ```>> v16.14.0 ```
+5) Check the node version
+```console 
+node -v 
+>> v16.14.0 
+```
 
-Note: Git is supposed to be installed in LINUX. 
+**Note:** Git is supposed to be already installed in LINUX. If not the case, execute in the terminal ```sudo apt-get install git ```
 
 
  
-#### Command line build instructions:
+### Command line build instructions:
+
+Now that the required packages are installed, the installation of the Web App can start. 
 ```console
 git clone https://github.com/LSyM-UVEG/TiFoSiAppWeb
 cd TiFoSiAppWeb
