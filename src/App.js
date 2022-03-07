@@ -140,7 +140,7 @@ class App extends Component {
               fileId: lthis.state.fileId + 1,
               isLoaded: true,
               global: result.tissue.global,
-              stages: Array.isArray(result.tissue.stages.stage)? result.tissue.stages.stage: [result.tissue.stages.stage],
+              stages: typeof result.tissue.stages === "undefined" ? [result.tissue.stages] : lthis.getArray(result.tissue.stages.stage),
               potentials: typeof result.tissue.potentials === "undefined" ? [result.tissue.potentials] : lthis.getArray(result.tissue.potentials.potential),
               cycles: typeof result.tissue.cycles === "undefined" ? [result.tissue.cycles] : lthis.getArray(result.tissue.cycles.cycle),
               proteins: typeof result.tissue.proteins === "undefined" ? "": result.tissue.proteins,
