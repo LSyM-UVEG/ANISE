@@ -1254,7 +1254,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph align="left">
-      Finally, you can add the number of molecules of certain protein in cells C1 and C2, if any defined in the <b>Proteins</b> section, to the formula. It was added like a variable (whose name begin with %), with the proper syntax.
+      Finally, you can add the number of molecules of certain protein in cells C1 and C2, if any defined in the <b>Proteins</b> section, to the formula. It is added like a variable (whose names begin with %), with the proper syntax.
       </Typography>	  
      
       </div>
