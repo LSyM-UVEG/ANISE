@@ -56,7 +56,7 @@ import stages from './assets/images/stages.png';
 import stages_properties from './assets/images/stages_properties.PNG';
 import stages_table from './assets/images/stages_table.PNG';
 import protein_constants from './assets/images/protein_constants.PNG';
-import protein_editor from './assets/images/protein_editor.PNG';
+import protein_editor from './assets/images/protein_editor.png';
 import protein_editor_mode1 from './assets/images/protein_editor_mode1.png';
 import protein_editor_mode2 from './assets/images/protein_editor_mode2.png';
 import protein_name from './assets/images/protein_name.png';
@@ -68,7 +68,7 @@ import regulation_properties from './assets/images/regulation_properties.png';
 
 import protein_toolbar from './assets/images/protein_toolbar.png';
 import edit_protein from './assets/images/edit_protein.png';
-import cycles_parameters from './assets/images/cycles_parameters.png';
+import cycles_parameters from './assets/images/cycles_parameters.PNG';
 import cycles_all from './assets/images/cycles_all.PNG';
 
 import global_all from './assets/images/global_all.PNG';
