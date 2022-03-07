@@ -1211,19 +1211,19 @@ function ManualContent(props) {
       </tr>
       <tr>
       <td>CELL TYPE</td>
-      <td>The cell type.</td>
+      <td>Cell type.</td>
       </tr>
       <tr>
       <td>NEIGHBOURING CELLS</td>
-      <td>The number of cell neighbours.</td>
+      <td>Number of cell neighbours.</td>
       </tr>
       <tr>
       <td>N. CELL VERTEXES</td>
-      <td>The number of cell vertexes.</td>
+      <td>Number of cell vertexes.</td>
       </tr>
       <tr>
       <td>X, Y</td>
-      <td>The location of the cell center (x, y coordinates).</td>
+      <td>Location of the cell center (x, y coordinates).</td>
       </tr>
       </table>
       </Typography>
@@ -1240,7 +1240,7 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>%t</td>
-      <td>Accounts for the value of the non-dimensional time.</td>
+      <td>Value of the non-dimensional time.</td>
       </tr>  
       <tr>
       <td>%cedge</td>
