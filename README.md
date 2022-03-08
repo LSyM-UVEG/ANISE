@@ -8,7 +8,7 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ## Quick Guide to building
 
 ### Prerequisites:
-To install the Web App, **Nodejs version 16.14** (includes npm manager 8.3.1), **Git**, **Python 3** and **Visual studio (C++)** are needed.  
+To install the Web App, **Nodejs version 16.14** (includes npm manager 8.3.1), **Git**, **Python 3** and **Visual Studio Code(C++)** are needed.  
  
 #### WINDOWS SETUP
 * **Nodejs**
@@ -30,16 +30,17 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 1) Download the Windows installer of [Python 3](https://www.python.org/downloads/windows/) 
 2) Execute the _.exe_ file and follow the _Python3 Setup_ instructions
 
-* **Visual Studio (C++)** 
-1) Download the Windows installer of [Visual Studio](https://visualstudio.microsoft.com/downloads/) **with C++**
-2) Select the **Community** file
-3) Execute the _.exe_ file and follow the _Visual Studio Setup_ instructions
+* **Visual Studio Code (C++)** 
+1) Download the Windows installer of [Visual Studio Code](https://code.visualstudio.com/Download) 
+2) Execute the _.exe_ file and follow the _Visual Studio Code Setup_ instructions
+3) Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
+ 
 
 #### LINUX SETUP
 
 * **Nodejs** 
 
-**Option 1:** Installation using a source code (way longer but includes Python)
+**Option 1:** Installation using a source code (longer but includes Python)
 1) Download the source code of [nodejs](https://nodejs.org/en/download/) version 16.14.0
 2) Extract the folder using ```tar xvzf node-v16.14.0.tar.gz```
 3) Enter the folder ```cd node-v16.14.0```
@@ -92,9 +93,9 @@ Git is supposed to be already installed in LINUX. If not the case, you can follo
 
 To install or update Python, you can follow those [instructions](https://docs.python-guide.org/starting/install3/linux/).
 
-* **Visual studio (C++)** 
+* **Visual studio Code (C++)** 
 
-To install Virtual Studio, you can follow those [instructions](https://code.visualstudio.com/docs/setup/linux). Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
+To install Virtual Studio Code, you can follow those [instructions](https://code.visualstudio.com/docs/setup/linux). Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
  
 ### Command line build instructions:
 
