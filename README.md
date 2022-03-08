@@ -8,12 +8,15 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ## Quick Guide to building
 
 ### Prerequisites:
-To install the Web App, **Nodejs version 16.14** (includes npm manager 8.3.1), **Git**, **Python 3** and **Visual Studio Code(C++)** are needed.  
+To install the Web App, **Nodejs version 16.14** (includes **npm** version 8.3.1) and **Git** are needed. 
+
+To note, some **npm** modules need to be compiled with **Python** and **Visual Studio (C++)**.
  
 #### WINDOWS SETUP
 * **Nodejs**
 1) Download the Windows installer of [Nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
-2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions
+2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions. \
+Warning: select "Automatically install the necessary tools" to install **Python** and **Visual Studio** as well. 
 3) Check the version of the node via the terminal (run as admnistrator)
  ```console 
  node -v  
@@ -25,22 +28,13 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 * **Git** 
 1) Download the Windows installer of [Git](https://gitforwindows.org/) 
 2) Execute the _.exe_ file and follow the _Git Setup_ instructions
-
-* **Python 3** 
-1) Download the Windows installer of [Python 3](https://www.python.org/downloads/windows/) 
-2) Execute the _.exe_ file and follow the _Python3 Setup_ instructions
-
-* **Visual Studio Code (C++)** 
-1) Download the Windows installer of [Visual Studio Code](https://code.visualstudio.com/Download) 
-2) Execute the _.exe_ file and follow the _Visual Studio Code Setup_ instructions
-3) Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
  
 
 #### LINUX SETUP
 
 * **Nodejs** 
 
-**Option 1:** Installation using a source code (longer but includes Python)
+**Option 1:** Installation using the source code (longer)
 1) Download the source code of [nodejs](https://nodejs.org/en/download/) version 16.14.0
 2) Extract the folder using ```tar xvzf node-v16.14.0.tar.gz```
 3) Enter the folder ```cd node-v16.14.0```
@@ -89,13 +83,6 @@ node -v
 
 Git is supposed to be already installed in LINUX. If not the case, you can follow those [instructions](https://git-scm.com/download/linux).
 
-* **Python 3**
-
-To install or update Python, you can follow those [instructions](https://docs.python-guide.org/starting/install3/linux/).
-
-* **Visual studio Code (C++)** 
-
-To install Virtual Studio Code, you can follow those [instructions](https://code.visualstudio.com/docs/setup/linux). Do not forget to download the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools). 
  
 ### Command line build instructions:
 
