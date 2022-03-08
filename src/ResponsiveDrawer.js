@@ -269,7 +269,7 @@ function ManualContent(props) {
 		  Delta Time
       </Typography>
       <Typography paragraph align="left">
-      Provides the value of the dimensionless <b>time step</b> used in the Euler algorithm for numerically integrating the dynamics of the tissue mechanics/growth and the protein kinetics.
+      Provides the value of the dimensionless <b>time step</b> used in the Euler algorithm to numerically integrate the dynamics of the tissue mechanics/growth and the protein kinetics.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={time_step}/>
@@ -322,7 +322,7 @@ function ManualContent(props) {
       </Typography>
 	  
       <Typography paragraph align="left">
-      The different <b>cell types</b> involved in the simulations are defined in this list. Each cell type has a unique color that identifies it in other sections.
+      The different <b>cell types</b> involved in the simulations are defined in this list. Each cell type has a unique color that identifies it in the other sections.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={celltypes}/>
@@ -367,7 +367,7 @@ function ManualContent(props) {
 	</SectionHeading>
     <div class="w3-code">      
       <Typography paragraph align="left">
-		The initial spatial organization of the different cell types is composed by square <b>regions</b> (laying over the background).
+		The initial spatial organization of the different cell types is composed by <b>regions</b> (laying over the background).
       </Typography>
 	  
 	  <Typography paragraph align="left">
@@ -383,20 +383,20 @@ function ManualContent(props) {
 	  <Typography paragraph>
       <table class="center, w3-table-all"> 
       <tr>
-      <td>Select</td>
-      <td>Allows to select a region (identified by an predefined number)</td>
+      <td>Selected region</td>
+      <td>Region selected identified by an predefined number</td>
       </tr>  
       <tr>
       <td>Cell Type</td>
-      <td>The cell type that ocuppies the region</td>
+      <td>Cell type that ocuppies the region</td>
       </tr>
 	  <tr>
       <td>Init Position (X, Y)</td>
-      <td>The coordinates of the bottom-left corner of the region</td>
+      <td>Coordinates of the bottom-left corner of the region</td>
       </tr>
 	  <tr>
       <td>Number Cells (X, Y)</td>
-      <td>The size of the region in number of cells</td>
+      <td>Size of the region in number of cells</td>
       </tr>
       </table>	  
       </Typography>
@@ -422,7 +422,7 @@ function ManualContent(props) {
 	
     <div class="w3-code">     
       <Typography paragraph align="left">
-	  This <b>editor</b> is used to facilitate the spatial arrangement of the background and the cell types by means of a grid. This grid is represented by a hexagonal lattice with the <i>background</i> size, and a set of squares with the position and the size of the <i>regions</i>.
+	  This <b>editor</b> is used to facilitate the spatial arrangement of the background and the cell types by means of a grid. This grid is represented by a hexagonal lattice with the <i>background</i> size, and a set of <i>regions</i> with their positions and sizes.
       </Typography>
 	  <Typography paragraph align="left">
 	  The colors used to represent the background and regions are the same as defined in their respectives subsections.
@@ -623,7 +623,7 @@ function ManualContent(props) {
 
       <Typography paragraph align="left">
       <div class="w3-panel w3-warning">
-        <p><strong>Note:</strong> If the protein equation was edited in the <i>Formula Mode</i> and its current equation can not be represented, the <i>Visual mode</i> will be unable.</p>
+        <p><strong>Note:</strong> If the protein equation was edited in the <i>Formula Mode</i> and its current equation can not be represented, the <i>Visual mode</i> will be unusable.</p>
 	    </div>
       </Typography>
 				
@@ -635,7 +635,7 @@ function ManualContent(props) {
     </Typography>   
 
     <Typography paragraph align="left">	
-        Inside the editor, you can add new proteins and/or regulations between them. The proteins are represented by a rectangle with his name inside, and the regulations are represented by an arrow (from one protein to another protein or regulation).
+        Inside the editor, you can add new proteins and/or regulations between them. The proteins are represented by a rectangle with their names inside, and the regulations are represented by an arrow (from one protein to another protein or regulation).
     </Typography>
 
     <Typography paragraph align="center">
@@ -654,7 +654,7 @@ function ManualContent(props) {
         </tr>
 	    <tr>
         <td class="w3-small">NEW PROTEIN</td>
-        <td>Add a protein by select this option and clicking a position in the editor. The <i>Protein Properties</i> dialog (explained below) is shown at this moment.</td>
+        <td>Add a protein by selecting this option and clicking a position in the editor. The <i>Protein Properties</i> dialog (explained below) is shown at this moment.</td>
         </tr>
 	    <tr>      
         <td class="w3-small">NEW POSITIVE REGULATION</td>
@@ -898,11 +898,11 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>LAMBDA (Λ)</td>
-      <td>Prescribes the line tension or affinity between cells.</td>
+      <td>Line tension or affinity between cells</td>
       </tr>  
       <tr>
       <td>lambda (&lambda;)</td>
-      <td>Stands for the inhomogeneities of the contractile tension between cells.</td>
+      <td>Inhomogeneities of the contractile tension between cells</td>
       </tr>
       </table>
       </Typography>
@@ -935,22 +935,22 @@ function ManualContent(props) {
       <div class="w3-code">      
 
       <Typography paragraph align="left">
-      There are other individual mechanical properties that only required to specify in single (selected) cell type:
+      There are other individual mechanical properties that are only required to specify in single (selected) cell type:
       </Typography>
 
       <Typography paragraph>
       <table class="center, w3-table-all"> 
       <tr>
       <td>KAPPA (K)</td>
-      <td>Value of (dimensionless) elastic constant, Young modulus, of a particular cell type.</td>
+      <td>Value of (dimensionless) elastic constant, Young modulus, of a particular cell type</td>
       </tr>  
       <tr>
       <td>GAMMA (Γ)</td>
-      <td>Value of (dimensionless) global cortical tension.</td>
+      <td>Value of (dimensionless) global cortical tension</td>
       </tr>
       <tr>
       <td>Force</td>
-      <td>Additional, external, or active (dimensionless) force with components <i>x</i> and <i>y</i>.</td>
+      <td>Additional, external, or active (dimensionless) force with components <i>x</i> and <i>y</i></td>
       </tr>
       </table>
       </Typography>
@@ -996,7 +996,7 @@ function ManualContent(props) {
 	  </SectionHeading>
       <div class="w3-code">      
 		<Typography paragraph>
-			The <b>Cycles section</b> defines the cell cycle kinetics and cleavage orientarion properties.	  
+			The <b>Cycles section</b> defines the cell cycle kinetics and cleavage orientation properties.	  
 		</Typography>
 		<Typography paragraph align="center">
 			<img alt="" src={cycles_all} width="60%" height="60%"/>
@@ -1009,7 +1009,7 @@ function ManualContent(props) {
 
       <div class="w3-code">      
       <Typography paragraph align="left">
-      The top toolbar allows to select the <b>Stage</b> of the simulation for wich the cycle parameters defined below is applied. If the same dynamics applies to all the stages, use <b>All</b> checkbox to define only one set of parameters.
+      The top toolbar allows to select the <b>Stage</b> of the simulation for which the cycle parameters defined below is applied. If the same dynamics apply to all the stages, use <b>All</b> checkbox to define only one set of parameters.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={toolbar_potentials}/>
@@ -1137,7 +1137,7 @@ function ManualContent(props) {
       <div class="w3-code">
       
       <Typography paragraph align="left">
-      The <b>Function Editor</b> allows to prescribe values of the parameters as a function of time or, among other cell properties, as a function of the amount of proteins within cells in order to implement feedback between signaling and biomechanics.
+      The <b>Function Editor</b> allows to prescribe values of the parameters as a function of time or, among other cell properties, as a function of the amount of proteins within cells in order to implement feedbacks between signaling and biomechanics.
       </Typography>
 
       <Typography paragraph align="center">
@@ -1147,7 +1147,7 @@ function ManualContent(props) {
       <Typography paragraph align="left">
       In the top, the formula equation is stated. You can edit this formula, like a C-style mathematical expression.
       <p/>
-      This textbox allows to write the function as a equation that depends on several types of <i>variables</i> (whose names begin with %), that correspond to the properties of a specific cell type or its number of proteins.
+      This textbox allows to write the function as an equation that depends on several types of <i>variables</i> (whose names begin with %), that correspond to the properties of a specific cell type or its number of proteins.
       </Typography>
 
       <Typography paragraph align="center">
@@ -1174,19 +1174,19 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>C1</td>
-      <td>Current selected cell type.</td>
+      <td>Current selected cell type</td>
       </tr>  
       <tr>
       <td>C2</td>
-      <td>Cell type pair in combination with the selected cell type (C1), only if the property that you are editing depends on cell pairs.</td>
+      <td>Cell type pair in combination with the selected cell type (C1), only if the property that you are editing depends on cell pairs</td>
       </tr>
       <tr>
       <td>CP1</td>
-      <td>Neighbouring cell types of C1.</td>
+      <td>Neighbouring cell types of C1</td>
       </tr>
       <tr>
       <td>CP2</td>
-      <td>Neighbouring cell types of C2.</td>
+      <td>Neighbouring cell types of C2</td>
       </tr>
       </table>
       </Typography>
@@ -1203,27 +1203,27 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>AREA</td>
-      <td>Area of the cell.</td>
+      <td>Area of the cell</td>
       </tr>
       <tr>
       <td>PERIMETER</td>
-      <td>Perimeter of the cell.</td>
+      <td>Perimeter of the cell</td>
       </tr>
       <tr>
       <td>CELL TYPE</td>
-      <td>Cell type.</td>
+      <td>Cell type</td>
       </tr>
       <tr>
       <td>NEIGHBOURING CELLS</td>
-      <td>Number of cell neighbours.</td>
+      <td>Number of cell neighbours</td>
       </tr>
       <tr>
       <td>N. CELL VERTEXES</td>
-      <td>Number of cell vertexes.</td>
+      <td>Number of cell vertexes</td>
       </tr>
       <tr>
       <td>X, Y</td>
-      <td>Location of the cell center (x, y coordinates).</td>
+      <td>Location of the cell center (x, y coordinates)</td>
       </tr>
       </table>
       </Typography>
@@ -1240,11 +1240,11 @@ function ManualContent(props) {
       <table class="center, w3-table-all"> 
       <tr>
       <td>%t</td>
-      <td>Value of the non-dimensional time.</td>
+      <td>Value of the non-dimensional time</td>
       </tr>  
       <tr>
       <td>%cedge</td>
-      <td>Length of the edge that a cell pair shares.</td>
+      <td>Length of the edge that a cell pair shares</td>
       </tr>
       </table>
       </Typography>
@@ -1254,7 +1254,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph align="left">
-      Finally, you can add the number of molecules of certain protein in cells C1 and C2, if any defined in the <b>Proteins</b> section, to the formula. It is added like a variable (whose names begin with %), with the proper syntax.
+      Finally, you can add the number of molecules of certain protein in cells C1 and C2 to the formula, if any is defined in the <b>Proteins</b> section. It is added like a variable (whose names begin with %), with the proper syntax.
       </Typography>	  
      
       </div>
