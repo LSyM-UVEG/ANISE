@@ -10,13 +10,14 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ### Prerequisites:
 To install the Web App, **Nodejs version 16.14** (includes **npm** version 8.3.1) and **Git** are needed. 
 
-To note, some **npm** modules need to be compiled with **Python** and **Visual Studio (C++)**.
+To note, some **npm** modules need to be compiled with **Python** and **Visual Studio (C++)**. 
  
 #### WINDOWS SETUP
+
 * **Nodejs**
 1) Download the Windows installer of [Nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
 2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions. \
-Warning: select "Automatically install the necessary tools" to install **Python** and **Visual Studio** as well. 
+WARNING: select "Automatically install the necessary tools" to install **Python** and **Visual Studio** as well. 
 3) Check the version of the node via the terminal (run as admnistrator)
  ```console 
  node -v  
