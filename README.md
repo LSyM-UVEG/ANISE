@@ -18,7 +18,7 @@ To note, some **npm** modules need to be compiled with **Python** and **Visual S
 1) Download the Windows installer of [Nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
 2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions. \
 WARNING: select "Automatically install the necessary tools" to install **Python** and **Visual Studio** as well. 
-3) Check the version of the node via the terminal (run as admnistrator)
+3) Check the version of the node, via the terminal as admnistrator or via the Windows PowerShell. 
  ```console 
  node -v  
 >> v16.14.0 
