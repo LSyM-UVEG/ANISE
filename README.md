@@ -37,7 +37,7 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 
 There are 2 options to install nodejs in your Linux machine.
 
-**Option 1:** Installation using the source code (longer)
+**Option 1:** Installation using the source code (easier but longer)
 1) Download the source code of [nodejs](https://nodejs.org/en/download/) version 16.14.0
 2) Extract the folder using ```tar xvzf node-v16.14.0.tar.gz```
 3) Enter the folder ```cd node-v16.14.0```
