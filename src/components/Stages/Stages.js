@@ -13,16 +13,7 @@ import { deleteCyclesOfStage, deletePotetialsOfStage, deleteConstantsOfStage } f
 
 class Stages extends Component {
   constructor(props) {
-    super(props);
-    if (typeof this.props.value.stages[0] === "undefined") {
-      this.props.value.stages[0] = {
-        $: { order: "1",
-            duration: "200",
-            intermediate: "10000"},
-      }
-      this.props.handlerValue([], null, this.props.value.stages);
-    }
-      
+    super(props);  
     this.state = {
       selectedRow: 0,
     };

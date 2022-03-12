@@ -127,6 +127,33 @@ class App extends Component {
       return Array.isArray(data) ? data : [data];
   }
 
+  globalByDefault = () => {
+    let newGlobal = {
+      deltat: "0.001",
+      types: {
+        celltype1: ""
+      },
+      itissue: {
+        backgroundcells: "celltype1",
+        file: { $: {f: ""} },
+        ncellsx: "5",
+        ncellsy: "5",
+        square: []
+      }
+    }
+    return newGlobal;
+  }
+
+  stagesByDefault = () => {
+    let newStages = [];
+    newStages.push({
+      $: { order: "1",
+          duration: "200",
+          intermediate: "10000"},
+    });
+    return newStages;
+  }
+
   onFileChange = () => (event) => {
     var lthis = this;
     if (event.target.files && event.target.files.length > 0) {
@@ -139,13 +166,13 @@ class App extends Component {
             lthis.setState({
               fileId: lthis.state.fileId + 1,
               isLoaded: true,
-              global: result.tissue.global,
-              stages: typeof result.tissue.stages === "undefined" ? [result.tissue.stages] : lthis.getArray(result.tissue.stages.stage),
+              global: typeof result.tissue.global === "undefined" ? lthis.globalByDefault(): result.tissue.global,
+              stages: typeof result.tissue.stages === "undefined" ? lthis.stagesByDefault() : lthis.getArray(result.tissue.stages.stage),
               potentials: typeof result.tissue.potentials === "undefined" ? [result.tissue.potentials] : lthis.getArray(result.tissue.potentials.potential),
               cycles: typeof result.tissue.cycles === "undefined" ? [result.tissue.cycles] : lthis.getArray(result.tissue.cycles.cycle),
               proteins: typeof result.tissue.proteins === "undefined" ? "": result.tissue.proteins,
               proteinEditorData: parseXMLProteinEditorData(text),
-              colorList: lthis.getColorList(result.tissue.global.types)
+              colorList: typeof result.tissue.global === "undefined" ? lthis.getColorList(lthis.globalByDefault()): lthis.getColorList(result.tissue.global.types)
             });
           }
 
