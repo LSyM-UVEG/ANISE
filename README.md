@@ -10,14 +10,19 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ### Prerequisites:
 To install the Web App, **Nodejs version 16.14** (includes **npm** version 8.3.1) and **Git** are needed. 
 
-To note, some npm modules need to be compiled with **Python** and **Visual Studio (C++)**. 
+To note, some npm modules need to be compiled with **Python** and **C++ Compiler**.
+
+*One time intalled npm, it's recomended update npm to the lastest version (tested npm 8.5.4)*
+```
+ npm install -g npm@latest 
+```
  
 #### WINDOWS SETUP
 
 * **Nodejs**
 1) Download the Windows installer of [Nodejs](https://nodejs.org/) corresponding to the 16.14.0 LTS version 
 2) Execute the _.msi_ file and follow the _Nodejs Setup_ instructions. \
-**Warning**: select "Automatically install the necessary tools" to install **Python** and **Visual Studio** as well. 
+**Warning**: select "Automatically install the necessary tools" to install **Python** and **Visual Studio Build Tools** as well. 
 3) Check the version of the node, via the terminal as admnistrator or via the Windows PowerShell. 
  ```console 
  node -v  
@@ -36,6 +41,16 @@ Note that you are free to install _Nodejs_ via the terminal as long as you insta
 * **Nodejs** 
 
 There are 2 options to install nodejs in your Linux machine.
+
+**Ootion 0:** Installation using the linux binaries
+1) Download the linux binaries of [nodejs](https://nodejs.org/en/download/) version 16.14.0.
+2) Copy the downloaded file to the desired directory, your HOME by example. ```cp node-v16.14.0-linux-x64.tar.xz $HOME```.
+3) Change to that directory and extract the data using ```tar xvzf node-v16.14.0-linux-x64.tar.xz```.
+4) Modify the PATH environment variable adding the path to the extracted *bin* folder. 
+    1) Update the PATH only on the current terminal:  ```PATH="$HOME/node-v16.14.0-linux-x64/bin:$PATH"```. 
+    2) Update the PATH for the current user (not needed to be root). Add in the *~/.bashrc* file the next line: ```export PATH="$HOME/node-v16.14.0-linux-x64/bin:$PATH"```. Then update the current terminal with ```source ~/.bashrc```.
+5) You can check the version with ```node -v```
+6) Update *npm* to the latest version using ```npm install -g npm@latest```
 
 **Option 1:** Installation using the source code (easier but longer)
 1) Download the source code of [nodejs](https://nodejs.org/en/download/) version 16.14.0
