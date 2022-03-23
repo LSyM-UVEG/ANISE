@@ -10,7 +10,7 @@ The app can be accessed through the following link [Tifosi Web](https://lsymserv
 ### Prerequisites:
 To install ANISE, **Nodejs version 16.14** (includes **npm**) and **Git** are needed. 
 
-To note, some npm modules need to be compiled with **Python** and **C++ Compiler**. Once installed, it is recommended to update npm to the latest version (version > 8.3.1) using ```npm install -g npm@latest```.  
+To note, some npm modules need to be compiled with **Python** and a **C++ Compiler**. Once installed, it is recommended to update npm to the latest version (version > 8.3.1) using ```npm install -g npm@latest```.  
  
 #### WINDOWS SETUP
 
