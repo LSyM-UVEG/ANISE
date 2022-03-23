@@ -46,7 +46,7 @@ There are 2 options to install nodejs in your Linux machine.
     2) Update the PATH for the current user (not needed to be root). Add in the *~/.bashrc* file the next line: ```export PATH="$HOME/node-v16.14.2-linux-x64/bin:$PATH"```. Then update the current terminal with ```source ~/.bashrc```.
 5) You can check the version with ```node -v```
 
-PROPOSITION OPTION 1
+** OTHER PROPOSITION OPTION 1 **
 1) Download the linux binaries of [nodejs](https://nodejs.org/en/download/) version 16.14.
 2) Run the following command lines. Feel free to replace $HOME by whatever folder you want nodejs to be installed in. 
 ``` console
