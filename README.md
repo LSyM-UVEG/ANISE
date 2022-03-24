@@ -39,25 +39,14 @@ There are 2 options to install nodejs in your Linux machine.
 
 **Option 1:** Installation using the Linux binaries (tested version 16.14.2)
 1) Download the linux binaries of [nodejs](https://nodejs.org/en/download/) version 16.14.
-2) Copy the downloaded file to the desired directory, your HOME by example. ```cp node-v16.14.2-linux-x64.tar.xz $HOME```.
-3) Change to that directory and extract the data using ```tar xvf node-v16.14.2-linux-x64.tar.xz```.
-4) Modify the PATH environment variable adding the path to the extracted *bin* folder. 
+2) Copy the downloaded file to the desired directory, your HOME for example. ```cp node-v16.14.2-linux-x64.tar.xz $HOME```.
+3) Change to that directory using ```cd /home``` 
+4) Extract the data using ```tar xvf node-v16.14.2-linux-x64.tar.xz```.
+5) Modify the PATH environment variable adding the path to the extracted *bin* folder. 
     1) Update the PATH only on the current terminal:  ```PATH="$HOME/node-v16.14.2-linux-x64/bin:$PATH"```. 
-    2) Update the PATH for the current user (not needed to be root). Add in the *~/.bashrc* file the next line: ```export PATH="$HOME/node-v16.14.2-linux-x64/bin:$PATH"```. Then update the current terminal with ```source ~/.bashrc```.
-5) You can check the version with ```node -v```
-
-** OTHER PROPOSITION OPTION 1 **
-1) Download the linux binaries of [nodejs](https://nodejs.org/en/download/) version 16.14.
-2) Run the following command lines. Feel free to replace $HOME by whatever folder you want nodejs to be installed in. 
-``` console
-cp node-v16.14.2-linux-x64.tar.xz $HOME
-cd /home
-tar xvf node-v16.14.2-linux-x64.tar.xz
-PATH="$HOME/node-v16.14.2-linux-x64/bin:$PATH"
-export PATH="$HOME/node-v16.14.2-linux-x64/bin:$PATH"
-source ~/.bashrc
-```
-4) Check the version with ```node -v```. 
+    2) Update the PATH for the current user (not needed to be root). Add in the *~/.bashrc* file the next line: ```export PATH="$HOME/node-v16.14.2-linux-x64/bin:$PATH"```. 
+    3) Update the current terminal with ```source ~/.bashrc```.
+6) Check the version with ```node -v```
 
 **Option 2:** Installation from the terminal 
  1) Run the following command line: 
