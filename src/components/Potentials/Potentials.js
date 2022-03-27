@@ -446,7 +446,7 @@ function Potentials(props) {
                 <span style={{ borderStyle: "solid", borderRadius: "4px", width: "120px", backgroundColor: "GhostWhite" }}>                 
                     <Typography color="textSecondary" variant="h5" gutterBottom>
                       <FunctionButton equation={LAMBDAValue} onChange={handlePairValue("LAMBDA")} />
-                        <Tooltip title={<Typography>LAMBDA (Λ): Inhomogeneities of the contractile tension</Typography>} placement="top">
+                        <Tooltip title={<Typography>LAMBDA (Λ): Line tension or affinity between cells</Typography>} placement="top">
                           <span> Λ </span>
                         </Tooltip>
                     </Typography>
@@ -457,7 +457,7 @@ function Potentials(props) {
                   
                     <Typography color="textSecondary" variant="h5" gutterBottom>
                       <FunctionButton equation={lambdaValue} onChange={handlePairValue("lambda")} />
-                      <Tooltip title={<Typography>lambda (&lambda;): Line tension or affinity between cells</Typography>} placement="top">
+                      <Tooltip title={<Typography>lambda (&lambda;): Inhomogeneities of the contractile tension</Typography>} placement="top">
                       <span>  &lambda; </span>
                       </Tooltip>
                     </Typography>
