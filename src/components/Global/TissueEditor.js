@@ -7,6 +7,7 @@ import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import Button from "@material-ui/core/Button";
 import ZoomInIcon from "@material-ui/icons/ZoomIn";
 import ZoomOutIcon from "@material-ui/icons/ZoomOut";
+import ZoomOutMap from "@material-ui/icons/ZoomOutMap";
 import BrushIcon from "@material-ui/icons/Brush";
 import LayersClearIcon from "@material-ui/icons/LayersClear";
 import SelectAllIcon from "@material-ui/icons/SelectAll";
@@ -69,7 +70,7 @@ function SelectMenu(props) {
 
 const useStyles = makeStyles(styles);
 function TissueEditor(props) {
-  const [zoom, setZoom] = useState(75);
+  const [zoom, setZoom] = useState(0);
   const [tool, setTool] = useState(0);
   const [provisionalMove, setProvisionalMove] = useState(false);
   const [colorBrush, setColorBrush] = useState(0);
@@ -83,6 +84,8 @@ function TissueEditor(props) {
   const [celltypeSelected, setCellTypeSelected] = React.useState(Object.keys(props.celltypeList)[0]);
   const [anchorElCellType, setAnchorElCellType] = React.useState(null);
   const classes = useStyles();
+
+
 
   if (!Object.keys(props.celltypeList).find(value => value === celltypeSelected)) {
     setCellTypeSelected(Object.keys(props.celltypeList)[0]);
@@ -121,6 +124,24 @@ function TissueEditor(props) {
     // }
   };
 
+  const zoomAll = () => {
+    let newZoom = 75;
+    let mapWidth = props.data.ncellsx * 15 + 40;
+    let mapHeight = props.data.ncellsy * 18 + 70;
+    let viewport = document.getElementById("viewport");
+    let size = viewport.getBoundingClientRect();
+    
+    let zoomWidth = size.width / mapWidth;
+    let zoomHeight = size.height / mapHeight;
+    newZoom = zoomWidth > zoomHeight ? zoomHeight * 50.0 : zoomWidth * 50.0;
+    newZoom = Math.min(Math.max(newZoom, 1), 100);
+    changeZoom(newZoom, 0.5, 0.5);
+
+    let offsetx = -(size.width * 50 / newZoom - mapWidth) * 0.5;
+    let offsety = -(size.height * 50 / newZoom - mapHeight) * 0.5;
+    setViewportOffset({ x: offsetx, y: offsety });
+  }
+
   useEffect(() => {
     window.addEventListener("keydown", onKeyDown);
 
@@ -153,15 +174,19 @@ function TissueEditor(props) {
   }, []);
 
   useLayoutEffect(() => {
-    let viewport = document.getElementById("viewport");
-    let size = viewport.getBoundingClientRect();
-    let ratio = 50.0 / zoom;
-    let viewportSize = { x: size.width * ratio, y: size.height * ratio };
+    if (zoom === 0) // Doing zoom all in the first render
+      zoomAll();
+    else {
+      let viewport = document.getElementById("viewport");
+      let size = viewport.getBoundingClientRect();
+      let ratio = 50.0 / zoom;
+      let viewportSize = { x: size.width * ratio, y: size.height * ratio };
 
-    let viewBoxSize = viewportOffset.x.toString() + " " + viewportOffset.y.toString();
-    viewBoxSize += " " + viewportSize.x.toString() + " " + viewportSize.y.toString();
+      let viewBoxSize = viewportOffset.x.toString() + " " + viewportOffset.y.toString();
+      viewBoxSize += " " + viewportSize.x.toString() + " " + viewportSize.y.toString();
 
-    viewport.setAttribute("viewBox", viewBoxSize);
+      viewport.setAttribute("viewBox", viewBoxSize);
+    }
   });
 
   const changeZoom = (newValue, propX, propY) => {
@@ -274,7 +299,7 @@ function TissueEditor(props) {
       }}
     >
       <Grid container spacing={0}>
-        <Grid item xs={12} md={12} lg={6} style={{ marginLeft: "20px", backgroundColor: "#cfe8fc" }}>
+        <Grid item xs={6} style={{ marginLeft: "20px", backgroundColor: "#cfe8fc" }}>
           <div
             style={{
               backgroundColor: "#cfe8fc",
@@ -312,22 +337,29 @@ function TissueEditor(props) {
             </div>
           </div>
         </Grid>
-        <Grid container item xs={4} md={4} lg={2} style={{ marginTop: "5px" }}>
-          <Grid item xs={4} lg={4}>
-            <Button onClick={() => setZoom(Math.max(zoom - 5, 1))}>
+        <Grid container item xs={3} style={{ marginTop: "5px" }}>
+          <Grid item xs={3}>
+            <Button onClick={(ev) => handleZoomChange(ev, Math.max(zoom - 5, 1))}>
               <ZoomOutIcon />
             </Button>
           </Grid>
-          <Grid item xs={4} lg={4}>
+          <Grid item xs={3}>
             <Slider value={zoom} min={1} max={100} onChange={handleZoomChange} aria-labelledby="continuous-slider" />
           </Grid>
-          <Grid item xs={4} lg={4}>
-            <Button onClick={() => setZoom(Math.min(zoom + 5, 100))}>
+          <Grid item xs={3}>
+            <Button onClick={(ev) => handleZoomChange(ev, Math.min(zoom + 5, 100))}>
               <ZoomInIcon />
             </Button>
           </Grid>
+          <Grid item xs={3}>
+            <Button onClick={() => zoomAll()}>
+            <Tooltip title={<Typography>Zoom all</Typography>}>
+              <ZoomOutMap />
+              </Tooltip>
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={8} md={8} lg={2}>
+        <Grid item xs={3}>
           <ToggleButtonGroup value={tool} exclusive onChange={handleTool} aria-label="text alignment">
             <ToggleButton value={0} aria-label="centered">
               <Tooltip title={<Typography>Move the tissue graph</Typography>}>
