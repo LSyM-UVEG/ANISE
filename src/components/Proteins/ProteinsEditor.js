@@ -776,16 +776,27 @@ function ProteinsEditor(props) {
             </ToggleButtonAction>
 
             <ToggleButtonAction value={1} aria-label="centered">
-              New Protein
+              <Tooltip open={tool === 1} title={<Typography>Click on the gray area to create a new protein</Typography>} arrow>
+                <Typography>New Protein</Typography>
+              </Tooltip>
             </ToggleButtonAction>
+            
             <ToggleButtonAction value={2} aria-label="centered">
-              New Positive Regulation
+              <Tooltip open={tool === 2} title={<Typography>Click down on the source protein and click up on the destination element</Typography>} arrow>
+                <Typography>New Positive Regulation</Typography>
+              </Tooltip>
             </ToggleButtonAction>
+
             <ToggleButtonAction value={3} aria-label="centered">
-              New Negative Regulation
+              <Tooltip open={tool === 3} title={<Typography>Click down on the source protein and click up on the destination element</Typography>} arrow>
+                <Typography>New Negative Regulation</Typography>
+              </Tooltip>
             </ToggleButtonAction>
+
             <ToggleButtonAction value={4} aria-label="centered">
-              Remove
+              <Tooltip open={tool === 4} title={<Typography>Click on any element to remove it</Typography>} arrow>
+                <Typography>Remove</Typography>
+              </Tooltip>
             </ToggleButtonAction>
           </ToggleButtonGroup>
         </div>
