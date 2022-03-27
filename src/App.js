@@ -21,6 +21,7 @@ import Potentials from "./components/Potentials/Potentials";
 import Cycles from "./components/Cycles/Cycles";
 import Proteins from "./components/Proteins/Proteins"
 import Manual from "./Manual";
+import DialogAlert from "./components/DialogAlert";
 
 // Auxiliar functions
 import { parseXMLProteinEditorData, writeXMLProteinEditorData } from "./components/Proteins/FormulaParser";
@@ -68,6 +69,7 @@ class App extends Component {
       cycles: null,
       proteins: null,
       colorList: [ ],
+      showAlertLoad: false,
     };
 
     this.colorHandler = this.colorHandler.bind(this);
@@ -175,10 +177,16 @@ class App extends Component {
               colorList: typeof result.tissue.global === "undefined" ? lthis.getColorList(lthis.globalByDefault()): lthis.getColorList(result.tissue.global.types)
             });
           }
-
-          //var json = JSON.stringify(result); //Aqui se convierte a un string json
-          console.log(err);
+          else {
+            //var json = JSON.stringify(result); //Aqui se convierte a un string json
+            console.log(err);
+            lthis.setState({showAlertLoad: true});
+          }
         });
+      })
+      .catch((err) => {
+        console.log(err);
+        lthis.setState({showAlertLoad: true});
       });
     }
   };
@@ -348,7 +356,7 @@ class App extends Component {
         transform: 'translate(-50%, -50%)'
     }}
     >
-      <h1 style={{fontSize: '100px', color: 'darkblue'}}>TIFOSI</h1>
+      <h1 style={{fontSize: '100px', color: 'darkblue'}}>ANISE</h1>
       <p><Link to="/manual" style={{ textDecoration: 'none' }}>
           <Button
             variant="contained"
@@ -390,10 +398,16 @@ class App extends Component {
       <Prompt message="Your changes may be lost. Are you sure?"/>
         <div className="App">
           <div style={{position: 'fixed', zIndex: '130', right: '40px', top: '10px'}}><FileLoad handlerLoad={this.onFileChange} handlerSave={this.onFileSave}/></div>
-          <h1 style={{position: 'fixed', zIndex: '130', fontSize: '40px', color: 'darkblue', left: '40px', top: '0px', margin: '0'}}><Link to="/" style={{ textDecoration: 'none' }}><b>TIFOSI</b></Link></h1>
+          <h1 style={{position: 'fixed', zIndex: '130', fontSize: '40px', color: 'darkblue', left: '40px', top: '0px', margin: '0'}}><Link to="/" style={{ textDecoration: 'none' }}><b>ANISE</b></Link></h1>
           <Hidden lgUp>
           <p style={{height:"20px"}}> </p>
         </Hidden>
+        <DialogAlert
+                  open={this.state.showAlertLoad}
+                  title={"Error loading XML file"}
+                  message={"No changes will be made to the current configuration"}
+                  handleOk={() => this.setState({ showAlertLoad: false })}
+                />
           <Tabs value={1} onChange={this.handleChange}>
             <div label="GLOBAL">
               <Global
@@ -432,7 +446,7 @@ class App extends Component {
 
   MyManual = () => (
     <React.Fragment>
-       <h1 style={{position: 'fixed', zIndex: '2000', fontSize: '40px', color: 'darkblue', left: '40px', top: '0px', margin: '0'}}><Link to="/" style={{ textDecoration: 'none', zIndex: '2000' }}><b>TIFOSI</b></Link></h1>
+       <h1 style={{position: 'fixed', zIndex: '2000', fontSize: '40px', color: 'darkblue', left: '40px', top: '0px', margin: '0'}}><Link to="/" style={{ textDecoration: 'none', zIndex: '2000' }}><b>ANISE</b></Link></h1>
        <Manual/>
     </React.Fragment>
     );
