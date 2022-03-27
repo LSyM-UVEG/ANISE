@@ -299,7 +299,7 @@ function TissueEditor(props) {
       }}
     >
       <Grid container spacing={0}>
-        <Grid item xs={6} style={{ marginLeft: "20px", backgroundColor: "#cfe8fc" }}>
+        <Grid item xs={6}>
           <div
             style={{
               backgroundColor: "#cfe8fc",
@@ -309,7 +309,7 @@ function TissueEditor(props) {
               justifyContent: "space-evenly",
             }}
           >
-            <div className={classes.divSelector}>
+            <div className={classes.divSelector} style={{alignItems: "baseline"}}>
               <Typography variant="h5" style={{ marginRight: "10px" }}>
                 {" "}
                 Brush cell type:{" "}
