@@ -160,7 +160,7 @@ function FunctionEditor(props) {
           </xmlData.Consumer>
         </div>
       </div>
-      <Link href="https://osf.io/3g2t5/?show=view" style={{ display: "table-cell" }} target="_blank">
+      <Link href="https://osf.io/3g2t5/download" style={{ display: "table-cell" }} target="_blank">
         {" "}
         See manual for more possibilities{" "}
       </Link>
