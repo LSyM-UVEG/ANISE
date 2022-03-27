@@ -53,6 +53,7 @@
   list-style: none;
   margin-bottom: -1px;
   padding: 1.25rem 0.75rem;
+  cursor: pointer;
 }
 
 .tab-list-active {
