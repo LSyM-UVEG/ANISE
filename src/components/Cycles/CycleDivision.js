@@ -2,8 +2,7 @@ import React from "react";
 import Card from "@material-ui/core/Card";
 //import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-//import Button from "@material-ui/core/Button";
-
+import Button from "@material-ui/core/Button";
 import { HexagonCut } from "./HexagonCut";
 import { DispersionChart } from "./DispersionChart";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -49,7 +48,67 @@ export function CycleDivision(props) {
     }
   };
 
+  const setPreconfiguredDivision = (id) => {
+    let newDivisionShift = 0;
+    let newDivisionDispersion = 0;
+    let newDivisionDispersionLimit = 0;
+    switch (id) {
+      case "Hertwig":
+        newDivisionShift = 0;
+        newDivisionDispersion = 0;
+        newDivisionDispersionLimit = 0;
+        break;
+      case "Anti-Hertwig":
+        newDivisionShift = 1.571;
+        newDivisionDispersion = 0;
+        newDivisionDispersionLimit = 0;
+        break;
+      case "Random":
+        newDivisionShift = 0;
+        newDivisionDispersion = 100;
+        newDivisionDispersionLimit = 1.571;
+        break;
+      default:
+        break;
+    }
+
+    setDivisionShift(newDivisionShift);
+    handlerUpdate("divisionshift", newDivisionShift);
+    setDivisionDispersion(newDivisionDispersion);
+    handlerUpdate("divisiondispersion", newDivisionDispersion);
+    setDivisionDispersionLimit(newDivisionDispersionLimit);
+    handlerUpdate("divisiondispersionlimit", newDivisionDispersionLimit);
+  }
+
   return (
+    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexDirection: "row",
+        alignItems: "center",
+        margin: "20px",
+        flexWrap: "wrap",
+        backgroundColor: "#cfe8fc",
+        borderRadius: "10px",
+        boxShadow: "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
+        //height: "40px",
+      }}
+    >
+      <Typography variant="h6"> Set Preconfigured Division: </Typography>
+      <span>
+      <Button variant="outlined"  onClick={() => setPreconfiguredDivision("Hertwig")}>
+        Hertwig
+      </Button>
+      <Button variant="outlined"  onClick={() => setPreconfiguredDivision("Anti-Hertwig")}>
+        Anti-Hertwig
+      </Button>
+      <Button variant="outlined" onClick={() => setPreconfiguredDivision("Random")}>
+        Random
+      </Button>
+      </span>
+    </div>
     <div
       style={{
         display: "flex",
@@ -135,7 +194,7 @@ export function CycleDivision(props) {
           <Tooltip title={<Typography>Random orientation using a Normal distribution (&sigma;, mean) </Typography>}>
             <Typography color="textSecondary" variant="h5" gutterBottom>
               {" "}
-              Dispersion{" "}
+              D.Dispersion{" "}
             </Typography>
           </Tooltip>
           <InputNumber name="divisiondispersion" value={divisionDispersion} minValue={0} round={5} handleValue={handlerValue} handleLocalValue={handlerLocalValue} />
@@ -190,6 +249,7 @@ export function CycleDivision(props) {
                         <Button size="small">Learn More</Button>
                       </CardActions> */}
       </Card>
+    </div>
     </div>
   );
 }
