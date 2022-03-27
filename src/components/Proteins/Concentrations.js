@@ -137,9 +137,9 @@ export default function Concentrations(props) {
 
   return (
     <div style={{ display: "flex", alignItems: "stretch", flexDirection: "column" }}>
-      <div style={{ display: "flex", borderStyle: "solid", borderRadius: "4px", padding: "10px", margin: "4px 0px", textAlign: "center", alignItems: "baseline", justifyContent: "center"}}>
+      <div style={{ display: "flex", borderStyle: "solid", borderRadius: "4px", padding: "10px", margin: "4px 0px", textAlign: "center", alignItems: "center", justifyContent: "center"}}>
         <Switch checked={props.negval === 'y'} onChange={props.handleNegval} />
-        <Typography color="textSecondary" variant="h6" gutterBottom>
+        <Typography color="textSecondary" variant="h6">
           {" "}Allow negative values{" "}
         </Typography>
       </div>

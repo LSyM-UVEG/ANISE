@@ -47,7 +47,7 @@ export default function ProteinDialog(props) {
             if (idx >= 0) {
                 newIconcentration.push(iconcentration[idx]);
             } else {
-                newIconcentration.push({_: 0.0, $: {t: celltypeLookupArray[i], dispersion: 0.0, stochastic: 'n'}});
+                newIconcentration.push({_: "0.0", $: {t: celltypeLookupArray[i], dispersion: "0.0", stochastic: 'n'}});
             }
         }
         return newIconcentration;
