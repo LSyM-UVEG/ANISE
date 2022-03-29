@@ -759,6 +759,7 @@ function ProteinsEditor(props) {
         </div>
       </div>
       {mode === 0 && (
+        <React.Fragment>
         <div style={{ display: "flex", justifyContent: "center", backgroundColor: "lightsteelblue", borderRadius: "14px" }}>
           <ToggleButtonGroup
             value={tool}
@@ -770,36 +771,21 @@ function ProteinsEditor(props) {
             style={{ display: "inline-block" }}
           >
             <ToggleButtonAction value={0} aria-label="centered">
-              <Tooltip title={<Typography>Select proteins and regulations</Typography>}>
                 <NearMe />
-              </Tooltip>
             </ToggleButtonAction>
-
-            <ToggleButtonAction value={1} aria-label="centered">
-              <Tooltip open={tool === 1} title={<Typography>Click on the gray area to create a new protein</Typography>} arrow>
-                <Typography>New Protein</Typography>
-              </Tooltip>
-            </ToggleButtonAction>
-            
-            <ToggleButtonAction value={2} aria-label="centered">
-              <Tooltip open={tool === 2} title={<Typography>Click down on the source protein and click up on the destination element</Typography>} arrow>
-                <Typography>New Positive Regulation</Typography>
-              </Tooltip>
-            </ToggleButtonAction>
-
-            <ToggleButtonAction value={3} aria-label="centered">
-              <Tooltip open={tool === 3} title={<Typography>Click down on the source protein and click up on the destination element</Typography>} arrow>
-                <Typography>New Negative Regulation</Typography>
-              </Tooltip>
-            </ToggleButtonAction>
-
-            <ToggleButtonAction value={4} aria-label="centered">
-              <Tooltip open={tool === 4} title={<Typography>Click on any element to remove it</Typography>} arrow>
-                <Typography>Remove</Typography>
-              </Tooltip>
-            </ToggleButtonAction>
+            <ToggleButtonAction value={1} aria-label="centered"> New Protein </ToggleButtonAction>
+            <ToggleButtonAction value={2} aria-label="centered"> New Positive Regulation </ToggleButtonAction>
+            <ToggleButtonAction value={3} aria-label="centered"> New Negative Regulation </ToggleButtonAction>
+            <ToggleButtonAction value={4} aria-label="centered"> Remove </ToggleButtonAction>
           </ToggleButtonGroup>
         </div>
+        <div style={{display: "flex", justifyContent: "center", color: "#fff", backgroundColor: "rgba(97,97,97,0.5)", borderRadius: "4px"}}>
+        { tool === 0 && <Typography>Select proteins and regulations to move</Typography>}
+        { tool === 1 && <Typography>Click on the gray area to create a new protein</Typography> }
+        { (tool === 2 || tool == 3) && <Typography>Click down on the source protein and click up on the destination element</Typography> }
+        { tool === 4 && <Typography>Click on any element to remove it</Typography> }
+        </div>
+        </React.Fragment>
       )}
 
       <ProteinDialog
