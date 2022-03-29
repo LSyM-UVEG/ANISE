@@ -271,6 +271,17 @@ export function ResizablePanel(props) {
     [arrayWidth]
   );
 
+  // check maxGroth value
+  let newMaxGrowth = maxGrowth;
+  phasesArray.forEach(phase => {
+    newMaxGrowth = Math.max(newMaxGrowth, parseFloat(phase.$.a0i));
+    newMaxGrowth = Math.max(newMaxGrowth, parseFloat(phase.$.a0f));
+  });
+  if (newMaxGrowth !== maxGrowth) {
+    setMaxGrowth(newMaxGrowth);
+    return;
+  }
+
   const saveValue = (idPhase) => (property, value) => {
     //let id = selectedSeparator.current;
 
