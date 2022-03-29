@@ -92,7 +92,7 @@ class StagesTable extends Component {
                         { title: "Mechanics", field: "mechanics", type: "boolean", align: "left" },
                         { title: "Growth", field: "growth", type: "boolean", align: "left" },
                         { title: "Proteins", field: "proteins", type: "boolean", align: "left" },
-                        { title: "Total Time", field: "realTime", type: "numeric", align: "left" },
+                        { title: "Total time", field: "realTime", type: "numeric", align: "left" },
                       ]}
                       data={state.stages.map((stage, i) => {
                         if (stage) {
@@ -310,7 +310,7 @@ export function StageData(props) {
         <span style={{ width: "70px" }}> </span>
         <span style={{ borderStyle: "solid", borderRadius: "4px", width: "160px", backgroundColor: "GhostWhite" }}>
           <Typography color="textSecondary" variant="h5" gutterBottom>
-            Input Time
+            Input time
           </Typography>
           <InputNumber name="intermediate" value={inputTime} minValue={0} round={5} handleValue={handleValue} />
         </span>

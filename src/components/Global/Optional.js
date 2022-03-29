@@ -78,6 +78,7 @@ export default function Optional(props) {
   return (
     <React.Fragment>
       <div style={{ borderTop: "1px solid LightGray" }}>
+        <Tooltip title={<Typography> {props.tooltipTitle} </Typography>}>
         <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
           <Typography variant="h5" style={{ width: textSize, textAlign: "left" }}> {props.label} </Typography>
           {typeof props.buttonData !== "undefined" &&
@@ -98,6 +99,7 @@ export default function Optional(props) {
             />
           </div>
         </div>
+        </Tooltip>
       </div>
       <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
         <DialogContent>

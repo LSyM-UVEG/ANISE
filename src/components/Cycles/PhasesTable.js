@@ -9,6 +9,7 @@ import { InputNumber } from "../Potentials/InputNumber";
 import { IconButton } from "@material-ui/core";
 import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutlined";
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
+import {Tooltip} from "@material-ui/core";
 
 const theme = createMuiTheme({
   palette: {
@@ -100,33 +101,42 @@ export function PhaseData(props) {
           boxShadow: "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
         }}
       >
+<Tooltip title={<Typography> Initial value of the apical cell area</Typography>}>
         <span style={{ borderStyle: "solid", borderRadius: "4px", width: "160px", backgroundColor: "GhostWhite" }}>
           <Typography color="textSecondary" variant="h5" gutterBottom>
             Initial
           </Typography>
           <InputNumber name="a0i" value={data[selected].a0i} minValue={1} round={5} handleValue={handleValue} />
         </span>
+        </Tooltip>
 
+        <Tooltip title={<Typography> Final value of the apical cell area</Typography>}>
         <span style={{ borderStyle: "solid", borderRadius: "4px", width: "160px", backgroundColor: "GhostWhite" }}>
           <Typography color="textSecondary" variant="h5" gutterBottom>
             Final
           </Typography>
           <InputNumber name="a0f" value={data[selected].a0f} minValue={1} round={5} handleValue={handleValue} />
         </span>
+        </Tooltip>
 
+        <Tooltip title={<Typography> To proceed to the next phase, this percentage of ´Final´ must be reached </Typography>}>
         <span style={{ borderStyle: "solid", borderRadius: "4px", width: "160px", backgroundColor: "GhostWhite" }}>
           <Typography color="textSecondary" variant="h5" gutterBottom>
-            Interpolation
+            Threshold
           </Typography>
           <InputNumber name="reldiv" value={data[selected].reldiv} minValue={0} maxValue={1} round={5} handleValue={handleValue} />
         </span>
+        </Tooltip>
 
+        <Tooltip title={<Typography> Percentage of the total cell cycle in this phase</Typography>}>
         <span style={{ borderStyle: "solid", borderRadius: "4px", width: "160px", backgroundColor: "GhostWhite" }}>
           <Typography color="textSecondary" variant="h5" gutterBottom>
             Proportion
           </Typography>
           <InputNumber name="prop" value={data[selected].prop} minValue={0.0} maxValue={1.0} round={5} handleValue={handleValue} />
         </span>
+        </Tooltip>
+
       </div>
       <IconButton aria-label="next_phase" onClick={handleChangePhase("next")}>
         <ArrowForwardIosOutlinedIcon color="primary" />

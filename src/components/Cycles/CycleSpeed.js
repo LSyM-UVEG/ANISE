@@ -13,11 +13,11 @@ export function CycleSpeed(props) {
   if (!isNaN(speedValue)) speedValue = parseFloat(speedValue);
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
+    <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexWrap: "wrap", width: "200px" }}>
       <Typography variant="h5" align="right">
         <FunctionButton equation={speedValue} onChange={handleSpeed("speed")} />
-        <Tooltip title={<Typography>Speed: Growth rate of the apical area</Typography>}>
-          <span> Speed: </span>
+        <Tooltip title={<Typography>Growth rate of the apical area</Typography>}>
+          <span> Growth speed </span>
         </Tooltip>
       </Typography>
       <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "0px", marginLeft: "10px", width: "120px" }}>

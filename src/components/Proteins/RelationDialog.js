@@ -1,4 +1,5 @@
 import React from 'react';
+import Tooltip from "@material-ui/core/Tooltip";
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -46,7 +47,7 @@ export default function RelationDialog(props) {
 
     return (
         <Dialog open={props.open} onClose={(event) => { props.handleClose(); setOpened(false); }} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title" style={{textAlign: "center"}}>Edit Regulation</DialogTitle>
+            <DialogTitle id="form-dialog-title" style={{textAlign: "center"}}>Edit regulation</DialogTitle>
             <DialogContent>
                 <HillFunctionChart type={type} k={k} threshold={threshold} n={n} />
                 <div
@@ -56,6 +57,7 @@ export default function RelationDialog(props) {
                         margin: "20px",
                     }}
                 >
+                    <Tooltip title={<Typography>Maximal production</Typography>}>
                     <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "10px", width: "300px", marginLeft: "10px", textAlign: "center" }}>
                         <Typography color="textSecondary" variant="h6" gutterBottom>
                             {" "}
@@ -65,6 +67,8 @@ export default function RelationDialog(props) {
                         <InputNumber name="k" value={k} round={4} handleValue={handlerValue} />
                         <ConstantButton constants={props.constants} handlerValue={handlerValue("k")}/>
                     </div>
+                    </Tooltip>
+                    <Tooltip title={<Typography>Concentration yielding half-maximal</Typography>}>
                     <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "10px", width: "300px", marginLeft: "10px", textAlign: "center" }}>
                         <Typography color="textSecondary" variant="h6" gutterBottom>
                             {" "}
@@ -74,6 +78,8 @@ export default function RelationDialog(props) {
                         <InputNumber name="threshold" value={threshold} round={4} handleValue={handlerValue} />
                         <ConstantButton constants={props.constants} handlerValue={handlerValue("threshold")}/>
                     </div>
+                    </Tooltip>
+                    <Tooltip title={<Typography>Degree of cooperativity (Hill exponent)</Typography>}>
                     <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "10px", width: "300px", marginLeft: "10px", textAlign: "center" }}>
                         <Typography color="textSecondary" variant="h6" gutterBottom>
                             {" "}
@@ -83,6 +89,7 @@ export default function RelationDialog(props) {
                         <InputNumber name="n" value={n} round={4} handleValue={handlerValue} />
                         <ConstantButton constants={props.constants} handlerValue={handlerValue("n")}/>
                     </div>
+                    </Tooltip>
                 </div>
             </DialogContent>
             <DialogActions>

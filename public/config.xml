@@ -65,9 +65,9 @@
       <divisionshift t="celltype1">0.2 </divisionshift>
       <divisionshift t="celltype2">0.2</divisionshift>
       <divisionshift t="celltype3">0.2</divisionshift>
-      <divisiondispersion t="celltype1">0.2</divisiondispersion>
+      <divisiondispersion t="celltype1">0.3</divisiondispersion>
       <divisiondispersion t="celltype2">0.3</divisiondispersion>
-      <divisiondispersion t="celltype3">0.2</divisiondispersion>
+      <divisiondispersion t="celltype3">0.3</divisiondispersion>
       <divisiondispersionlimit t="celltype1">0.5</divisiondispersionlimit>
       <divisiondispersionlimit t="celltype2">0.5</divisiondispersionlimit>
        <divisiondispersionlimit t="celltype3">0.5</divisiondispersionlimit>

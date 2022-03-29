@@ -242,7 +242,7 @@ class Squares extends Component {
                     handler={this.props.handler}
                   />
                   <NumberObj
-                    label="Init Pos. X"
+                    label="Init. pos. X"
                     name="ix"
                     path={dataPath}
                     step={this.props.syntaxis.ix._step}
@@ -253,7 +253,7 @@ class Squares extends Component {
                     round={0}
                   />
                   <NumberObj
-                    label="Init Pos. Y"
+                    label="Init. pos. Y"
                     name="iy"
                     path={dataPath}
                     step={this.props.syntaxis.iy._step}
@@ -264,7 +264,7 @@ class Squares extends Component {
                     round={0}
                   />
                   <NumberObj
-                    label="Num. Cells X"
+                    label="Num. cells X"
                     name="sizex"
                     path={dataPath}
                     step={this.props.syntaxis.sizex._step}
@@ -275,7 +275,7 @@ class Squares extends Component {
                     round={0}
                   />
                   <NumberObj
-                    label="Num. Cells Y"
+                    label="Num. cells Y"
                     name="sizey"
                     path={dataPath}
                     step={this.props.syntaxis.sizey._step}

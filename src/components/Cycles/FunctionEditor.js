@@ -57,13 +57,14 @@ function PotentialsHexagon(props) {
 }
 
 function FunctionDialog(props) {
-  const properties = [["area", "area"], ["perimeter", "perimeter"], ["cell type","ctype"], ["neighboring cells", "neighboringcells"], ["number of cell vertexes", "ncellvertexes"],  ["x","x"], ["y","y"]]; // area_growth only in potencials y proteins
+  const properties = [["area", "area"], ["perimeter", "perimeter"], ["type","ctype"], ["number of neighbors", "neighboringcells"], ["number of vertexes", "ncellvertexes"],  ["x","x"], ["y","y"]]; // area_growth only in potencials y proteins
   const classes = useStyles();
   const { onClose, open, inputEquation } = props;
   const [equation, setEquation] = React.useState(inputEquation);
   const [cellSelected, setCellSelected] = React.useState("c1");
   const [localUpdate, setLocalUpdate] = React.useState(open);
   const blueColor = "#3f51b5";
+  const lightBlueColor = "rgb(207, 232, 252)";
 
   const handleClose = (returnValue) => {
     let value = returnValue;
@@ -92,7 +93,7 @@ function FunctionDialog(props) {
 
   return (
     <Dialog onClose={handleClose} maxWidth={"md"} aria-labelledby="function-dialog" open={open}>
-      <DialogTitle id="simple-dialog-title">Function Editor</DialogTitle>
+      <DialogTitle id="simple-dialog-title">Function editor</DialogTitle>
       <DialogContent>
         <Grid component="span" container spacing={2} justify={"center"}>
           <Grid item xs={12}>
@@ -103,18 +104,18 @@ function FunctionDialog(props) {
               fullWidth
               multiline
               variant="outlined"
-              label="Write Equation"
+              label="Write equation"
               placeholder="Write"
               onChange={(event) => handleEquationChange(event.target.value)}
             />
           </Grid>
           <Grid item xs={4} className={classes.root}>
-            Cell
+            Cellular environment 
             <svg width="160px" height="200px">
               <PotentialsHexagon color={cellSelected === "c1" ? blueColor : "white"} xTrans="50" yTrans="100" handle={handleCellChange("c1")} />
-              <PotentialsHexagon color={cellSelected === "c2" ? blueColor : "white"} xTrans="114" yTrans="100" handle={handleCellChange("c2")} />
-              <PotentialsHexagon color={cellSelected === "cp2" ? blueColor : "white"} xTrans="82" yTrans="154" handle={handleCellChange("cp2")} />
-              <PotentialsHexagon color={cellSelected === "cp1" ? blueColor : "white"} xTrans="82" yTrans="46" handle={handleCellChange("cp1")} />
+              <PotentialsHexagon color={cellSelected === "c2" ? lightBlueColor : "white"} xTrans="114" yTrans="100" handle={handleCellChange("c2")} />
+              <PotentialsHexagon color={cellSelected === "cp2" ? lightBlueColor : "white"} xTrans="82" yTrans="154" handle={handleCellChange("cp2")} />
+              <PotentialsHexagon color={cellSelected === "cp1" ? lightBlueColor : "white"} xTrans="82" yTrans="46" handle={handleCellChange("cp1")} />
 
               <text
                 class="not-selectable"
@@ -130,7 +131,7 @@ function FunctionDialog(props) {
                 class="not-selectable"
                 x="114"
                 y="108"
-                fill={cellSelected === "c2" ? "white" : blueColor}
+                fill={blueColor}
                 text-anchor="middle"
                 style={{ fontSize: "15px", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
               >
@@ -140,7 +141,7 @@ function FunctionDialog(props) {
                 class="not-selectable"
                 x="82"
                 y="162"
-                fill={cellSelected === "cp2" ? "white" : blueColor}
+                fill={blueColor}
                 text-anchor="middle"
                 style={{ fontSize: "15px", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
               >
@@ -150,7 +151,7 @@ function FunctionDialog(props) {
                 class="not-selectable"
                 x="82"
                 y="54"
-                fill={cellSelected === "cp1" ? "white" : blueColor}
+                fill={blueColor}
                 text-anchor="middle"
                 style={{ fontSize: "15px", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
               >
@@ -159,7 +160,7 @@ function FunctionDialog(props) {
             </svg>
           </Grid>
           <Grid item xs={4} className={classes.root}>
-            Properties
+            Cell properties
             <ButtonGroup orientation="vertical" color="primary" aria-label="vertical outlined primary button group" fullWidth>
               {properties.map((value) => (
                 <Button onClick={() => handleEquationChange(equation + " (%" + cellSelected + "property." + value[1] + ")")}>{value[0]}</Button>
@@ -180,7 +181,7 @@ function FunctionDialog(props) {
           </Grid>
           <Link href="https://osf.io/3g2t5/download" style={{ display: "table-cell" }} target="_blank">
             {" "}
-            See manual for more possibilities{" "}
+            Check TiFoSi manual for more possibilities{" "}
           </Link>
         </Grid>
       </DialogContent>
@@ -214,7 +215,7 @@ export function FunctionButton(props) {
       <Tooltip
         title={
           <React.Fragment>
-            <Typography>Open Equation Editor</Typography>
+            <Typography>Open equation editor</Typography>
           </React.Fragment>
         }
         aria-label="equation"

@@ -286,21 +286,23 @@ class Global extends Component {
                             />
                             <Optional
                               style={{ borderTop: "1px solid WhiteSmoke" }}
-                              label="Allow T1C2 transitions"
+                              label="T1 at periphery"
                               name="AllowT1C2"
                               path={[]}
                               value={state.global.AllowT1C2}
                               handler={this.props.handlerOptional}
+                              tooltipTitle="Activating this option will allow T1 transitions in cells at the tissue periphery."
                             />
                             <Optional
-                              label="Protein Binomial Distribution"
+                              label="Protein binomial distribution"
                               name="ProteinBinomialDistribution"
                               path={[]}
                               value={state.global.ProteinBinomialDistribution}
                               handler={this.props.handlerOptional}
+                              tooltipTitle="Activating this option will distribute proteins among cells binomially after cell division. Otherwise proteins are halved among cells."
                             />
                             <Optional
-                              label="Use Initialization File"
+                              label="Use initialization file"
                               name="InitializationFile"
                               path={[]}
                               value={state.global.itissue.file.$.f === "" ? undefined : true }
@@ -345,7 +347,7 @@ class Global extends Component {
                         <AccordionDetails>
                           <div style={{ width: "100%" }}>
                             <NumberObj
-                              label="Num. Cells X"
+                              label="Num. cells X"
                               name="ncellsx"
                               path={["itissue"]}
                               step={globalData.itissue.ncellsx._step}
@@ -356,7 +358,7 @@ class Global extends Component {
                               round={0}
                             />
                             <NumberObj
-                              label="Num. Cells Y"
+                              label="Num. cells Y"
                               name="ncellsy"
                               path={["itissue"]}
                               step={globalData.itissue.ncellsy._step}

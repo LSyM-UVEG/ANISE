@@ -21,7 +21,6 @@ import {
 } from "./FormulaParser";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { NearMe } from "@material-ui/icons";
-import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import { FormulaEditor, ProteinList } from "./FormulaEditor";
 import { withStyles } from "@material-ui/core/styles";
@@ -296,7 +295,7 @@ function ProteinsEditor(props) {
         let newRelations = [...relations];
         let relationId = getMaxIndexInArrayField(relations, "id") + 1;
         let connectorId = getMaxIndexInArrayField(connectors, "id") + 1;
-        newRelations.push(createRelationObjectJS(relationId, proteins[info.id].name, connectorId, tool === 2 ? "positive" : "negative", 1.0, 1.0, 1));
+        newRelations.push(createRelationObjectJS(relationId, proteins[info.id].name, connectorId, tool === 2 ? "positive" : "negative", 1.0, 3.0, 4));
         setRelations(newRelations);
 
         let newConnectors = [...connectors];
@@ -779,8 +778,8 @@ function ProteinsEditor(props) {
             <ToggleButtonAction value={4} aria-label="centered"> Remove </ToggleButtonAction>
           </ToggleButtonGroup>
         </div>
-        <div style={{display: "flex", justifyContent: "center", color: "#fff", backgroundColor: "rgba(97,97,97,0.5)", borderRadius: "4px"}}>
-        { tool === 0 && <Typography>Select proteins and regulations to move</Typography>}
+        <div style={{display: "flex", justifyContent: "center", color: "#fff", backgroundColor: "rgba(97,97,97,0.5)", borderRadius: "4px", height: "22.5px"}}>
+        { tool === 0 && proteins.length > 0 && <Typography>Select proteins and regulations to move</Typography>}
         { tool === 1 && <Typography>Click on the gray area to create a new protein</Typography> }
         { (tool === 2 || tool == 3) && <Typography>Click down on the source protein and click up on the destination element</Typography> }
         { tool === 4 && <Typography>Click on any element to remove it</Typography> }

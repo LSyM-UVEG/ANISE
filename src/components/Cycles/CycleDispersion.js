@@ -12,13 +12,16 @@ export function CycleDispersion(props) {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
-      <Tooltip title={<Typography>Dispersion: Amount of stochasticity in the duration of the cell cycle</Typography>}>
-        <Typography variant="h5" style={{ marginRight: "10px" }}>
+    <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", width: "500px", flexWrap: "wrap" }}>
+      <Typography variant="h5" style={{ marginRight: "10px", width: "500px" }}>
           {" "}
-          Dispersion:{" "}
+          Cell cycle{" "}
         </Typography>
-      </Tooltip>
+        <Typography variant="h6" style={{ marginRight: "10px" }}>
+          {" "}
+          Stochastic{" "}
+        </Typography>
+      
       {" "}
       <Slider //className={classes.slider}
         name={"dispersion"}
@@ -31,6 +34,10 @@ export function CycleDispersion(props) {
         aria-labelledby="input-slider"
         valueLabelDisplay="off"
       />
+      <Typography variant="h6" style={{ marginRight: "10px" }}>
+          {" "}
+          Deterministic{" "}
+        </Typography>
       <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "0px", marginLeft: "10px", width: "120px" }}>
         <InputNumber name="dispersion" value={props.getPropertyValue("dispersion")} minValue={0} maxValue={1} round={4} handleValue={handleValue} handleLocalValue={handleValue}/>
       </div>

@@ -101,8 +101,8 @@ function SwitchWithAlertDialog(props) {
           <DialogContentText id="alert-dialog-description">
             {/* <Typography variant="h5"> */}
               {props.allStages
-                ? "If you disable all, different values can be configured for each stage. By default its values will be a copy of the stage all."
-                : "If you enable all, the particular values of each stage will be lost. The stage all will copy the values of stage " + props.currentStage + "."}
+                ? "If you disable ALL, different values can be configured for each stage."
+                : "If you enable ALL, the particular values of each stage will be lost. The value of stage " + props.currentStage + " will be used in all stages."}
             {/* </Typography> */}
           </DialogContentText>
         </DialogContent>
@@ -200,7 +200,7 @@ export function SelectorStageCelltype(props) {
         <SwitchWithAlertDialog allStages={allStages} setAllStages={setAllStages} handleMenuItemClickStage={handleMenuItemClickStage} currentStage={props.stageSelected}/>
         <Typography variant="h5" style={{ marginRight: "10px" }} color={allStages ? "primary" : "black"}>
           {" "}
-          all{" "}
+          ALL{" "}
         </Typography>
       </div>
       { typeof props.celltypeList !== "undefined" && 

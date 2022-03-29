@@ -6,7 +6,7 @@ export function createConnectorObjectJS(id, type, typeId, joint = 0.0) {
     return {id: id, type: type, typeId: typeId, joint: joint};
 }
 
-export function createRelationObjectJS(id, startProtein, endConnectorId, type = "positive", k = 1.0, threshold = 1.0, n = 1, startJoint = 0.0, points = []) {
+export function createRelationObjectJS(id, startProtein, endConnectorId, type = "positive", k = 1.0, threshold = 3.0, n = 4, startJoint = 0.0, points = []) {
     return {id: id, type: type, startProtein: startProtein, startJoint: startJoint, points: points, endConnectorId: endConnectorId, k: k, threshold: threshold, n: n};
 }
 

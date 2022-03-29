@@ -96,7 +96,7 @@ export function CycleDivision(props) {
         //height: "40px",
       }}
     >
-      <Typography variant="h6"> Set Preconfigured Division: </Typography>
+      <Typography variant="h6"> Set preconfigured division mode: </Typography>
       <span>
       <Button variant="outlined"  onClick={() => setPreconfiguredDivision("Hertwig")}>
         Hertwig
@@ -126,7 +126,7 @@ export function CycleDivision(props) {
       >
         <CardContent>
           <Typography variant="h5" gutterBottom>
-            Division Shift
+            Division orientation
           </Typography>
           <HexagonCut
             shift={isNaN(divisionShift) ? divisionShift : parseFloat(divisionShift)}
@@ -164,8 +164,8 @@ export function CycleDivision(props) {
         >
           <Typography color="textSecondary" variant="h5" gutterBottom>
             <FunctionButton equation={divisionShift} onChange={setAndUpdateDivisionShift} />
-            <Tooltip title={<Typography>Shift angle, from the principal axis of the inertia tensor, that defines the cell division orientation</Typography>}>
-              <span> Shift </span>
+            <Tooltip title={<Typography>Angle with respect to the inertia axis that defines the cell division orientation</Typography>}>
+              <span> Div. angle </span>
             </Tooltip>
           </Typography>
 
@@ -191,10 +191,10 @@ export function CycleDivision(props) {
             borderStyle: "solid",
           }}
         >
-          <Tooltip title={<Typography>Random orientation using a Normal distribution (&sigma;, mean) </Typography>}>
+          <Tooltip title={<Typography>Set randomness in the division orientation using a Normal distribution (&sigma;, mean) </Typography>}>
             <Typography color="textSecondary" variant="h5" gutterBottom>
               {" "}
-              D.Dispersion{" "}
+              Angle dispersion{" "}
             </Typography>
           </Tooltip>
           <InputNumber name="divisiondispersion" value={divisionDispersion} minValue={0} round={5} handleValue={handlerValue} handleLocalValue={handlerLocalValue} />
@@ -211,7 +211,7 @@ export function CycleDivision(props) {
           <Tooltip title={<Typography>Bounds (limit value) to the tails of the Normal distribution</Typography>}>
             <Typography color="textSecondary" variant="h5" gutterBottom>
               {" "}
-              Limit{" "}
+              Dispersion limit{" "}
             </Typography>
           </Tooltip>
           <InputNumber
@@ -235,7 +235,7 @@ export function CycleDivision(props) {
       >
         <CardContent>
           <Typography variant="h5" gutterBottom>
-            Division Dispersion
+            Division dispersion
           </Typography>
           <DispersionChart
             dispersion={parseFloat(divisionDispersion)}

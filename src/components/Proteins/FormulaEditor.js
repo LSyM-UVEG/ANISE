@@ -42,12 +42,14 @@ const getProteinsList = (proteinsData) => {
 
 
 function FunctionEditor(props) {
-  const properties = [["area", "area", "Cell area"], ["perimeter", "perimeter", "Cell perimeter"], ["cell type","ctype", "Cell type"], ["x","x", "X coordinate of the cell center"], ["y","y", "Y coordinate of the cell center"], ["Γ","k_gamma", "GAMMA (Γ): Global cortical tension" ], ["Κ","k_kappa", "KAPPA (K): Elastic constant or Young modulus"]]; // area_growth only in potencials y proteins
+  const properties = [["area", "area", "Cell apical area"], ["perimeter", "perimeter", "Cell perimeter"], ["Type","ctype", "Cell type"], ["x","x", "X coordinate of the cell center"], ["y","y", "Y coordinate of the cell center"], ["Γ","k_gamma", "GAMMA (Γ): Global cortical tension" ], ["Κ","k_kappa", "KAPPA (K): Elastic constant or Young modulus"]]; // area_growth only in potencials y proteins
   const predefinedFunctions = [
-    ["hill", "function_hill_f(x,k,n)", "function_hill_f(x,k,n) = k^n / (k^n + x^n)"],
-    ["hill inverse", "function_hill_f_inverse(x,k,n)", "function_hill_f_inverse(x,k,n) = x^n / (k^n + x^n)"]
+    ["Negative", "function_hill_f(x,k,n)", "function_hill_f(x,k,n) = k^n / (k^n + x^n)"],
+    ["Positive", "function_hill_f_inverse(x,k,n)", "function_hill_f_inverse(x,k,n) = x^n / (k^n + x^n)"]
   ];
-  const combinedFunctions = [["signal", "signal", "Weighted amount of proteinName in neighboring cells, weighted for every neighbor by the amount of shared “membrane” (edge length) relative to the perimeters of the neighboring cells"], ["signal raw", "signal_raw", "Total amount of proteinName in neighboring cells"], ["diffusion", "diffusion", "Diffusion, the number of protein molecules is conserved"]];
+  const combinedFunctions = [
+    ["Juxtacrine (Receptor-Ligand)", "signal", "Weighted amount of proteinName in neighboring cells, weighted for every neighbor by the amount of shared “membrane” (edge length) relative to the perimeters of the neighboring cells"],
+    ["Paracrine (Diffusion)", "diffusion", "Diffusion, the number of protein molecules is conserved"]];
   const { onClose, update, inputEquation, disabled } = props;
   const [equation, setEquation] = React.useState(inputEquation);
   const [localUpdate, setLocalUpdate] = React.useState(update);
@@ -113,7 +115,7 @@ function FunctionEditor(props) {
 
       <div style={{ display: "flex", justifyContent: "space-evenly", height: "265px", overflow: "auto", width: "100%" }}>
         <div>
-          <Typography align="center">Cell Properties</Typography>
+          <Typography align="center">Cell properties</Typography>
           <ButtonGroup orientation="vertical" color="primary" aria-label="vertical outlined primary button group" fullWidth>
             {properties.map((value) => (
               <Tooltip title={<Typography> {value[2]} </Typography>} placement="top">
@@ -124,7 +126,7 @@ function FunctionEditor(props) {
         </div>
 
         <div>
-        <Typography align="center">Predefined Functions</Typography>
+        <Typography align="center">Regulatory Hill functions</Typography>
           <ButtonGroup orientation="vertical" color="primary" aria-label="vertical outlined primary button group" fullWidth>
             {predefinedFunctions.map((value) => (
               <Tooltip title={<Typography> {value[2]} </Typography>} placement="top">
@@ -135,7 +137,7 @@ function FunctionEditor(props) {
 
           <p></p>
 
-          <Typography align="center">Combined Function</Typography>
+          <Typography align="center">Signaling functions</Typography>
           <ButtonGroup orientation="vertical" color="primary" aria-label="vertical outlined primary button group" fullWidth>
             {combinedFunctions.map((value) => (
               <Tooltip title={<Typography> {value[2]} </Typography>} placement="top">

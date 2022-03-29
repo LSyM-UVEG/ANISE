@@ -325,8 +325,7 @@ export function Constants(props) {
           </Grid>
           <Grid item xs={6}>
             <Typography align="center" variant="h5">
-              {" "}
-              Constants{" "}
+              Constant parameters
             </Typography>
           </Grid>
           <Grid item xs={3}>

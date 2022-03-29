@@ -486,7 +486,7 @@ function Potentials(props) {
             }}
           >
             <Typography variant="h5" gutterBottom>
-              Other Mechanical parameters
+              Other mechanical parameters
             </Typography>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <PotentialsForceHexagon
