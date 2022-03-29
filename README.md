@@ -1,5 +1,5 @@
 # ANISE
-ANISE (grAphical coNfigurator of TiFoSi In Silico Experiments) is an application that allows you to configure the input file of Tifosi which is a computational tool to simulate the cellular dynamics of planar epithelia. 
+ANISE (grAphical coNfigurator of TiFoSi In Silico Experiments) is an application that allows you to configure the input file of TiFoSi (Tissues: Forces & Signalling) which is a computational tool to simulate the cellular dynamics of planar epithelia. 
 
 The entire application is developed in javascript, mainly using [React](https://reactjs.org/), a library for building user interfaces.
 
