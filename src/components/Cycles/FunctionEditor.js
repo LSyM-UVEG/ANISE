@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, DialogActions, DialogContent, IconButton, Typography } from "@material-ui/core";
+import { Button, DialogActions, DialogContent, IconButton, Typography, OutlinedInput } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
@@ -97,16 +97,17 @@ function FunctionDialog(props) {
       <DialogContent>
         <Grid component="span" container spacing={2} justify={"center"}>
           <Grid item xs={12}>
-            <TextField
+            <OutlinedInput
               aria-label="empty textarea"
               value={equation}
-              rows={3}
+              rows={2}
               fullWidth
               multiline
               variant="outlined"
-              label="Write equation"
+              
               placeholder="Write"
               onChange={(event) => handleEquationChange(event.target.value)}
+              style={{fontSize: "1.25rem", marginBottom: "10px"}}
             />
           </Grid>
           <Grid item xs={4} className={classes.root}>
