@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "space-between",
     height: "200px",
-    width: "60px"
+    width: "100px"
     //justiyContent: "center",
     // alignItems: "stretch",
     //alignContent: "stretch"
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 function VerticalSlider(props) {
   let marginStr = typeof props.rightSide !== "undefined" ? "0px -1em" : "0px 0px";
   return (
-    <div className="Controls-slider-wrap">
+    <div className="Controls-slider-wrap" style={{zIndex:"1"}}>
       <input
         className="verticalSlider"
         type="range"
@@ -126,6 +126,66 @@ function Line(props) {
   );
 }
 
+function AreaLine(props) {
+  return (
+    <svg
+      width="40px"
+      height="200px"
+      viewBox="0 0 100% 100%"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{marginRight:"-15px", zIndex:"1"}}
+    >
+      <defs>
+        <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+          <polyline points="0,3 5,5 0,7" stroke="#3f51b5" fill="#3f51b5" />
+        </marker>
+      </defs>
+      <line
+        x1="50%"
+        y1="100%"
+        x2="50%"
+        y2="0%"
+        stroke="#3f51b5"
+        strokeWidth="5px"
+        markerEnd="url(#arrowHead)"
+      />
+    </svg>
+  );
+}
+
+function TimeLine(props) {
+  return (
+    <React.Fragment>
+    <svg
+      width="100%"
+      height="40px"
+      viewBox="0 0 100% 100%"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{marginTop:"-20px", paddingLeft:"97px", paddingRight:"60px"}}
+    >
+      {/* <defs>
+        <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+          <polyline points="0,3 10,5 0,10" />
+        </marker>
+      </defs> */}
+      <line
+        x1="0%"
+        y1="50%"
+        x2="100%"
+        y2="50%"
+        stroke="#3f51b5"
+        strokeWidth="5px"
+        markerEnd="url(#arrowHead)"
+      />
+    </svg>
+    <span style={{display:"flex", justifyContent:"space-between", marginTop:"-20px", paddingLeft:"40px", paddingRight:"20px"}}>
+      <Typography variant="h6">Start cell cycle</Typography>
+      <Typography variant="h6" color="textSecondary">time</Typography>
+      <Typography variant="h6">End cell cycle</Typography>
+    </span>
+    </React.Fragment>
+  );
+}
 
 
 function GrowthPhase(props) {
@@ -375,9 +435,10 @@ export function ResizablePanel(props) {
   });
 
   return (
+    <React.Fragment>
     <div style={{display: "flex", alignItems: "center"}}>
       <div class={classes.legend} /*style={{alignItems:"flex-end"}}*/>
-        <Typography variant="h6">Max</Typography>
+        <Typography variant="h6">Max area</Typography>
         <InputBase
             className="specialInputNumber"
             color="primary"
@@ -394,12 +455,14 @@ export function ResizablePanel(props) {
           />
         <Typography variant="h6">{(0.5 * (maxGrowth + 1.0)).toFixed(1)}</Typography>
         <Typography variant="h6">1.0</Typography>
-        <Typography variant="h6">Min</Typography>
+        <Typography variant="h6">Min area</Typography>
       </div>
+      <AreaLine/>
       <div style={{display:"flex", flexDirection:"column", width:"100%"}}>
         <div ref={sliderRef} className={classes.root}> {divPanel} </div>
       </div>
-      <div class={classes.legend} /*style={{alignItems:"flex-start"}}*/>
+      <div style={{width:"100px"}}></div>
+      {/* <div class={classes.legend}>
         <Typography variant="h6">Max</Typography>
         <InputBase
             className="specialInputNumber" 
@@ -418,7 +481,9 @@ export function ResizablePanel(props) {
         <Typography variant="h6">{(0.5 * (maxGrowth + 1.0)).toFixed(1)}</Typography>
         <Typography variant="h6">1.0</Typography>
         <Typography variant="h6">Min</Typography>
-      </div>
+      </div> */}
     </div>
+    <TimeLine/>
+    </React.Fragment>
   );
 }
