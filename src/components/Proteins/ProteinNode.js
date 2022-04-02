@@ -1,10 +1,26 @@
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({  
+    proteinStyle: {
+      "&:hover": {
+        strokeWidth: "3px",
+      },
+    },
+    commonStyle: {
+      "&:hover": {
+        cursor: "pointer",
+      },
+    }
+  }));
+
 export default function ProteinNode(props) {
+    const classes = useStyles();
     let transf = "translate(" + props.x.toString() + ", " + props.y.toString() + ")";
 
     return (
-        <g transform={transf}>
+        <g transform={transf} class={classes.commonStyle}>
             <g onMouseDown={props.onMouseDown} onDoubleClick={props.onDoubleClick}>
-                <rect x={-props.width/2} y={-props.height/2} width={props.width} height={props.height} stroke="rgb(200,200,200)" strokeWidth="1px" fill="white" />
+                <rect x={-props.width/2} y={-props.height/2} width={props.width} height={props.height} stroke="rgb(200,200,200)" strokeWidth="1px" fill="white" class={classes.proteinStyle}/>
                 <text className="not-selectable" x="0" y="0" fill="rgb(100,100,100)" textAnchor="middle" dominantBaseline="middle" style={{ fontSize: 24 }}>{props.name}</text>
             </g>
             {props.degradation !== null && <g onMouseDown={() => props.onRemoveProp("degradation")} transform={"translate(" + props.width/2 + ", 0)"}>

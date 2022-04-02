@@ -1,4 +1,17 @@
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({  
+    relationStyle: {
+      "&:hover": {
+        cursor: "pointer",
+        //strokeWidth: "8px",
+      },
+    },
+  }));
+
 export default function ProteinRelation(props) {
+    const classes = useStyles();
+
     let points = [{x: props.startX, y: props.startY}];
     props.points.forEach((point) => {points.push({x: point.x, y: point.y})});
     points.push({x: props.endX, y: props.endY});
@@ -25,7 +38,7 @@ export default function ProteinRelation(props) {
     //transf = "translate(" + points[n-1].x.toString() + ", " + points[n-1].y.toString() + ") rotate(" + angle.toString() + ")";
 
     return (
-        <g onDoubleClick={props.onDoubleClick}>
+        <g onDoubleClick={props.onDoubleClick} class={classes.relationStyle}>
             {points.map((point, i) => (
                 (i < n-1) && <line key={i} x1={points[i].x} y1={points[i].y} x2={points[i+1].x} y2={points[i+1].y} stroke={color} strokeWidth="5" onMouseDown={props.onRelationMouseDown(i)} />
             ))}
