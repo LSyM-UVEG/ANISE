@@ -20,7 +20,7 @@ export function CycleSpeed(props) {
           <span> Growth speed </span>
         </Tooltip>
       </Typography>
-      <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "0px", marginLeft: "10px", width: "120px" }}>
+      <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "0px", width: "120px" }}>
         <Tooltip title={<Typography>{speedValue}</Typography>} aria-label="equation">
           <InputNumber onlyNumbers name="speed" value={props.getPropertyValue("speed")} minValue={0.0} round={4} handleValue={handleSpeed} />
         </Tooltip>

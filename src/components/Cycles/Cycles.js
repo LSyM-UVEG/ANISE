@@ -418,7 +418,7 @@ export function Cycles(props) {
                   cellTypeColorList={props.cellTypeColorList}
                 />
 
-                <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", alignContent: "stretch", marginTop: "10px" }}>
+                <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: "10px" }}>
                   <CycleDispersion getPropertyValue={getPropertyValue} setPropertyValue={setPropertyValue} />
                   <CycleSpeed getPropertyValue={getPropertyValue} setPropertyValue={setPropertyValue} />
                 </div>
