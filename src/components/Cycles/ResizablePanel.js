@@ -445,12 +445,11 @@ export function ResizablePanel(props) {
             type="number"
             value={maxGrowth}
             inputProps={{ className: classes.fieldInput, step: "0.01", min: "0"}}
-            onChange={(e) => setMaxGrowth(
-				parseFloat(e.target.valueAsNumber.toLocaleString('en-US', {
+            onChange={(e) => !isNaN(e.target.valueAsNumber) && setMaxGrowth(
+				        parseFloat(e.target.valueAsNumber.toLocaleString('en-US', {
                               minimumFractionDigits: 0,
                               maximumFractionDigits: 2
-                          }).replace(/,/g, ""))
-			)}
+                          }).replace(/,/g, "")))}
             style={{backgroundColor: "rgba(0,0,255,0.1)", borderRatio: "10px", borderColor: "rgba(0,0,255,0.5)", borderStyle: "solid"}}
           />
         <Typography variant="h6">{(0.5 * (maxGrowth + 1.0)).toFixed(1)}</Typography>
