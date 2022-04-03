@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -83,21 +83,21 @@ export default function ProteinDialog(props) {
 
     return (
         <Dialog open={props.open} onClose={(event) => { props.handleClose(); setOpened(false); }} aria-labelledby="form-dialog-title" maxWidth={false}>
-            <DialogTitle id="form-dialog-title" style={{textAlign: "center"}}>Edit Protein</DialogTitle>
+            <DialogTitle id="form-dialog-title" style={{textAlign: "center"}}>Edit protein</DialogTitle>
             <DialogContent>
-                <TextField
+                <OutlinedInput
                     error={error !== 0}
                     helperText={errorText}
                     autoFocus
-                    margin="normal"
                     size="medium"
                     id="name"
-                    label="Species Name"
                     type="text"
                     value={proteinName}
                     onChange={(event) => { setProteinName(event.target.value); setError(props.handleValidation(event.target.value)); }}
-                    variant="outlined"
                     fullWidth
+                    placeholder="Write name"
+                    style={{fontSize: "1.5rem", marginBottom: "10px"}}
+                    inputProps={{ style: {textAlign: "center"}}}
                 />
 
                 {props.visualEnabled && <div

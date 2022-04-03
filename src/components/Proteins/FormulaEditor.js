@@ -100,7 +100,6 @@ function FunctionEditor(props) {
         fullWidth
         multiline
         variant="outlined"
-        label="Write Equation"
         placeholder="Write"
         onChange={(event) => handleEquationChange(event.target.value)}
         style={{fontSize: "1.25rem", marginBottom: "10px"}}
