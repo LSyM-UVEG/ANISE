@@ -12,7 +12,7 @@
       <ncellsy>25</ncellsy>
       <backgroundcells>celltype1</backgroundcells>
       <square t="celltype2" ix="16" iy="13" sizex="8" sizey="7"/>
-      <square t="celltype3" ix="0" iy="0" sizex="2" sizey="2"/>
+      <square t="celltype3" ix="0" iy="0" sizex="5" sizey="5"/>
       <file f=""/>
     </itissue>
     <AllowT1C2/>
