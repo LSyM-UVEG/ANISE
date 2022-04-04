@@ -70,6 +70,7 @@ import protein_toolbar from './assets/images/protein_toolbar.png';
 import edit_protein from './assets/images/edit_protein.png';
 import cycles_parameters from './assets/images/cycles_parameters.png';
 import cycles_all from './assets/images/cycles_all.png';
+import cycles_all from './assets/images/cycles_setup.png';
 
 import global_all from './assets/images/global_all.png';
 import stages_all from './assets/images/stages_all.png';
@@ -1020,18 +1021,18 @@ function ManualContent(props) {
       </div>
 
       <SectionHeading paragraph variant="h5">
-      Cell dispersion and growth speed
+      Cell cycle dispersion and growth speed
       </SectionHeading>
 
       <div class="w3-code">
       <Typography paragraph align="left">
-      The <b>Dispersion</b> parameter establishes the value of epsilon that weights the amount of stochasticity in the duration of the cell cycle.
+      The <b>Cell cycle</b> parameter establishes the value of epsilon that weights the amount of stochasticity in the duration of the cell cycle.
       </Typography>
       <Typography paragraph align="center">
       <img alt="" src={dispersion}/>
       </Typography>
       <Typography paragraph align="left">
-      The <b>Speed</b> parameter actually sets the putative duration of the cell cycle. 
+      The <b>Growth speed</b> parameter actually sets the putative duration of the cell cycle (See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSI for more explanations). 
       Note that the default value is 0, assuming that the apical area of particular cell type will not grow.
       <p/>
       This last parameter can be defined as function, depending on the amount of particular protein species, using the <i>Function Editor</i> (<EditIcon/>) as explained below.
@@ -1073,12 +1074,21 @@ function ManualContent(props) {
       </Typography>
       
       <Typography paragraph align="left">
-      Alternatively, you can directly set the <i>Division Shift</i>, <i>Dispersion</i> and <i>Limit</i> values using the three boxes between the two graphs.
+      Alternatively, you can directly set the <i>Division angle</i>, <i>Angle dispersion</i> and <i>Disersion limit</i> values using the three boxes between the two graphs. 
       </Typography>
 
       <Typography paragraph align="center">
       <img alt="" src={cycles_parameters}/>
       </Typography>
+
+     <Typography paragraph align="left">
+      Moreover, you can set a preconfigured division mode (Hertwig, Anti-Hertwig and Random) using the following toolbar. 
+      </Typography>
+
+      <Typography paragraph align="center">
+      <img alt="" src={cycles_setup}/>
+      </Typography>
+
 
       <Typography paragraph align="left">
       Please, note that although the maximum value of the <i>Division Dispersion</i> is 10 using the slider, it can be set with a higher value using the box.
