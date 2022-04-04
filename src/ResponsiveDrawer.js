@@ -36,14 +36,14 @@ import background from './assets/images/background.png';
 import squares from './assets/images/squares.png';
 import sections from './assets/images/sections.PNG';
 import loadsave from './assets/images/load_save.png';
-import canvas from './assets/images/canvas.PNG';
+import canvas from './assets/images/canvas.png';
 import toolbar_potentials from './assets/images/toolbar_potentials.png';
 import one_cell from './assets/images/one_cell.png';
 import two_cells from './assets/images/two_cells.png';
-import function_editor from './assets/images/function_editor.PNG';
+import function_editor from './assets/images/function_editor.png';
 import function_editor_equation from './assets/images/function_editor_equation.PNG';
-import function_editor_options from './assets/images/function_editor_options.PNG';
-import dispersion from './assets/images/dispersion.PNG';
+import function_editor_options from './assets/images/function_editor_options.png';
+import dispersion from './assets/images/dispersion.png';
 import phases_add from './assets/images/phases_add.png';
 import phases_graph from './assets/images/phases_graph.png';
 import phases_params from './assets/images/phases_params.png';
@@ -53,9 +53,9 @@ import initialization_file from './assets/images/initialization_file.png';
 
 import stages_add from './assets/images/stages_add.png';
 import stages from './assets/images/stages.png';
-import stages_properties from './assets/images/stages_properties.PNG';
-import stages_table from './assets/images/stages_table.PNG';
-import protein_constants from './assets/images/protein_constants.PNG';
+import stages_properties from './assets/images/stages_properties.png';
+import stages_table from './assets/images/stages_table.png';
+import protein_constants from './assets/images/protein_constants.png';
 import protein_editor from './assets/images/protein_editor.png';
 import protein_editor_mode1 from './assets/images/protein_editor_mode1.png';
 import protein_editor_mode2 from './assets/images/protein_editor_mode2.png';
@@ -68,16 +68,16 @@ import regulation_properties from './assets/images/regulation_properties.png';
 
 import protein_toolbar from './assets/images/protein_toolbar.png';
 import edit_protein from './assets/images/edit_protein.png';
-import cycles_parameters from './assets/images/cycles_parameters.PNG';
-import cycles_all from './assets/images/cycles_all.PNG';
+import cycles_parameters from './assets/images/cycles_parameters.png';
+import cycles_all from './assets/images/cycles_all.png';
 
-import global_all from './assets/images/global_all.PNG';
-import stages_all from './assets/images/stages_all.PNG';
+import global_all from './assets/images/global_all.png';
+import stages_all from './assets/images/stages_all.png';
 import potentials_all from './assets/images/potentials_all.png';
-import proteins_all from './assets/images/proteins_all.PNG';
+import proteins_all from './assets/images/proteins_all.png';
 import protein_list from './assets/images/protein_list.PNG';
 import protein_formula_top from './assets/images/protein_formula_top.PNG';
-import protein_formula_bottom from './assets/images/protein_formula_bottom.PNG';
+import protein_formula_bottom from './assets/images/protein_formula_bottom.png';
 
 import { withStyles } from "@material-ui/core/styles";
 
