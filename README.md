@@ -3,7 +3,7 @@ ANISE (grAphical coNfigurator of TiFoSi In Silico Experiments) is an application
 
 The entire application is developed in javascript, mainly using [React](https://reactjs.org/), a library for building user interfaces.
 
-The app can be accessed through the following link [Tifosi Web](https://lsymserver.uv.es/lsym/ANISE/)
+The app can also be accessed through the following link [ANISE](https://lsymserver.uv.es/lsym/ANISE/).
 
 ## Quick Guide to building
 
