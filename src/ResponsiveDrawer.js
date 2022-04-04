@@ -167,7 +167,7 @@ function ManualContent(props) {
         </div>
 
         <SectionHeading paragraph variant="h5">
-		    Configuration Sections
+		    Configuration sections
 	      </SectionHeading>
 
         <div class="w3-code">        
@@ -260,13 +260,13 @@ function ManualContent(props) {
     </div>
 
     <SectionHeading paragraph variant="h5">
-      Simulation Parameters
+      Simulation parameters
     </SectionHeading>
 										
     <div class="w3-code">
 	
       <Typography paragraph variant="h6" align="left">
-		  Delta Time
+		  Delta time
       </Typography>
       <Typography paragraph align="left">
       Provides the value of the dimensionless <b>time step</b> used in the Euler algorithm to numerically integrate the dynamics of the tissue mechanics/growth and the protein kinetics.
@@ -281,7 +281,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph variant="h6" align="left">
-		  Allow T1C2 Transitions
+		  Allow T1C2 transitions
       </Typography>
 
       <Typography paragraph align="left">
@@ -302,7 +302,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph variant="h6" align="left">
-		  Initialization File
+		  Initialization file
       </Typography>
       <Typography paragraph align="left">
       This option offers an alternative way to initialize the tissue, and start the simulation from this state using an <i>initialization file</i>. Press the pencil button (<EditIcon />) to load this file.
@@ -318,7 +318,7 @@ function ManualContent(props) {
       </Typography>
 	  	  
 	   <Typography paragraph variant="h6" align="left">
-		  Cell Types
+		  Cell types
       </Typography>
 	  
       <Typography paragraph align="left">
@@ -681,7 +681,7 @@ function ManualContent(props) {
 
 
     <SectionHeading paragraph variant="h5">
-    Proteins Properties
+    Proteins properties
     </SectionHeading>
     <div class="w3-code">		
 		  <Typography paragraph align="left">
@@ -703,7 +703,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph variant="h6" align="left">
-		  Species Name
+		  Species name
       </Typography>
       <Typography paragraph align="left">
       Set the protein name. This name is arbitraty and you can provide any alphanumerical string.
@@ -713,7 +713,7 @@ function ManualContent(props) {
       </Typography>
 
       <Typography paragraph variant="h6" align="left">
-		  Degradation, Basal and Diffusion rates
+		  Degradation, basal and diffusion rates
       </Typography>
       <Typography paragraph align="left">
       These properties can be optionally activated and you can set a value or select a previously defined constant using the pencil button for each one of them. (<EditIcon />).
@@ -762,7 +762,7 @@ function ManualContent(props) {
     </div>
 
     <SectionHeading paragraph variant="h5">
-    Regulation Properties
+    Regulation properties
     </SectionHeading>
     <div class="w3-code">		
 		  <Typography paragraph align="left">
@@ -827,7 +827,7 @@ function ManualContent(props) {
     </div>
 
 		<SectionHeading paragraph variant="h5">
-      	Protein List
+      	Protein list
         </SectionHeading>
         <div class="w3-code">      
       	<Typography paragraph>
@@ -868,7 +868,7 @@ function ManualContent(props) {
         </div>		
       
       <SectionHeading paragraph variant="h5" align="left">
-      Stage and Cell Type selection
+      Stage and cell type selection
       </SectionHeading>
 
       <div class="w3-code">      
@@ -972,7 +972,7 @@ function ManualContent(props) {
       </div>
 
       <SectionHeading paragraph variant="h5" align="left">
-      Function Editor
+      Function editor
       </SectionHeading>
 
       { titulo_function_editor() }
@@ -1004,7 +1004,7 @@ function ManualContent(props) {
       </div>
 	
     <SectionHeading paragraph variant="h5">
-		Stage and Cell Type selection
+		Stage and cell type selection
 	  </SectionHeading>
 
       <div class="w3-code">      
