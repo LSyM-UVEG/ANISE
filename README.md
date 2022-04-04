@@ -31,7 +31,7 @@ To note, some npm modules need to be compiled with **Python** and a **C++ Compil
  
 Note that you are free to install the packages via the terminal as long as you install the good version of _Nodejs_ (16.14). 
 
-#### LINUX SETUP
+#### LINUX/MAC SETUP
 
 * **Nodejs** 
 
