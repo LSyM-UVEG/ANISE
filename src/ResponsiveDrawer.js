@@ -388,15 +388,15 @@ function ManualContent(props) {
       <td>Region selected identified by an predefined number</td>
       </tr>  
       <tr>
-      <td>Cell Type</td>
+      <td>Cell type</td>
       <td>Cell type that ocuppies the region</td>
       </tr>
 	  <tr>
-      <td>Init Position (X, Y)</td>
+      <td>Initial position (X, Y)</td>
       <td>Coordinates of the bottom-left corner of the region</td>
       </tr>
 	  <tr>
-      <td>Number Cells (X, Y)</td>
+      <td>Number of cells (X, Y)</td>
       <td>Size of the region in number of cells</td>
       </tr>
       </table>	  
@@ -784,9 +784,9 @@ function ManualContent(props) {
       <Typography paragraph align="left">
       The regulation (Hill function) parameters are:
       <ul>
-				<li><b>Amplitude (K)</b>: Final value of the function.</li>
-				<li><b>Threshold</b>: Input value that makes the function value 0.5 with respect to its final value. </li>
-				<li><b>Order (n)</b>: Function order which represents the value of the slope of the function.</li>
+				<li><b>Maximal production (k)</b>: Final value of the function.</li>
+				<li><b>Threshold</b>: Concentration yield-half maximal (input value that makes the function value 0.5 with respect to its final value). </li>
+				<li><b>Order (n)</b>: Degree cooperativity (function order which represents the value of the slope of the function).</li>
 			</ul>        
       </Typography>
       <Typography paragraph align="left">
@@ -823,7 +823,7 @@ function ManualContent(props) {
       		<img alt="" src={protein_formula_bottom}/>
       	</Typography>
       <Typography paragraph align="left">
-      In the case of <i>combined functions</i>, you must select the function to use first, and then select the protein to which it applies.
+      In the case of <i>Signaling functions</i>, you must select the function to use first, and then select the protein to which it applies.
       </Typography>      
     </div>
 
@@ -1081,7 +1081,15 @@ function ManualContent(props) {
       <img alt="" src={cycles_parameters}/>
       </Typography>
 
-     <Typography paragraph align="left">
+
+      <Typography paragraph align="left">
+      Please, note that although the maximum value of the <i>Angle dispersion</i> is 10 using the slider, it can be set with a higher value using the box.
+      <p/>
+      As in the case of <i>Speed growth</i> value, the parameter <i>Angle dispersion</i> can be a function of the protein by using the <i>Function Editor</i> (<EditIcon/>), as explained below.
+      </Typography>
+      </div>
+
+      <Typography paragraph align="left">
       Moreover, you can set a preconfigured division mode (Hertwig, Anti-Hertwig and Random) using the following toolbar. 
       </Typography>
 
@@ -1089,13 +1097,6 @@ function ManualContent(props) {
       <img alt="" src={cycles_setup}/>
       </Typography>
 
-
-      <Typography paragraph align="left">
-      Please, note that although the maximum value of the <i>Division Dispersion</i> is 10 using the slider, it can be set with a higher value using the box.
-      <p/>
-      As in the case of <i>Speed value</i>, the parameter <i>Division Shift</i> can be a function of the protein by using the <i>Function Editor</i> (<EditIcon/>), as explained below.
-      </Typography>
-      </div>
 
       <SectionHeading paragraph variant="h5">
       Phases
@@ -1124,9 +1125,39 @@ function ManualContent(props) {
       <Typography paragraph align="center">
       <img alt="" src={phases_params}/>
       </Typography>
+
       <Typography paragraph>
-      Alternatively, you can change the previous parameters (initial and final values of the preferred apical area and the proportion of the selected phase) editing their values using the bottom toolbar.
-      Also, the <i>interpolation</i> parameter can be established in the same toolbar.
+      <table class="center, w3-table-all"> 
+      <tr>
+      <td>Initial</td>
+      <td>Initial value of the preferred apical area</td>
+      </tr>  
+      <tr>
+      <td>Final</td>
+      <td>Final value of the preferred apical area</td>
+      </tr>
+      <tr>
+      <td>Threshold</td>
+      <td>States that the actual value of the apical cell area by the end of the phase must reach a value proportional to the final preferred value of the selected phase (1)</td>
+      </tr>
+      <tr>
+      <td>Proportion</td>
+      <td>Percentage of the total cell cycle in the selected phase</td>
+      </tr>
+      </table>
+      </Typography>
+
+      <Typography paragraph>
+      <i>(1) For example, if <i>Threshold = 0.85, it means that the actual area must reach an 85% of the target value. 
+      We notice that in some cases it is necessary to lower this value “a lot”, e.g.0.5 ,because the cell is too “stiff” and the cell cycle 
+      cannot progress otherwise. The reason to include the actual value of the apical cell area is because the cell growth dynamics ultimately 
+      applies to the actual size of the cell and not simply to the preferred size as prescribed by the elastic energy term.<i> 
+      </Typography>
+
+
+      <Typography paragraph>
+      Alternatively, you can change the previous parameters editing their values using the bottom toolbar.
+      Also, the <i>Thereshold</i> parameter can be established in the same toolbar. 
       </Typography>
       </div>
 
@@ -1220,15 +1251,15 @@ function ManualContent(props) {
       <td>Perimeter of the cell</td>
       </tr>
       <tr>
-      <td>CELL TYPE</td>
+      <td>TYPE</td>
       <td>Cell type</td>
       </tr>
       <tr>
-      <td>NEIGHBOURING CELLS</td>
+      <td>NUMBER OF NEIGHBOURING CELLS</td>
       <td>Number of cell neighbours</td>
       </tr>
       <tr>
-      <td>N. CELL VERTEXES</td>
+      <td>NUMBER OF CELL VERTEXES</td>
       <td>Number of cell vertexes</td>
       </tr>
       <tr>
