@@ -308,6 +308,7 @@ class Global extends Component {
                               value={state.global.itissue.file.$.f === "" ? undefined : true }
                               handler={this.changeInitializationFile}
                               buttonData={state.global.itissue.file.$.f}
+                              tooltipTitle="Loads a file that specifies the initial setup of the tissue"
                             />
                             <div style={{
                               opacity:  (this.props.global && this.props.global.itissue.file.$.f !== "") ? "0.7" : "1.0",
