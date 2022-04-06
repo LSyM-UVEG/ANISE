@@ -288,7 +288,7 @@ function ManualContent(props) {
             Allows that <b>T1 transitions</b> at the tissue periphery can take place, meaning that the cell edges that form the tissue periphery can eventually disappear.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={transitions} width="50%" height="50%"/>
+            <img alt="" src={transitions} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -298,7 +298,7 @@ function ManualContent(props) {
             Forces proteins to distribute among daughter cells following a <b>binomial distribution</b>.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={binomial} width="50%" height="50%"/>
+            <img alt="" src={binomial} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -308,7 +308,7 @@ function ManualContent(props) {
             This option offers an alternative way to initialize the tissue, and start the simulation from this state using an <i>initialization file</i>. Press the pencil button (<EditIcon />) to load this file.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={initialization_file} width="50%" height="50%"/>
+            <img alt="" src={initialization_file} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -353,7 +353,7 @@ function ManualContent(props) {
             The initial tissue size is composed by <i>X</i> x <i>Y</i> cells organized in an hexagonal lattice with X rows and Y columns.		</Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={background} width="50%" height="50%" />
+            <img alt="" src={background} width="40%" height="40%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -404,7 +404,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={squares} width="40%" height="40%"/>
+            <img alt="" src={squares} width="30%" height="30%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -428,7 +428,7 @@ function ManualContent(props) {
             The colors used to represent the background and regions are the same as defined in their respectives subsections.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={canvas} width="50%" height="50%" />
+            <img alt="" src={canvas} width="40%" height="40%" />
           </Typography>
           <Typography paragraph align="left">
             The toolbar on top of the grid support the following actions:
@@ -517,7 +517,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={stages} />
+            <img alt="" src={stages} width="50%" height="50%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -599,7 +599,7 @@ function ManualContent(props) {
             The name of the constants is arbitrary and the user can provide any alphanumeric string.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_constants} width="40%" height="40%" />
+            <img alt="" src={protein_constants} width="30%" height="30%" />
           </Typography>
           <Typography paragraph align="left">
             The constants and their values are defined for each existing stage (from the <b>Stages</b> section).
@@ -719,7 +719,7 @@ function ManualContent(props) {
             These properties can be optionally activated and you can set a value or select a previously defined constant using the pencil button for each one of them. (<EditIcon />).
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_rates} width="60%" height="60%"/>
+            <img alt="" src={protein_rates} width="50%" height="50%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -757,7 +757,7 @@ function ManualContent(props) {
             </ul>
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_initial_values} />
+            <img alt="" src={protein_initial_values} width="40%" height="40%" />
           </Typography>
         </div>
 
@@ -771,7 +771,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={regulation_properties} width="40%" height="40%" />
+            <img alt="" src={regulation_properties} width="35%" height="35%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -1048,7 +1048,7 @@ function ManualContent(props) {
             This picture represents the putative division angle, <i>Shift Angle</i>, relative to the principal angle axis of the inertia tensor.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={division_shift} />
+            <img alt="" src={division_shift} width="25%" height="25%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -1063,7 +1063,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={division_dispersion} />
+            <img alt="" src={division_dispersion} width="25%" height="25%"/>
           </Typography>
 
           <Typography paragraph align="left">
