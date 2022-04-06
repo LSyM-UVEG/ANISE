@@ -182,7 +182,7 @@ export function ProteinList(props) {
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Typography variant="h5" align="center">Protein List</Typography>
+      <Typography variant="h5" align="center">Protein list</Typography>
     </div>
     <div style={{maxHeight: "200px", overflow: "hidden auto"}}>
       {props.proteins.protein && props.proteins.protein.map((protein, i) => {
