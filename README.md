@@ -105,7 +105,7 @@ Now you can run depending on what you prefer ```npm start``` or ```npm run build
 ##### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) if the browser doesn't appear automatically. 
+Open [http://localhost:3000](http://localhost:3000) TO CHANGE if the browser doesn't appear automatically. 
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
