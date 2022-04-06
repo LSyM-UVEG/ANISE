@@ -47,7 +47,7 @@ import dispersion from './assets/images/dispersion.png';
 import phases_add from './assets/images/phases_add.png';
 import phases_graph from './assets/images/phases_graph.png';
 import phases_parameters from './assets/images/phases_parameters.png';
-import division_shift from './assets/images/division_shift.PNG';
+import division_shift from './assets/images/division_shift.png';
 import division_dispersion from './assets/images/division_dispersion.png';
 import initialization_file from './assets/images/initialization_file.png';
 
