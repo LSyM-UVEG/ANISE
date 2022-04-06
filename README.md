@@ -5,7 +5,7 @@ The entire application is developed in javascript, mainly using [React](https://
 
 The app can also be accessed through the following link [ANISE](https://lsymserver.uv.es/lsym/ANISE/).
 
-## Quick Guide to building
+## Quick building guide
 
 ### Prerequisites:
 To install ANISE, **Nodejs version 16.14** (includes **npm**) and **Git** are needed. 
@@ -35,7 +35,7 @@ Note that you are free to install the packages via the terminal as long as you i
 
 * **Nodejs** 
 
-There are 2 options to install nodejs in your Linux machine.
+There are 2 options to install nodejs in your machine.
 
 **Option 1:** Installation using the Linux binaries (tested version 16.14.2)
 1) Download the linux binaries of [nodejs](https://nodejs.org/en/download/) version 16.14.
@@ -57,7 +57,7 @@ sudo apt install --assume-yes nodejs
 ```
 2) Check the version installed using ```node -v ```. If the version is not 16.14 then follow the next steps.
 
-3) The node version can be changed with Node Version Manager (nvm). Execute the following command line. 
+3) The node version can be changed with Node Version Manager (nvm). Execute the following command line to install nvm. 
 ```console 
 curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -o install_nvm.sh
 ```
@@ -72,7 +72,7 @@ export NVM_DIR="$HOME/.nvm"
 ```
 Check that it is well installed with the command ```command -v nvm ``` which should return ```nvm ```
 
-4) Install the 16.14 version executing ```nvm install 16.14.1```
+4) Install the 16.14 version executing ```nvm install 16.14.2```
 
 5) Check the node version
 ```console 
