@@ -92,7 +92,7 @@ Git is supposed to be already installed in LINUX. If not the case, you can follo
 Now that the required packages are installed, the installation of ANISE can start. Execute the following command lines in the terminal:
 ```console
 git clone https://github.com/lsym-uveg/anise
-cd TiFoSiAppWeb
+cd anise
 npm install
 ```
 Note for Windows: the command lines have to been run in the **Windows PowerShell**. 
