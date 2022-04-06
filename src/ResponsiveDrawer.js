@@ -31,7 +31,7 @@ import './assets/css/w3.css';
 import time_step from './assets/images/time_step.png';
 import transitions from './assets/images/t1c2_transitions.png';
 import binomial from './assets/images/binomial_distribution.png';
-import celltypes from './assets/images/celltypes.PNG';
+import celltypes from './assets/images/celltypes.png';
 import background from './assets/images/background.png';
 import squares from './assets/images/squares.png';
 import sections from './assets/images/sections.PNG';
