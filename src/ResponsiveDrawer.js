@@ -288,7 +288,7 @@ function ManualContent(props) {
             Allows that <b>T1 transitions</b> at the tissue periphery can take place, meaning that the cell edges that form the tissue periphery can eventually disappear.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={transitions} />
+            <img alt="" src={transitions} width="50%" height="50%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -298,7 +298,7 @@ function ManualContent(props) {
             Forces proteins to distribute among daughter cells following a <b>binomial distribution</b>.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={binomial} />
+            <img alt="" src={binomial} width="50%" height="50%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -308,7 +308,7 @@ function ManualContent(props) {
             This option offers an alternative way to initialize the tissue, and start the simulation from this state using an <i>initialization file</i>. Press the pencil button (<EditIcon />) to load this file.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={initialization_file} />
+            <img alt="" src={initialization_file} width="50%" height="50%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -325,7 +325,7 @@ function ManualContent(props) {
             The different <b>cell types</b> involved in the simulations are defined in this list. Each cell type has a unique color that identifies it in the other sections.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={celltypes} />
+            <img alt="" src={celltypes} width="40%" height="40%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -353,7 +353,7 @@ function ManualContent(props) {
             The initial tissue size is composed by <i>X</i> x <i>Y</i> cells organized in an hexagonal lattice with X rows and Y columns.		</Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={background} />
+            <img alt="" src={background} width="50%" height="50%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -404,7 +404,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={squares} />
+            <img alt="" src={squares} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -535,7 +535,7 @@ function ManualContent(props) {
             When one stage is selected, you can enable/disable the <b>Mechanics</b> (tissue dynamics), the cell <b>Growth</b>, and/or the <b>Proteins</b> regulation by the check selector of each property.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={stages_properties} />
+            <img alt="" src={stages_properties} width="40%" height="40%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -558,7 +558,7 @@ function ManualContent(props) {
             Finally, a summary table of the defined stages is shown. You can select any stage (row) to edit their parameters in the above subsection.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={stages_table} />
+            <img alt="" src={stages_table} width="80%" height="80%" />
           </Typography>
         </div>
 
@@ -599,7 +599,7 @@ function ManualContent(props) {
             The name of the constants is arbitrary and the user can provide any alphanumeric string.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_constants} />
+            <img alt="" src={protein_constants} width="40%" height="40%" />
           </Typography>
           <Typography paragraph align="left">
             The constants and their values are defined for each existing stage (from the <b>Stages</b> section).
@@ -719,7 +719,7 @@ function ManualContent(props) {
             These properties can be optionally activated and you can set a value or select a previously defined constant using the pencil button for each one of them. (<EditIcon />).
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_rates} />
+            <img alt="" src={protein_rates} width="60%" height="60%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -811,7 +811,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={protein_formula_top} />
+            <img alt="" src={protein_formula_top} width="60%" height="60%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -819,7 +819,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={protein_formula_bottom} />
+            <img alt="" src={protein_formula_bottom} width="60%" height="60%" />
           </Typography>
           <Typography paragraph align="left">
             In the case of <i>Signaling functions</i>, you must select the function to use first, and then select the protein to which it applies.
@@ -834,7 +834,7 @@ function ManualContent(props) {
             The <b>Protein List</b> shows the formula of all the proteins kinematic equations defined. If you press a protein equation, the corresponding formula is stated in the top for editing.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_list} />
+            <img alt="" src={protein_list} width="60%" height="60%"/>
           </Typography>
           <Typography paragraph>
             Also, you can edit the protein properties (name, initial concentration, dispersion,...) using the <EditIcon /> icon, remove a defined protein (<DeleteIcon /> icon), or add a new protein (<AddIcon /> icon).
@@ -877,7 +877,7 @@ function ManualContent(props) {
             If you want to have the <i>same</i> parameter values for all stages, use the <b>All</b> checkbox.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={toolbar_potentials} />
+            <img alt="" src={toolbar_potentials} width="60%" height="60%"/>
           </Typography>
           <Typography paragraph align="left">
             Additionally, the <b>Cell Type</b> involved in the current potential is selected in this toolbar. The color code for the cell types is the same as defined in <i>Global</i> section.
@@ -1012,7 +1012,7 @@ function ManualContent(props) {
             The top toolbar allows to select the <b>Stage</b> of the simulation for which the cycle parameters defined below is applied. If the same dynamics apply to all the stages, use <b>All</b> checkbox to define only one set of parameters.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={toolbar_potentials} />
+            <img alt="" src={toolbar_potentials} width="60%" height="60%"/>
           </Typography>
           <Typography paragraph align="left">
             Also, the <b>Cell Type</b> involved in the current cycle is selected in this toolbar. The color code for the cell types is the same as defined in <i>Global</i> section.
@@ -1028,7 +1028,7 @@ function ManualContent(props) {
             The <b>Cell cycle</b> parameter establishes the value of epsilon that weights the amount of stochasticity in the duration of the cell cycle.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={dispersion} />
+            <img alt="" src={dispersion} width="50%" height="50%"/>
           </Typography>
           <Typography paragraph align="left">
             The <b>Growth speed</b> parameter actually sets the putative duration of the cell cycle (See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSI for more explanations).
@@ -1077,7 +1077,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={cycles_parameters} />
+            <img alt="" src={cycles_parameters} width="10%" height="10%"/>
           </Typography>
 
 
@@ -1093,7 +1093,7 @@ function ManualContent(props) {
         </Typography>
 
         <Typography paragraph align="center">
-          <img alt="" src={cycles_setup} />
+          <img alt="" src={cycles_setup} width="80%" height="80%"/>
         </Typography>
 
 
@@ -1114,7 +1114,7 @@ function ManualContent(props) {
             The <i>proportion</i> or duration of the phase with respect to the rest is indicated at the bottom by a percentage, and can be changed by moving the vertical bar that separates two phases.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={phases_graph} />
+            <img alt="" src={phases_graph} width="60%" height="60%"/>
           </Typography>
           <Typography paragraph>
             Within each phase, the <i>progression</i> of the preferred cell apical area is shown by a graph line.
@@ -1122,7 +1122,7 @@ function ManualContent(props) {
             The maximum value of the ordinate axis in the graph can be changed by editing the lateral textbox.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={phases_parameters} />
+            <img alt="" src={phases_parameters} width="60%" height="60%"/>
           </Typography>
 
           <Typography paragraph>
@@ -1192,7 +1192,7 @@ function ManualContent(props) {
         </Typography>
 
         <Typography paragraph align="center">
-          <img alt="" src={function_editor_equation} />
+          <img alt="" src={function_editor_equation} width="60%" height="60%"/>
         </Typography>
 
         <Typography paragraph align="left">
@@ -1200,7 +1200,7 @@ function ManualContent(props) {
         </Typography>
 
         <Typography paragraph align="center">
-          <img alt="" src={function_editor_options} />
+          <img alt="" src={function_editor_options} width="60%" height="60%"/>
         </Typography>
 
         <Typography paragraph variant="h6" align="left">
