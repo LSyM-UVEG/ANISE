@@ -209,7 +209,7 @@ function ProteinsEditor(props) {
     // If visual editor is enabled the component local state is used
     if (visualEnabled) {
       let newProteins = [...proteins];
-      let proteinName = "Protein" + (getMaxIndexInArrayField(proteins, "name", "Protein", 0) + 1).toString();
+      let proteinName = "protein" + (getMaxIndexInArrayField(proteins, "name", "protein", 0) + 1).toString();
       newProteins.push(createProteinObjectJS(proteinName, pos));
       setProteins(newProteins);
       setProteinDialog(proteinName);
@@ -217,7 +217,7 @@ function ProteinsEditor(props) {
     } else {
       // Otherwise App global state is used
       let newProteins = Object.assign({}, props.proteins);
-      let proteinName = "Protein" + newProteins.protein.length;
+      let proteinName = "protein" + (newProteins.protein.length + 1);
       let newProtein = { $: { species: proteinName }, dynamics: { _: "", $: { negval: "n" } }, iconcentration: [] };
       newProteins.protein.push(newProtein);
       props.handlerValue(newProteins);
