@@ -40,6 +40,7 @@ import canvas from './assets/images/canvas.png';
 import toolbar_potentials from './assets/images/toolbar_potentials.png';
 import one_cell from './assets/images/one_cell.png';
 import two_cells from './assets/images/two_cells.png';
+import neighbors from './assets/images/neighbors.png';
 import function_editor from './assets/images/function_editor.png';
 import function_editor_equation from './assets/images/function_editor_equation.PNG';
 import function_editor_options from './assets/images/function_editor_options.png';
@@ -1040,7 +1041,7 @@ function ManualContent(props) {
 
         <div class="w3-code">
           <Typography paragraph align="left">
-            The <b>Cell cycle</b> parameter establishes the value of the stochasticity in the duration of the cell cycle. If that paremeter is 1 then the cell cycle duration is purely determinsitic (See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSI for more explanations).
+            The <b>Cell cycle</b> parameter establishes the value of the stochasticity in the duration of the cell cycle. If that paremeter is 1 then the cell cycle duration is purely determinsitic (See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for more explanations).
           </Typography>
           <Typography paragraph align="center">
             <img alt="" src={dispersion} width="50%" height="50%"/>
@@ -1249,6 +1250,14 @@ rule. Finally, we can choose a random cleavage configuration using the preconfig
               <td>Neighbouring cell types of C2</td>
             </tr>
           </table>
+        </Typography>
+
+ 	<Typography paragraph align="center">
+          <img alt="" src={neighbors} width="30%" height="30%"/>
+        </Typography>
+
+	<Typography paragraph align="left">
+          The edge defined by the vertexes <i>i</i> and <i>j</i> is shared by the blue cells <i>C1</i> and <i>C2</i>. Still the vertexes, and hence their biomechanics, are also shared by the purple neighboring cells <i>CP1</i> and <i>CP2</i>. Some parameters of the those cells can be used in value to define functions. See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for more details.
         </Typography>
 
         <Typography paragraph variant="h6" align="left">
