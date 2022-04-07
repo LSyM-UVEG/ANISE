@@ -1283,11 +1283,11 @@ rule. Finally, we can choose a random cleavage configuration using the preconfig
               <td>Cell type</td>
             </tr>
             <tr>
-              <td>NUMB. OF NEIGHBORS</td>
+              <td style={{width:"220px"}}>NUMBER OF NEIGHBORS</td>
               <td>Number of cell neighbors</td>
             </tr>
             <tr>
-              <td>NUMB. OF VERTEXES</td>
+              <td style={{width:"220px"}}>NUMBER OF VERTEXES</td>
               <td>Number of cell vertexes</td>
             </tr>
             <tr>
