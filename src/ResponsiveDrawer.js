@@ -206,7 +206,7 @@ function ManualContent(props) {
             The properties of each section are accessed through the upper tabs from the web editor.
           </Typography>
           <Typography paragrap align="center">
-            <img alt="" src={sections} />
+            <img alt="" src={sections} width="40%" height="40%"/>
           </Typography>
           <Typography paragraph>
             <p />
@@ -255,7 +255,7 @@ function ManualContent(props) {
             The <b>Global section</b> contains the most relevant parameters of the simulation, such as the cell types, the initial spatial organization of cells, and some additional data regarding the simulation.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={global_all} width="60%" height="60%" />
+            <img alt="" src={global_all} width="80%" height="80%" />
           </Typography>
         </div>
 
@@ -272,7 +272,7 @@ function ManualContent(props) {
             Provides the value of the dimensionless <b>time step</b> used in the Euler algorithm to numerically integrate the dynamics of the tissue mechanics/growth and the protein kinetics.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={time_step} />
+            <img alt="" src={time_step} width="35%" height="35%"/>
           </Typography>
           <Typography paragraph align="left">
             <div class="w3-panel w3-warning">
@@ -288,7 +288,7 @@ function ManualContent(props) {
             Allows that <b>T1 transitions</b> at the tissue periphery can take place, meaning that the cell edges that form the tissue periphery can eventually disappear.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={transitions} width="40%" height="40%"/>
+            <img alt="" src={transitions} width="35%" height="35%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -298,7 +298,7 @@ function ManualContent(props) {
             Forces proteins to distribute among daughter cells following a <b>binomial distribution</b>.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={binomial} width="40%" height="40%"/>
+            <img alt="" src={binomial} width="35%" height="35%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -308,7 +308,7 @@ function ManualContent(props) {
             This option offers an alternative way to initialize the tissue, and start the simulation from this state using an <i>initialization file</i>. Press the pencil button (<EditIcon />) to load this file.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={initialization_file} width="40%" height="40%"/>
+            <img alt="" src={initialization_file} width="35%" height="35%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -353,7 +353,7 @@ function ManualContent(props) {
             The initial tissue size is composed by <i>X</i> x <i>Y</i> cells organized in an hexagonal lattice with X rows and Y columns.		</Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={background} width="40%" height="40%" />
+            <img alt="" src={background} width="35%" height="35%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -517,7 +517,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={stages} width="50%" height="50%" />
+            <img alt="" src={stages} width="45%" height="45%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -535,7 +535,7 @@ function ManualContent(props) {
             When one stage is selected, you can enable/disable the <b>Mechanics</b> (tissue dynamics), the cell <b>Growth</b>, and/or the <b>Proteins</b> regulation by the check selector of each property.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={stages_properties} width="40%" height="40%" />
+            <img alt="" src={stages_properties} width="30%" height="30%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -558,7 +558,7 @@ function ManualContent(props) {
             Finally, a summary table of the defined stages is shown. You can select any stage (row) to edit their parameters in the above subsection.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={stages_table} width="80%" height="80%" />
+            <img alt="" src={stages_table} width="70%" height="70%" />
           </Typography>
         </div>
 
@@ -585,7 +585,7 @@ function ManualContent(props) {
             The <b>Proteins section</b> defines the protein kinetics (described by differential equations) and the initial concentration of species within cells.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={proteins_all} width="60%" height="60%" />
+            <img alt="" src={proteins_all} width="90%" height="90%" />
           </Typography>
         </div>
 
@@ -599,7 +599,7 @@ function ManualContent(props) {
             The name of the constants is arbitrary and the user can provide any alphanumeric string.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_constants} width="30%" height="30%" />
+            <img alt="" src={protein_constants} width="25%" height="25%" />
           </Typography>
           <Typography paragraph align="left">
             The constants and their values are defined for each existing stage (from the <b>Stages</b> section).
@@ -631,15 +631,22 @@ function ManualContent(props) {
             This subsection is centered in the <b>Visual mode</b>. It allows you to graphically design a protein relationship scheme.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_editor} />
+            <img alt="" src={protein_editor} width="40%" height="40%"/>
           </Typography>
+
+  <Typography paragraph align="left">
+            <div class="w3-panel w3-warning">
+              <p><strong>Note:</strong> If you don't see the regulation added, move the protein. </p>
+            </div>
+          </Typography>
+
 
           <Typography paragraph align="left">
             Inside the editor, you can add new proteins and/or regulations between them. The proteins are represented by a rectangle with their names inside, and the regulations are represented by an arrow (from one protein to another protein or regulation).
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={protein_toolbar} />
+            <img alt="" src={protein_toolbar} width="50%" height="50%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -719,7 +726,7 @@ function ManualContent(props) {
             These properties can be optionally activated and you can set a value or select a previously defined constant using the pencil button for each one of them. (<EditIcon />).
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_rates} width="50%" height="50%"/>
+            <img alt="" src={protein_rates} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -742,7 +749,7 @@ function ManualContent(props) {
             This property allows negative values for the protein number throughout its growth.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_negative_values} />
+            <img alt="" src={protein_negative_values} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -811,7 +818,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={protein_formula_top} width="60%" height="60%" />
+            <img alt="" src={protein_formula_top} width="50%" height="50%" />
           </Typography>
 
           <Typography paragraph align="left">
@@ -819,11 +826,19 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={protein_formula_bottom} width="60%" height="60%" />
+            <img alt="" src={protein_formula_bottom} width="50%" height="50%" />
           </Typography>
+          
           <Typography paragraph align="left">
-            In the case of <i>Signaling functions</i>, you must select the function to use first, and then select the protein to which it applies.
+            If you select the function <i>Juxtacrine</i>, the function <i>Signal</i> will appear in the Formula box, since that is the name used in TiFoSi.
           </Typography>
+          
+          <Typography paragraph align="left">
+            <div class="w3-panel w3-warning">
+              <p><strong>Hint:</strong> In the case of <i>Signaling functions</i>, you must select the function to use first, and then select the protein to which it applies.</p>
+            </div>
+          </Typography>
+          
         </div>
 
         <SectionHeading paragraph variant="h5">
@@ -834,7 +849,7 @@ function ManualContent(props) {
             The <b>Protein List</b> shows the formula of all the proteins kinematic equations defined. If you press a protein equation, the corresponding formula is stated in the top for editing.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={protein_list} width="60%" height="60%"/>
+            <img alt="" src={protein_list} width="50%" height="50%"/>
           </Typography>
           <Typography paragraph>
             Also, you can edit the protein properties (name, initial concentration, dispersion,...) using the <EditIcon /> icon, remove a defined protein (<DeleteIcon /> icon), or add a new protein (<AddIcon /> icon).
@@ -863,7 +878,7 @@ function ManualContent(props) {
             The <b>Potentials section</b> defines the functional energy (potentials) of the vertex model.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={potentials_all} width="60%" height="60%" />
+            <img alt="" src={potentials_all} width="80%" height="80%" />
           </Typography>
         </div>
 
@@ -913,7 +928,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={two_cells} />
+            <img alt="" src={two_cells} width="25%" height="25%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -956,7 +971,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={one_cell} />
+            <img alt="" src={one_cell} width="25%" height="25%"/>
           </Typography>
 
           <Typography paragraph align="left">
@@ -999,7 +1014,7 @@ function ManualContent(props) {
             The <b>Cycles section</b> defines the cell cycle kinetics and cleavage orientation properties.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={cycles_all} width="60%" height="60%" />
+            <img alt="" src={cycles_all} width="50%" height="50%" />
           </Typography>
         </div>
 
@@ -1025,13 +1040,13 @@ function ManualContent(props) {
 
         <div class="w3-code">
           <Typography paragraph align="left">
-            The <b>Cell cycle</b> parameter establishes the value of epsilon that weights the amount of stochasticity in the duration of the cell cycle.
+            The <b>Cell cycle</b> parameter establishes the value of the stochasticity in the duration of the cell cycle. If that paremeter is 1 then the cell cycle duration is purely determinsitic (See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSI for more explanations).
           </Typography>
           <Typography paragraph align="center">
             <img alt="" src={dispersion} width="50%" height="50%"/>
           </Typography>
           <Typography paragraph align="left">
-            The <b>Growth speed</b> parameter actually sets the putative duration of the cell cycle (See <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSI for more explanations).
+            The <b>Growth speed</b> parameter actually sets the putative duration of the cell cycle.
             Note that the default value is 0, assuming that the apical area of particular cell type will not grow.
             <p />
             This last parameter can be defined as function, depending on the amount of particular protein species, using the <i>Function Editor</i> (<EditIcon />) as explained below.
@@ -1077,16 +1092,14 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph align="center">
-            <img alt="" src={cycles_parameters} width="10%" height="10%"/>
+            <img alt="" src={cycles_parameters} width="12%" height="12%"/>
           </Typography>
 
 
           <Typography paragraph align="left">
-            Please, note that although the maximum value of the <i>Angle dispersion</i> is 10 using the slider, it can be set with a higher value using the box.
-            <p />
-            As in the case of <i>Speed growth</i> value, the parameter <i>Angle dispersion</i> can be a function of the protein by using the <i>Function Editor</i> (<EditIcon />), as explained below.
+            Please, note that although the maximum value of the <i>Angle dispersion</i> is 10 using the slider, it can be set with a higher value using the box. As in the case of <i>Speed growth</i> value, the parameter <i>Angle dispersion</i> can be a function of the protein by using the <i>Function Editor</i> (<EditIcon />), as explained below.
           </Typography>
-        </div>
+        
 
         <Typography paragraph align="left">
           Moreover, you can set a preconfigured division mode (Hertwig, Anti-Hertwig and Random) using the following toolbar.
@@ -1095,7 +1108,13 @@ function ManualContent(props) {
         <Typography paragraph align="center">
           <img alt="" src={cycles_setup} width="80%" height="80%"/>
         </Typography>
+        
+        <Typography paragraph align="left">
+          <i>Hertwig</i> configuration means that the cleavage plane is perpendicular to the longest axis of the cell. On contrary, <i>Anti-Hertwig</i> configuration will set the division contrary to the Hertwig
+rule. Finally, we can choose a random cleavage configuration using the preconfigured division mode <i>Random</i>. 
+        </Typography>
 
+	</div>
 
         <SectionHeading paragraph variant="h5">
           Phases
@@ -1107,22 +1126,22 @@ function ManualContent(props) {
             You can create new phases or remove existing ones with the <i>Add New Phase</i> <AddIcon /> or <i>Remove Phase</i> <RemoveIcon /> buttons.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={phases_add} />
+            <img alt="" src={phases_add} width="55%" height="55%"/>
           </Typography>
           <Typography paragraph align="left">
             Each phase is represented by a graph, inside a box, with an <i>index</i> at the top following the sequence of phases.
             The <i>proportion</i> or duration of the phase with respect to the rest is indicated at the bottom by a percentage, and can be changed by moving the vertical bar that separates two phases.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={phases_graph} width="60%" height="60%"/>
+            <img alt="" src={phases_graph} width="70%" height="70%"/>
           </Typography>
           <Typography paragraph>
-            Within each phase, the <i>progression</i> of the preferred cell apical area is shown by a graph line.
+            Within each phase, the progression of the preferred cell apical area is shown by a graph line.
             When a phase is selected, you can change the <i>initial</i> and <i>final values</i> of this progression by moving, up or down, the blue dots at the beginning or the end of the graph line.
             The maximum value of the ordinate axis in the graph can be changed by editing the lateral textbox.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={phases_parameters} width="60%" height="60%"/>
+            <img alt="" src={phases_parameters} width="55%" height="55%"/>
           </Typography>
 
           <Typography paragraph>
@@ -1182,7 +1201,7 @@ function ManualContent(props) {
         </Typography>
 
         <Typography paragraph align="center">
-          <img alt="" src={function_editor} width="50%" height="50%" />
+          <img alt="" src={function_editor} width="60%" height="60%" />
         </Typography>
 
         <Typography paragraph align="left">
@@ -1267,6 +1286,10 @@ function ManualContent(props) {
               <td>Location of the cell center (x, y coordinates)</td>
             </tr>
           </table>
+        </Typography>
+
+<Typography paragraph align="left">
+          Note that the number of neighbors is equal to the number of vertixes unless for the cells in the periphery. 
         </Typography>
 
         <Typography paragraph variant="h6" align="left">
