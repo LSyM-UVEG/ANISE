@@ -1255,11 +1255,11 @@ function ManualContent(props) {
               <td>Cell type</td>
             </tr>
             <tr>
-              <td>N. OF NEIGHBOURING CELLS</td>
-              <td>Number of cell neighbours</td>
+              <td>NUMB. OF NEIGHBORS</td>
+              <td>Number of cell neighbors</td>
             </tr>
             <tr>
-              <td>N. OF CELL VERTEXES</td>
+              <td>NUMB. OF VERTEXES</td>
               <td>Number of cell vertexes</td>
             </tr>
             <tr>
