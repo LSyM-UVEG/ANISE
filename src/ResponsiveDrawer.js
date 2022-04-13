@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -1432,11 +1432,15 @@ function ResponsiveDrawer(props) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [option, setOption] = React.useState(0);
+  const myRefScroll = React.useRef();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  useEffect(() => {
+    myRefScroll.current.scrollIntoView({block: "start"});
+  }, [option])
 
   const drawer = (
     <div>
@@ -1468,9 +1472,9 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} ref={myRefScroll}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}  >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -1518,10 +1522,7 @@ function ResponsiveDrawer(props) {
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <div />
-
-        <ManualContent option={option} />
-
+        <ManualContent option={option}/>
       </main>
     </div>
   );
