@@ -267,7 +267,7 @@ function ManualContent(props) {
         <div class="w3-code">
 
           <Typography paragraph variant="h6" align="left">
-            Delta time
+            Time step
           </Typography>
           <Typography paragraph align="left">
             Provides the value of the dimensionless <b>time step</b> used in the Euler algorithm to numerically integrate the dynamics of the tissue mechanics/growth and the protein kinetics.
@@ -282,7 +282,7 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
-            Allow T1C2 transitions
+            T1 at periphery
           </Typography>
 
           <Typography paragraph align="left">
