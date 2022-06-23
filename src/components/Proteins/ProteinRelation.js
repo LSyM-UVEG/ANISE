@@ -40,7 +40,7 @@ export default function ProteinRelation(props) {
     return (
         <g onDoubleClick={props.onDoubleClick} class={classes.relationStyle}>
             {points.map((point, i) => (
-                (i < n-1) && <line key={i} x1={points[i].x} y1={points[i].y} x2={points[i+1].x} y2={points[i+1].y} stroke={color} strokeWidth="5" onMouseDown={props.onRelationMouseDown(i)} />
+                (i < n-1) && <line key={i} x1={points[i].x} y1={points[i].y} x2={points[i+1].x} y2={points[i+1].y} stroke={color} strokeWidth="5" strokeDasharray={props.type === "positive" ? "1,0": "5,5"} onMouseDown={props.onRelationMouseDown(i)} />
             ))}
             {props.points.map((point, i) => (
                 <circle key={i} cx={point.x} cy={point.y} r="6" stroke="none" fill={color} onMouseDown={props.onRelationPointMouseDown(i)} />
@@ -49,7 +49,7 @@ export default function ProteinRelation(props) {
             <circle cx={props.startX} cy={props.startY} r="6" stroke="none" fill={color} onMouseDown={props.onRelationStartMouseDown} />
             
             {props.type === "positive" && <polygon onMouseDown={props.onRelationEndMouseDown} transform={transf} points="-20 -8, 0 0, -20 8" fill={color} />}
-            {props.type === "negative" && <line onMouseDown={props.onRelationEndMouseDown} transform={transf} x1="-2" y1="-12" x2="-2" y2="12" stroke={color} strokeWidth="5" />}
+            {props.type === "negative" && <line onMouseDown={props.onRelationEndMouseDown} transform={transf} x1="-2" y1="-12" x2="-2" y2="12" stroke={color} strokeWidth="8" />}
         </g>
     );
 }
