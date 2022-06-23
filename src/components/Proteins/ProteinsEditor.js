@@ -439,7 +439,7 @@ function ProteinsEditor(props) {
             if (end !== null) {
               let dist = getMagnitude(getVector(mousePos, end));
               if (dist <= 8.0) {
-                newConnectors[idx] = { id: newConnectors[idx].id, type: con.type, typeId: con.typeId, joint: con.joint };
+                newConnectors[idx] = { id: newConnectors[idx].id, type: con.type, typeId: con.typeId, joint: con.joint, x: con.x, y: con.y };
                 elementIntersect = true;
               }
             }
