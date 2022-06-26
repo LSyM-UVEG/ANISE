@@ -192,16 +192,25 @@ function ProteinsEditor(props) {
   //////////////////////////////////////////////////////////////////////////////////
 
   const repairConnectors = (newProteins, newRelations) => {
+    let connectorsToRemove = [];
     let newConnectors = [...connectors];
     newConnectors.forEach((con, i) => {
-      if (con.type === "protein" && newProteins.findIndex((prot) => con.typeId === prot.name) === -1) {
+      if (newRelations.findIndex((rel) => con.relationId === rel.id) === -1) {
+        if ( newRelations.findIndex((rel) => con.id == rel.endConnectorId) === -1) 
+          connectorsToRemove.push(i);
+      } else if (con.type === "protein" && newProteins.findIndex((prot) => con.typeId === prot.name) === -1) {
         let pos = getConnectorCoords(con.id);
-        newConnectors[i] = { id: con.id, type: "position", x: pos.x, y: pos.y };
+        newConnectors[i] = { id: con.id, type: "position", x: pos.x, y: pos.y, relationId: con.relationId };
       } else if (con.type === "relation" && newRelations.findIndex((rel) => con.typeId === rel.id) === -1) {
         let pos = getConnectorCoords(con.id);
-        newConnectors[i] = { id: con.id, type: "position", x: pos.x, y: pos.y };
-      }
+        if (pos === null)
+          removeRelation(newRelations.findIndex((rel) => rel.id === con.relationId));
+        else
+          newConnectors[i] = { id: con.id, type: "position", x: pos.x, y: pos.y, relationId: con.relationId };
+      } 
     });
+    connectorsToRemove.sort((a,b)=> b - a);
+    connectorsToRemove.forEach((idCon) => newConnectors.splice(idCon,1));
     setConnectors(newConnectors);
   };
 
@@ -295,11 +304,12 @@ function ProteinsEditor(props) {
         let newRelations = [...relations];
         let relationId = getMaxIndexInArrayField(relations, "id") + 1;
         let connectorId = getMaxIndexInArrayField(connectors, "id") + 1;
-        newRelations.push(createRelationObjectJS(relationId, proteins[info.id].name, connectorId, tool === 2 ? "positive" : "negative", 1.0, 3.0, 4));
+        newRelations.push(createRelationObjectJS(relationId, proteins[info.id].name, connectorId, tool === 2 ? "positive" : "negative", 1.0, 3.0, 4, 0, [{x: mousePos.x + 5, y: mousePos.y - 50}]));
         setRelations(newRelations);
 
         let newConnectors = [...connectors];
-        newConnectors.push({ id: connectorId, type: "position", x: mousePos.x, y: mousePos.y });
+        //newConnectors.push({ id: connectorId, type: "position", x: mousePos.x, y: mousePos.y });
+        newConnectors.push({ id: connectorId, type: "protein", x: mousePos.x, y: mousePos.y, typeId: proteins[info.id].name, joint: 1.0, relationId: relationId });
         setConnectors(newConnectors);
         setMovingParameters({ type: "relationEnd", id: newRelations.length - 1, auxIdx: null, lastX: mousePos.x, lastY: mousePos.y });
         setTool(0);
@@ -406,7 +416,12 @@ function ProteinsEditor(props) {
             }
             let prop = getPointOverProteinProportion(origin, mousePos, prot);
             if (prop) {
-              newConnectors[idx] = { id: newConnectors[idx].id, type: "protein", typeId: prot.name, joint: prop };
+              newConnectors[idx] = { id: newConnectors[idx].id, type: "protein", typeId: prot.name, joint: prop, relationId: relations[movingParameters.id].id };
+              elementIntersect = true;
+            }
+            else {
+              // Esta sobre ella misma
+              newConnectors[idx] = { id: newConnectors[idx].id, type: "protein", typeId: prot.name, joint: 1.0, relationId: relations[movingParameters.id].id };
               elementIntersect = true;
             }
           }
@@ -425,7 +440,7 @@ function ProteinsEditor(props) {
               for (let k = 0; k < points.length - 1; k++) {
                 let prop = getPointOverLineSegmentProportion(mousePos, points[k], points[k + 1]);
                 if (prop >= 0.0 && prop <= 1.0) {
-                  newConnectors[idx] = { id: newConnectors[idx].id, type: "relation", typeId: rel.id, joint: prop + k };
+                  newConnectors[idx] = { id: newConnectors[idx].id, type: "relation", typeId: rel.id, joint: prop + k, relationId: newConnectors[idx].relationId };
                   elementIntersect = true;
                 }
               }
@@ -439,7 +454,7 @@ function ProteinsEditor(props) {
             if (end !== null) {
               let dist = getMagnitude(getVector(mousePos, end));
               if (dist <= 8.0) {
-                newConnectors[idx] = { id: newConnectors[idx].id, type: con.type, typeId: con.typeId, joint: con.joint, x: con.x, y: con.y };
+                newConnectors[idx] = { id: newConnectors[idx].id, type: con.type, typeId: con.typeId, joint: con.joint, x: con.x, y: con.y, relationId: newConnectors[idx].relationId };
                 elementIntersect = true;
               }
             }
@@ -447,7 +462,7 @@ function ProteinsEditor(props) {
         });
 
         if (!elementIntersect) {
-          newConnectors[idx] = { id: newConnectors[idx].id, type: "position", x: mousePos.x, y: mousePos.y };
+          newConnectors[idx] = { id: newConnectors[idx].id, type: "position", x: mousePos.x, y: mousePos.y, relationId: newConnectors[idx].relationId };
         }
         setConnectors(newConnectors);
         //updateGlobalState();
@@ -501,7 +516,7 @@ function ProteinsEditor(props) {
           // If some relations are connected to the removed section, adjust its joint value
           let newConnectors = [...connectors];
           newConnectors.forEach((con, i) => {
-            if (con.type === "relation" && con.typeId === movingParameters.id) {
+            if (con.type === "relation" && con.typeId ===  newRelations[movingParameters.id].id) {
               if (Math.floor(con.joint) === movingParameters.auxIdx || Math.floor(con.joint) === movingParameters.auxIdx + 1) {
                 let prop = con.joint - Math.floor(con.joint);
                 let dist1 = getMagnitude(getVector(points[movingParameters.auxIdx], points[movingParameters.auxIdx + 1]));
@@ -565,8 +580,11 @@ function ProteinsEditor(props) {
             let k = connector.joint;
             let k_idx = Math.floor(k);
 
+            if (k_idx >= points.length - 1)
+              k_idx = points.length - 2
+
             if (k_idx < points.length - 1) {
-              k -= k_idx;
+              k -= Math.floor(k);
               point = { x: points[k_idx].x * (1 - k) + points[k_idx + 1].x * k, y: points[k_idx].y * (1 - k) + points[k_idx + 1].y * k };
             }
           }
