@@ -201,9 +201,16 @@ export function StageData(props) {
       growth: typeof props.value.growth !== "undefined",
       proteins: typeof props.value.proteins !== "undefined",
     };
+
+    if (property === "mechanics" && !event.target.checked && newData["growth"])
+      return;
+    
     newData[property] = event.target.checked;
+
     if (property === "growth" && event.target.checked)
       newData["mechanics"] = event.target.checked;
+
+
     props.handlerUpdate(newData, props.value.$.order - 1);
   };
 
