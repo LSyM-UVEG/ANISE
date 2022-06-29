@@ -550,7 +550,11 @@ function ManualContent(props) {
 
             <Typography paragraph align="left">
 	    The duration of a particular stage is determine by the number of <b>frames</b> and the <b>input time</b> (dimensionless units). Using that information the number of time steps between frames (<b>Intermediate</b>) and
-	the <i>actual</i> duration of the stage (<b>Time</b>) are determined.
+	the <i>actual</i> duration of the stage (<b>Time</b>) are determined. 
+          </Typography>
+          
+          <Typography paragraph align="left">
+	    To note that <b>Growth</b> always requires <b>Mechanics</b> to be active for getting a meaningful simulation. However, <b>Mechanics</b> does not necessarily require <b>Growth</b> to be active. 
           </Typography>
         </div>
 
@@ -619,7 +623,7 @@ function ManualContent(props) {
             The <b>Proteins</b> and their relationships (interactions) are defined through an editor. It allows to define the dynamics and the initial number of the proteins species.
           </Typography>
           <Typography paragraph align="left">
-            The editor has two working modes: <b>Visual</b> and <b>Formula</b>. Both modes are equivalent, as explained below.
+            The editor has two working modes: <b>Visual</b> and <b>Formula</b>. 
           </Typography>
           <Typography paragraph align="center">
             <img alt="" src={protein_editor_mode1} />
@@ -627,12 +631,12 @@ function ManualContent(props) {
 
           <Typography paragraph align="left">
             <div class="w3-panel w3-warning">
-              <p><strong>Note:</strong> If the protein equation was edited in the <i>Formula Mode</i> and its current equation can not be represented, the <i>Visual mode</i> cannot be used.</p>
+              <p><strong>Note:</strong> If you want to start using <i>Visual mode</i> then delete all the proteins in the <b>Protein List</b>. Indeed, if the protein equation is edited in the <i>Formula Mode</i> and its current equation can not be represented, the <i>Visual mode</i> cannot be used. This is the case for the default equations.</p>
             </div>
           </Typography>
 
           <Typography paragraph align="left">
-            This subsection is centered in the <b>Visual mode</b>. It allows you to graphically design a protein relationship scheme.
+            The <b>Visual mode</b> allows you to graphically design a protein relationship scheme.
           </Typography>
           <Typography paragraph align="center">
             <img alt="" src={protein_editor} width="40%" height="40%"/>
@@ -640,14 +644,21 @@ function ManualContent(props) {
 
   <Typography paragraph align="left">
             <div class="w3-panel w3-warning">
-            <p><strong>Note:</strong> Once a regulatory interaction is created for a particular protein (see below) move the protein to clearly see and edit the properties of the regulatory function. </p>
+            <p><strong>Hint:</strong> Once a regulatory interaction is created for a particular protein (see below) you can edit the properties of the regulatory function by double clicking on the arrow. </p>
             </div>
           </Typography>
 
 
           <Typography paragraph align="left">
-            Inside the editor, you can add new proteins and/or regulatory interactions between them. Proteins are represented by a rectangle with their names inside, and the regulatory interactions are represented by arrows (from protein to protein or from protein to regulatory interaction).
+            Inside the editor, you can add new proteins and/or regulatory interactions between them. Proteins are represented by a rectangle with their names inside, and the regulatory interactions are represented by arrows (from protein to protein or from protein to regulatory interaction). A green continuous arrow corresponds to a positive regulatory regulation (positive Hill function) and a red discontinous arrow  with a dash head stands for a negative interation (inverse Hill function).
           </Typography>
+
+ <Typography paragraph align="left">
+            <div class="w3-panel w3-warning">
+            <p><strong>Warning:</strong> Before drawing a new regulation, make sure the previous one makes sense i.e it connects a protein, a regulation or itself (self-regulation). </p>
+            </div>
+          </Typography>
+
 
           <Typography paragraph align="center">
             <img alt="" src={protein_toolbar} width="50%" height="50%"/>
@@ -746,14 +757,14 @@ function ManualContent(props) {
             Negative values
           </Typography>
           <Typography paragraph align="left">
-            This property allows negative values for the protein number throughout its growth.
+            This property allows negative values for the protein number throughout its growth. It can be used for example to prescribe a magnitude dynamics that can take negative values.
             </Typography>
           <Typography paragraph align="center">
             <img alt="" src={protein_negative_values} width="40%" height="40%"/>
           </Typography>
 	              <Typography paragraph align="left">
             <div class="w3-panel w3-warning">
-              <p><strong>Hint:</strong> Be sure that you understand the implications of activating this option! If not sure, do not activate it.</p>
+              <p><strong>Hint:</strong> Be sure that you understand the implications of activating this option! If not sure, do not activate it (see note [43] in the <i>TiFoSi</i> <a href="https://osf.io/3g2t5/download">manual</a>).</p>
             </div>
           </Typography>
 
