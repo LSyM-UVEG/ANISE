@@ -294,7 +294,7 @@ class Global extends Component {
                               tooltipTitle="Activating this option will allow T1 transitions in cells at the tissue periphery."
                             />
                             <Optional
-                              label="Protein binomial distribution"
+                              label="Protein binomial partition"
                               name="ProteinBinomialDistribution"
                               path={[]}
                               value={state.global.ProteinBinomialDistribution}
