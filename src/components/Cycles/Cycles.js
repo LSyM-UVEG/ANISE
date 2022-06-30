@@ -9,6 +9,7 @@ import { CycleDivision } from "./CycleDivision";
 import { PhaseData } from "./PhasesTable";
 import { CycleDispersion } from "./CycleDispersion";
 import { CycleSpeed } from "./CycleSpeed";
+import { CycleDuration } from "./CycleDuration";
 import { SelectorStageCelltype } from "./SelectorStageCelltype";
 
 function newProperty(value, cellType) {
@@ -417,10 +418,24 @@ export function Cycles(props) {
                   celltypeHandler={handlerChoiceCellType}
                   cellTypeColorList={props.cellTypeColorList}
                 />
-
+                <div><Typography variant="h5" style={{height: "35.2px",
+                        paddingTop: "0px",
+                        paddingBottom: "0px",
+                        borderTopWidth: "0px",
+                        borderTopStyle: "solid",
+                        marginTop: "10px",
+                        borderRadius: "10px",
+                        marginLeft: "20px",
+                        marginRight: "20px",
+                        boxShadow: "rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
+                        backgroundColor: "rgb(207, 232, 252)"
+                }}>
+                  Cell cycle
+                </Typography></div>
                 <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: "10px" }}>
                   <CycleDispersion getPropertyValue={getPropertyValue} setPropertyValue={setPropertyValue} />
-                  <CycleSpeed getPropertyValue={getPropertyValue} setPropertyValue={setPropertyValue} />
+                  <CycleSpeed getPropertyValue={getPropertyValue} setPropertyValue={setPropertyValue} step={props.global.deltat} />
+                  <CycleDuration  getPropertyValue={getPropertyValue} setPropertyValue={setPropertyValue} step={props.global.deltat} />
                 </div>
 
                 <CycleDivision

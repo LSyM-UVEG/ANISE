@@ -10,21 +10,23 @@ export function CycleSpeed(props) {
   };
 
   let speedValue = props.getPropertyValue("speed");
-  if (!isNaN(speedValue)) speedValue = parseFloat(speedValue);
+  if (!isNaN(speedValue)) {
+    speedValue = parseFloat(speedValue);
+  }
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexWrap: "wrap", width: "200px" }}>
+    <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexWrap: "wrap", width: "150px" }}>
       <Typography variant="h5" align="right">
         <FunctionButton equation={speedValue} onChange={handleSpeed("speed")} />
-        <Tooltip title={<Typography>Growth rate of the apical area</Typography>}>
-          <span> Growth speed </span>
+        <Tooltip title={<Typography>Cell cycle progression speed</Typography>}>
+          <span> Speed </span>
         </Tooltip>
       </Typography>
       <div style={{ borderStyle: "solid", borderRadius: "4px", padding: "0px", width: "120px" }}>
         <Tooltip title={<Typography>{speedValue}</Typography>} aria-label="equation">
           <InputNumber onlyNumbers name="speed" value={props.getPropertyValue("speed")} minValue={0.0} round={4} handleValue={handleSpeed} />
         </Tooltip>
-      </div>
+       </div>
     </div>
   );
 }

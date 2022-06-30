@@ -13,10 +13,12 @@ export function CycleDispersion(props) {
 
   return (
     <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", width: "500px", flexWrap: "wrap" }}>
+      <Tooltip title={<Typography>This slider weights the amount of stochasticity in the duration of the cell cycle. Notice that the average duration of the cell cycle does not depend on this value, only its variance.</Typography>}>
       <Typography variant="h5" style={{ width: "500px" }}>
           {" "}
-          Cell cycle{" "}
+          Variability{" "}
         </Typography>
+      </Tooltip>
         <Typography variant="h6" style={{ width: "100px" }}>
           {" "}
           Stochastic{" "}
