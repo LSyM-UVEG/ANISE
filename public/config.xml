@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tissue>
   <global>
     <deltat>0.002</deltat>
@@ -20,7 +20,7 @@
   <stages>
     <stage order="1" duration="30" intermediate="10000">
       <proteins/>
-            <mechanics/>
+      <mechanics/>
     </stage>
     <stage order="2" duration="100" intermediate="10000">
       <mechanics/>
@@ -53,9 +53,9 @@
       <dispersion t="celltype1">0.8</dispersion>
       <dispersion t="celltype2">0.5</dispersion>
       <dispersion t="celltype3">0.8</dispersion>
-      <speed t="celltype1">0.96</speed>
+      <speed t="celltype1">1.0</speed>
       <speed t="celltype2">0.8</speed>
-      <speed t="celltype2">1.2</speed>
+      <speed t="celltype3">1.2</speed>
       <phase t="celltype1" a0i="1." a0f="1." reldiv="0.70" prop="0.5">1</phase>
       <phase t="celltype1" a0i="1." a0f="2." reldiv="0.70" prop="0.5">2</phase>
       <phase t="celltype2" a0i="1." a0f="1." reldiv="0.70" prop="0.5">1</phase>
@@ -70,7 +70,7 @@
       <divisiondispersion t="celltype3">0.3</divisiondispersion>
       <divisiondispersionlimit t="celltype1">0.5</divisiondispersionlimit>
       <divisiondispersionlimit t="celltype2">0.5</divisiondispersionlimit>
-       <divisiondispersionlimit t="celltype3">0.5</divisiondispersionlimit>
+      <divisiondispersionlimit t="celltype3">0.5</divisiondispersionlimit>
     </cycle>
   </cycles>
   <proteins>
@@ -96,13 +96,13 @@
       <iconcentration t="celltype1" dispersion="0" stochastic="n">0</iconcentration>
       <iconcentration t="celltype2" dispersion="0" stochastic="n">0</iconcentration>
       <iconcentration t="celltype3" dispersion="0" stochastic="n">1</iconcentration>
-      <dynamics negval="n">function_hill(protein3,k1,1)-deg1*protein2</dynamics>
+      <dynamics negval="n">function_hill_f(protein3,k1,1)-deg1*protein2</dynamics>
     </protein>
     <protein species="protein3">
       <iconcentration t="celltype1" dispersion="0" stochastic="n">2</iconcentration>
       <iconcentration t="celltype2" dispersion="0" stochastic="n">0</iconcentration>
       <iconcentration t="celltype3" dispersion="0" stochastic="n">2</iconcentration>
-      <dynamics negval="n">function_hill_inverse(protein2,k2,2)-deg2*protein3+diffusion_protein3()</dynamics>
+      <dynamics negval="n">function_hill_f_inverse(protein2,k2,2)-deg2*protein3+diffusion_protein3()</dynamics>
     </protein>
   </proteins>
 </tissue>
