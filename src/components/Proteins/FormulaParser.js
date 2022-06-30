@@ -67,7 +67,7 @@ function getRelationFormula(rel, prot, connectors, relations) {
                     res += starSymbol ? " * " : "";
                     starSymbol = true;
                     res += getSignedNumberString(relAux.k, false) + " * function_hill_f";
-                    res += relAux.type === "negative" ? "_inverse(" : "(";
+                    res += relAux.type === "postive" ? "_inverse(" : "(";
                     //res += relAux.startProtein;
 
                     res += getRelationFormula(relAux, relAux.startProtein, connectors, relations);
@@ -96,7 +96,7 @@ export function getProteinFormula(prot, connectors, relations) {
                     res += getSignedNumberString(rel.k, !plusSymbol !== !starSymbol) + " * function_hill_f";
                     starSymbol = true;
                     plusSymbol = true;
-                    res += rel.type === "negative" ? "_inverse(" : "(";
+                    res += rel.type === "positive" ? "_inverse(" : "(";
                     //res += rel.startProtein;
 
                     res += getRelationFormula(rel, rel.startProtein, connectors, relations);
@@ -329,7 +329,7 @@ function processRelation(type, typeId, term, proteins, connectors, relations, co
                 }
 
                 let relationId = getMaxIndexInArrayField(relations, "id") + 1;
-                let relationType = func.function === "function_hill_f" ? "positive" : "negative";
+                let relationType = func.function === "function_hill_f" ? "negative" : "positive";
                 relations.push(createRelationObjectJS(relationId, relProtein, connectorId, relationType, k, threshold, n, Math.random()));
 
                 if (nextTerm.length > 0) {
