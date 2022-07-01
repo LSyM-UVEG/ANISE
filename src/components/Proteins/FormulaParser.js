@@ -158,6 +158,8 @@ function getTermParts(formula) {
             } else {
                 let parameters;
                 [formula, parameters] = getFunctionParenthesis(formula.substr(firstIdx+1));
+                if (value[0] === '+')
+                    value = value.substr(1);
                 parts.push({function: value, parameters: parameters});
                 // To avoid initial * or /
                 if (minIndexOf(formula, ['/', '*']) === 0) {

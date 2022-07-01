@@ -44,8 +44,8 @@ const getProteinsList = (proteinsData) => {
 function FunctionEditor(props) {
   const properties = [["area", "area", "Cell apical area"], ["perimeter", "perimeter", "Cell perimeter"], ["Type","ctype", "Cell type"], ["x","x", "X coordinate of the cell center"], ["y","y", "Y coordinate of the cell center"], ["Γ","k_gamma", "GAMMA (Γ): Global cortical tension" ], ["Κ","k_kappa", "KAPPA (K): Elastic constant or Young modulus"]]; // area_growth only in potencials y proteins
   const predefinedFunctions = [
-    ["Negative", "function_hill_f(x,k,n)", "function_hill_f(x,k,n) = k^n / (k^n + x^n)"],
-    ["Positive", "function_hill_f_inverse(x,k,n)", "function_hill_f_inverse(x,k,n) = x^n / (k^n + x^n)"]
+    ["Negative", "+ 1.0 * function_hill_f(x,k,n)", "function_hill_f(x,k,n) = k^n / (k^n + x^n)"],
+    ["Positive", "+ 1.0 * function_hill_f_inverse(x,k,n)", "function_hill_f_inverse(x,k,n) = x^n / (k^n + x^n)"]
   ];
   const combinedFunctions = [
     ["Juxtacrine (Receptor-Ligand)", "signal", "Weighted amount of proteinName in neighboring cells, weighted for every neighbor by the amount of shared “membrane” (edge length) relative to the perimeters of the neighboring cells"],
@@ -284,7 +284,7 @@ export function FormulaEditor(props) {
           fullWidth="true"
           endIcon={<AddCircle />}
           color="primary"
-          onClick={() => props.onNewProtein({ x: 200, y: 200 })}
+          onClick={() => props.onNewProtein({ x: 50 + 700 * Math.random(), y: 10 + 350 * Math.random()})}
           style={{ borderRadius: "10px", paddingTop: "10px", paddingBottom: "10px", width: "300px" }}
         >
           Add New Protein
