@@ -297,7 +297,7 @@ function ManualContent(props) {
             Use this option to split proteins among daughter cells (after a division) following a <b>binomial distribution</b>.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={binomial} width="35%" height="35%"/>
+            <img alt="" src={binomial} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -1054,7 +1054,7 @@ function ManualContent(props) {
             The <b>Cell cycle</b> has three parameters. The <b>Variability</b> establishes the value of the stochasticity in the duration of the cell cycle. If that parameter is set to 1/0 then the cell cycle duration is purely deterministic/stochastic (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details). Use either the slider or the text box to set a value.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={dispersion} width="50%" height="50%"/>
+            <img alt="" src={dispersion} width="60%" height="60%"/>
           </Typography>
           <Typography paragraph align="left">
             The <b>Speed</b> parameter determines the progression velocity of the cell cycle and sets the average duration of the cell cycle (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details). This  parameter can be defined as function (e.g., depending on the amount of a particular protein species) using the <i>Function Editor</i> (<EditIcon />) as explained below.
