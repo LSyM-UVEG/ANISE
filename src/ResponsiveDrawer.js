@@ -656,7 +656,7 @@ function ManualContent(props) {
 
 
           <Typography paragraph align="left">
-            Inside the editor, you can add new proteins and/or regulatory interactions between them. Proteins are represented by a rectangle with their names inside, and the regulatory interactions are represented by arrows (from protein to protein or from protein to regulatory interaction). A green continuous arrow corresponds to a positive regulatory regulation (positive Hill function) and a red discontinous arrow  with a dash head stands for a negative interation (inverse Hill function).
+            Inside the editor, you can add new proteins and/or regulatory interactions between them. Proteins are represented by a rectangle with their names inside, and the regulatory interactions are represented by arrows (from protein to protein or from protein to regulatory interaction). A solid green arrow corresponds to a positive regulatory regulation (positive Hill function) and a red dashed arrow  with a dash head stands for a negative interation (inverse Hill function).
           </Typography>
 
 	          <Typography paragraph align="center">
