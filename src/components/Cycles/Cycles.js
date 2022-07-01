@@ -150,18 +150,18 @@ export function Cycles(props) {
     const arrayProperty = props.cycles[idCycleSelected][property];
 
     //const propertyValue = arrayProperty.filter((value) => value.$.t === cellTypeSelected);
-    let indexSelected = 0;
+    let indexSelected = [];
     let propertyFound = arrayProperty.map((value, index) => {
       if (value.$.t === cellTypeSelected) {
-        indexSelected = index;
+        indexSelected.push(index);
         return value;
       }
       return null;
     });
 
-    if (propertyFound[indexSelected] !== null) {
-      propertyFound[indexSelected]._ = typeof newValue === "undefined" ? event.target.value : newValue;
-      props.handlerValue([idCycleSelected, property], indexSelected, propertyFound[indexSelected]);
+    if ( indexSelected.length > 0 && propertyFound[indexSelected[0]] !== null) {
+      propertyFound[indexSelected[0]]._ = typeof newValue === "undefined" ? event.target.value : newValue;
+      props.handlerValue([idCycleSelected, property], indexSelected[0], propertyFound[indexSelected[0]]);
     }
   };
 
