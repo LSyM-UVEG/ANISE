@@ -291,13 +291,13 @@ function ManualContent(props) {
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
-            Protein binomial distribution
+            Protein binomial partition
           </Typography>
           <Typography paragraph align="left">
             Use this option to split proteins among daughter cells (after a division) following a <b>binomial distribution</b>.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={binomial} width="35%" height="35%"/>
+            <img alt="" src={binomial} width="40%" height="40%"/>
           </Typography>
 
           <Typography paragraph variant="h6" align="left">
@@ -469,6 +469,12 @@ function ManualContent(props) {
             <td>Scale a region (click and drag the top right corner)</td>
               </tr>
             </table>
+          </Typography>
+          
+          <Typography paragraph align="left">
+            <div class="w3-panel w3-warning">
+              <p><strong>Note:</strong> Using the scrolling gesture in a trackpad will zoom the tissue. We note that the pinching gesture zooms both the image and the whole webpage.</p>
+            </div>
           </Typography>
 
         </div>
@@ -650,17 +656,10 @@ function ManualContent(props) {
 
 
           <Typography paragraph align="left">
-            Inside the editor, you can add new proteins and/or regulatory interactions between them. Proteins are represented by a rectangle with their names inside, and the regulatory interactions are represented by arrows (from protein to protein or from protein to regulatory interaction). A green continuous arrow corresponds to a positive regulatory regulation (positive Hill function) and a red discontinous arrow  with a dash head stands for a negative interation (inverse Hill function).
+            Inside the editor, you can add new proteins and/or regulatory interactions between them. Proteins are represented by a rectangle with their names inside, and the regulatory interactions are represented by arrows (from protein to protein or from protein to regulatory interaction). A solid green arrow corresponds to a positive regulatory regulation (positive Hill function) and a red dashed arrow  with a dash head stands for a negative interation (inverse Hill function).
           </Typography>
 
- <Typography paragraph align="left">
-            <div class="w3-panel w3-warning">
-            <p><strong>Warning:</strong> Before drawing a new regulation, make sure the previous one makes sense i.e it connects a protein, a regulation or itself (self-regulation). </p>
-            </div>
-          </Typography>
-
-
-          <Typography paragraph align="center">
+	          <Typography paragraph align="center">
             <img alt="" src={protein_toolbar} width="50%" height="50%"/>
           </Typography>
 
@@ -680,11 +679,11 @@ function ManualContent(props) {
               </tr>
               <tr>
                 <td class="w3-small">NEW POSITIVE REGULATION</td>
-            <td>Add a positive regulatory interaction by selecting this option: click a protein and drag the <b class="w3-text-green"> green arrow </b>to either another protein or another regulation.</td>
+            <td>Add a positive regulatory interaction by selecting this option: click a protein and drag the <b class="w3-text-green"> green arrow </b> to a protein or a regulation.</td>
               </tr>
               <tr>
                 <td class="w3-small">NEW NEGATIVE REGULATION</td>
-            <td>Add a negative regulatory interaction by selecting this option: click a protein and drag the <b class="w3-text-red"> red arrow </b>to either another protein or another regulation.</td>
+            <td>Add a negative regulatory interaction by selecting this option: click a protein and drag the <b class="w3-text-red"> red arrow </b>to  a protein or a regulation.</td>
               </tr>
               <tr>
                 <td class="w3-small">REMOVE</td>
@@ -695,7 +694,7 @@ function ManualContent(props) {
 
           <Typography paragraph align="left">
             <div class="w3-panel w3-warning">
-            <p><strong>Hint:</strong> You can draw <i>curved</i> regulations (e.g., loops) by clicking and dragging on the segment (or segments) that define a regulation.</p>
+            <p><strong>Hint:</strong> You can draw <i>curved</i> regulations (e.g., loops) by clicking and dragging on the segment (or segments) that define a regulation. However, when you browse to another tab section, the arrows will take the minimum length and you will loose the visual organization.</p>
             </div>
           </Typography>
 
@@ -1047,20 +1046,29 @@ function ManualContent(props) {
         </div>
 
         <SectionHeading paragraph variant="h5">
-          Cell cycle stochasticity and growth speed
+          Cell cycle parameters
         </SectionHeading>
 
         <div class="w3-code">
           <Typography paragraph align="left">
-            The <b>Cell cycle</b> parameter establishes the value of the stochasticity in the duration of the cell cycle. If that parameter is set to 1/0 then the cell cycle duration is purely deterministic/stochastic (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details). Use either the slider or the text box to set a value.
+            The <b>Cell cycle</b> has three parameters. The <b>Variability</b> establishes the value of the stochasticity in the duration of the cell cycle. If that parameter is set to 1/0 then the cell cycle duration is purely deterministic/stochastic (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details). Use either the slider or the text box to set a value.
           </Typography>
           <Typography paragraph align="center">
-            <img alt="" src={dispersion} width="50%" height="50%"/>
+            <img alt="" src={dispersion} width="60%" height="60%"/>
           </Typography>
           <Typography paragraph align="left">
-            The <b>Growth speed</b> parameter sets the putative duration of the cell cycle (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details).
-            This  parameter can be defined as function (e.g., depending on the amount of a particular protein species) using the <i>Function Editor</i> (<EditIcon />) as explained below.
+            The <b>Speed</b> parameter determines the progression velocity of the cell cycle and sets the average duration of the cell cycle (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details). This  parameter can be defined as function (e.g., depending on the amount of a particular protein species) using the <i>Function Editor</i> (<EditIcon />) as explained below.
           </Typography>
+          <Typography paragraph align="left">
+            The <b>Duration</b> sets the expected average cell cycle duration without any mechanical stresses.
+          </Typography>
+          
+          <Typography paragraph align="left">
+            <div class="w3-panel w3-warning">
+              <p><strong>Note:</strong> <i>Speed</i> and <i>Duration</i> are dependent. If you choose a <i>Speed</i> value then the cycle <i>Duration</i> will be automatically computed. If you want to put a cycle <i>Duration</i> then the <i>Speed</i> value will be set. However, when the <i>Speed</i> depends on properties (e.g cell area), then the expected average cell cycle <i>Duration</i> is unknown.</p>
+            </div>
+          </Typography>
+          
         </div>
 
         <SectionHeading paragraph variant="h5">
