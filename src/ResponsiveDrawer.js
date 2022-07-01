@@ -473,7 +473,7 @@ function ManualContent(props) {
           
           <Typography paragraph align="left">
             <div class="w3-panel w3-warning">
-              <p><strong>Note:</strong> You can face some issues while zooming with a MacBook trackpad.</p>
+              <p><strong>Note:</strong> Using the scrolling gesture in a trackpad will zoom the tissue. We note that the pinching gesture zooms both the image and the whole webpage.</p>
             </div>
           </Typography>
 
@@ -1057,7 +1057,7 @@ function ManualContent(props) {
             <img alt="" src={dispersion} width="50%" height="50%"/>
           </Typography>
           <Typography paragraph align="left">
-            The <b>Speed</b> parameter sets the speed (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details).This  parameter can be defined as function (e.g., depending on the amount of a particular protein species) using the <i>Function Editor</i> (<EditIcon />) as explained below.
+            The <b>Speed</b> parameter determines the progression velocity of the cell cycle and sets the average duration of the cell cycle (see <a href="https://osf.io/3g2t5/download">manual</a> of TiFoSi for details). This  parameter can be defined as function (e.g., depending on the amount of a particular protein species) using the <i>Function Editor</i> (<EditIcon />) as explained below.
           </Typography>
           <Typography paragraph align="left">
             The <b>Duration</b> sets the expected average cell cycle duration without any mechanical stresses.
