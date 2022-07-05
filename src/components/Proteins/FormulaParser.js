@@ -332,7 +332,14 @@ function processRelation(type, typeId, term, proteins, connectors, relations, co
 
                 let relationId = getMaxIndexInArrayField(relations, "id") + 1;
                 let relationType = func.function === "function_hill_f" ? "negative" : "positive";
-                relations.push(createRelationObjectJS(relationId, relProtein, connectorId, relationType, k, threshold, n, Math.random()));
+
+                let intermediatePoints = [];
+                if (connectors.findIndex(element => (element.id === connectorId && element.typeId === relProtein)) >= 0) { // if is an autoregulation, we add an intermediate point
+                    let idxProtein = proteins.findIndex(p => p.name === relProtein);
+                    if (idxProtein >= 0)
+                        intermediatePoints.push({x: proteins[idxProtein].x + 50 , y: proteins[idxProtein].y - 50});
+                }
+                relations.push(createRelationObjectJS(relationId, relProtein, connectorId, relationType, k, threshold, n, Math.random(), intermediatePoints));
 
                 if (nextTerm.length > 0) {
                     let auxError;
@@ -457,6 +464,11 @@ export function configureEditorData(proteinEditorData, proteinArray, newConnecto
             proteinArray[i].y = prot.y;
             proteinArray[i].w = prot.w;
             proteinArray[i].h = prot.h;
+
+            newRelations.forEach( element => {
+                if (element.startProtein === proteinArray[i].name && Array.isArray(element.points) && element.points.length > 0)
+                    element.points[0] = {x: prot.x + 50, y: prot.y - 50};
+            });
         }
     }
 

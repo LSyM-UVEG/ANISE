@@ -196,7 +196,7 @@ function ProteinsEditor(props) {
     let newConnectors = [...connectors];
     newConnectors.forEach((con, i) => {
       if (newRelations.findIndex((rel) => con.relationId === rel.id) === -1) {
-        if ( newRelations.findIndex((rel) => con.id == rel.endConnectorId) === -1) 
+        if ( newRelations.findIndex((rel) => con.id === rel.endConnectorId) === -1) 
           connectorsToRemove.push(i);
       } else if (con.type === "protein" && newProteins.findIndex((prot) => con.typeId === prot.name) === -1) {
         let pos = getConnectorCoords(con.id);
