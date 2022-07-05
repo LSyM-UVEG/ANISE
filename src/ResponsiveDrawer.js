@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+import ReactPlayer from 'react-player/lazy'
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -601,6 +602,18 @@ function ManualContent(props) {
           <Typography paragraph align="center">
             <img alt="" src={proteins_all} width="90%" height="90%" />
           </Typography>
+        </div>
+
+        <SectionHeading paragraph variant="h5">
+          Video demo
+        </SectionHeading>
+        <div class="w3-code">
+          <ReactPlayer
+            url={process.env.PUBLIC_URL + "/proteinsVideo.mp4"}
+            width='100%'
+            height='100%'
+            controls
+          />
         </div>
 
         <SectionHeading paragraph variant="h5">
