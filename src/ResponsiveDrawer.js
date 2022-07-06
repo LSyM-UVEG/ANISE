@@ -605,7 +605,7 @@ function ManualContent(props) {
         </div>
 
         <SectionHeading paragraph variant="h5">
-          Video demo
+          Video tutorial
         </SectionHeading>
         <div class="w3-code">
           <ReactPlayer
