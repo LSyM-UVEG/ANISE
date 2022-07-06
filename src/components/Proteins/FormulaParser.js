@@ -336,8 +336,12 @@ function processRelation(type, typeId, term, proteins, connectors, relations, co
                 let intermediatePoints = [];
                 if (connectors.findIndex(element => (element.id === connectorId && element.typeId === relProtein)) >= 0) { // if is an autoregulation, we add an intermediate point
                     let idxProtein = proteins.findIndex(p => p.name === relProtein);
-                    if (idxProtein >= 0)
-                        intermediatePoints.push({x: proteins[idxProtein].x + 50 , y: proteins[idxProtein].y - 50});
+                    if (idxProtein >= 0) {
+                        let point = {x: proteins[idxProtein].x + 50 , y: proteins[idxProtein].y - 50};
+                        point.x = Math.max(0, Math.min(800.0, point.x));
+                        point.y = Math.max(0.0, Math.min(400.0, point.y));
+                        intermediatePoints.push(point);
+                    }
                 }
                 relations.push(createRelationObjectJS(relationId, relProtein, connectorId, relationType, k, threshold, n, Math.random(), intermediatePoints));
 

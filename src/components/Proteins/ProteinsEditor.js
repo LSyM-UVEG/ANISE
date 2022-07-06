@@ -219,6 +219,8 @@ function ProteinsEditor(props) {
     if (visualEnabled) {
       let newProteins = [...proteins];
       let proteinName = "protein" + (getMaxIndexInArrayField(proteins, "name", "protein", 0) + 1).toString();
+      pos.x = Math.max(100 * 0.5, Math.min(800.0 - 100 * 0.5, pos.x));
+      pos.y = Math.max(50.0, Math.min(380.0, pos.y));
       newProteins.push(createProteinObjectJS(proteinName, pos));
       setProteins(newProteins);
       setProteinDialog(proteinName);
@@ -304,7 +306,10 @@ function ProteinsEditor(props) {
         let newRelations = [...relations];
         let relationId = getMaxIndexInArrayField(relations, "id") + 1;
         let connectorId = getMaxIndexInArrayField(connectors, "id") + 1;
-        newRelations.push(createRelationObjectJS(relationId, proteins[info.id].name, connectorId, tool === 2 ? "positive" : "negative", 1.0, 3.0, 4, 0, [{x: mousePos.x + 5, y: mousePos.y - 50}]));
+        let point = {x: mousePos.x + 5, y: mousePos.y - 50};
+        point.x = Math.max(0, Math.min(800.0, point.x));
+        point.y = Math.max(0.0, Math.min(400.0, point.y));
+        newRelations.push(createRelationObjectJS(relationId, proteins[info.id].name, connectorId, tool === 2 ? "positive" : "negative", 1.0, 3.0, 4, 0, [point]));
         setRelations(newRelations);
 
         let newConnectors = [...connectors];
@@ -341,6 +346,9 @@ function ProteinsEditor(props) {
         let proteinIdx = movingParameters.id;
         newProteins[proteinIdx].x += mousePos.x - movingParameters.lastX;
         newProteins[proteinIdx].y += mousePos.y - movingParameters.lastY;
+        newProteins[proteinIdx].x = Math.max(newProteins[proteinIdx].w * 0.5, Math.min(800.0 - newProteins[proteinIdx].w * 0.5, newProteins[proteinIdx].x));
+        newProteins[proteinIdx].y = Math.max(20.0, Math.min(380.0, newProteins[proteinIdx].y));
+        
         setProteins(newProteins);
         //updateGlobalState();
       } else if (movingParameters.type === "relation") {
