@@ -769,7 +769,7 @@ function ManualContent(props) {
             Negative values
           </Typography>
           <Typography paragraph align="left">
-            This property allows negative values for the protein number throughout its growth. It can be used for example to prescribe a magnitude dynamics that can take negative values.
+            If activated, this option allows the “protein” being defined to take negative values. This option can be used for example to prescribe a dynamics for a magnitude (not a protein concentration!) that can take negative values.
             </Typography>
           <Typography paragraph align="center">
             <img alt="" src={protein_negative_values} width="40%" height="40%"/>
