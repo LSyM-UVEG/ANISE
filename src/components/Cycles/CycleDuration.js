@@ -9,7 +9,7 @@ export function CycleDuration(props) {
     let duration = parseFloat(newValue);
     
     if (!isNaN(duration)) {
-      let speedValue = (props.step * 1551008) / duration ;
+      let speedValue = (1551.008) / duration ;
       props.setPropertyValue(null, name, null)(null, speedValue);
     }
   };
@@ -19,7 +19,7 @@ export function CycleDuration(props) {
   if (!isNaN(speedValue)) {
     speedValue = parseFloat(speedValue);
     if (speedValue > 0) {
-      duration = 1551008 * props.step / speedValue;
+      duration = 1551.008 / speedValue;
       //duration = Math.round(duration * 10) / 10;
     }
   }
